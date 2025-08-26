@@ -16,7 +16,7 @@ const About = () => {
               className="py-16 mx-auto w-40 lg:size-96"
             />
 
-            <div className="w-full text-base lg:ml-18 text-start text-white/90">
+            <div className="w-2/3 text-base lg:ml-18 text-start text-white/90">
               <p>
                 Depuis plus de 30 ans, je chemine aux côtés de l’Art
                 Divinatoire, guidée par la douceur et la lumière qu’il peut
