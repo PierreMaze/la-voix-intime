@@ -5,7 +5,7 @@ const About = () => {
     <section id="about" className="relative flex items-center h-full mt-32">
       <div className="relative w-full">
         <div className="px-4 mx-auto text-center max-w-5xl sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-extrabold tracking-tight text-white sm:text-4xl md:text-5xl lg:text-6xl">
+          <h2 className="text-3xl font-extrabold tracking-tight text-white uppercase">
             À propos
           </h2>
 
