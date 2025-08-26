@@ -99,7 +99,7 @@ const Header = () => {
 
   return (
     <header className={headerClasses}>
-      <div className="px-8 mx-auto w-full max-w-6xl 2xl:max-w-[1850px]">
+      <div className="px-8 mx-auto w-full max-w-6xl 2xl:max-w-[1850px]py-8">
         <nav className="flex items-center justify-between h-20">
           <Link to="/" className="flex flex-col items-center">
             <img
