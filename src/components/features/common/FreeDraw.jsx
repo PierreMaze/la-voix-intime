@@ -2,7 +2,7 @@ import { FadeIn } from "../../ui/FadeIn";
 
 const FreeDraw = () => {
   return (
-    <section id="about" className="px-4 py-16">
+    <section id="free-draw" className="px-4 py-16">
       <div className="mx-auto max-w-6xl">
         <FadeIn>
           <div className="text-center mb-12">
@@ -16,7 +16,7 @@ const FreeDraw = () => {
         </FadeIn>
 
         <FadeIn>
-          <div className="mx-auto max-w-4xl mb-8">
+          <div className="mx-auto max-w-4xl lg:max-w-xl mb-8">
             <div
               className="relative w-full"
               style={{ paddingBottom: "56.25%" }}>

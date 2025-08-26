@@ -36,7 +36,7 @@ const Price = () => {
   return (
     <section
       id="price"
-      className="relative flex flex-col items-center px-4 py-16 h-full">
+      className="relative flex flex-col items-center px-4 py-16 scroll-p-60">
       <div className="w-full max-w-6xl">
         <FadeIn>
           <div className="text-center mb-12">
