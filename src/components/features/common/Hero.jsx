@@ -25,8 +25,11 @@ const Hero = () => {
                   Réserver un tirage
                 </span>
               </button>
-              <button className="inline-flex items-center justify-center px-6 py-3 w-full text-base font-medium border rounded transition-all duration-300 sm:w-auto md:text-lg focus:outline-none border-purple-50 text-purple-50 hover:bg-white hover:text-purple-900 hover:border-purple-300">
-                Découvrir les tirages gratuits sur YouTube
+              <button className="relative inline-flex items-center justify-center px-6 py-3 w-full text-base font-medium border rounded transition-all duration-300 sm:w-auto md:text-lg focus:outline-none border-purple-50 text-purple-50 hover:bg-white hover:text-purple-900 hover:border-purple-300 overflow-hidden group">
+                <div className="absolute inset-0 bg-white transition-transform duration-300 ease-out transform translate-y-full group-hover:translate-y-0"></div>
+                <span className="relative z-10 transition-colors duration-300 group-hover:text-purple-900">
+                  Découvrir les tirages gratuits sur YouTube
+                </span>
               </button>
             </div>
           </FadeIn>
