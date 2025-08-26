@@ -1,6 +1,7 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
+import Logo from "../../../assets/img/logo-la-voix-intime.png";
 
 const navigationItems = [
   {
@@ -102,8 +103,8 @@ const Header = () => {
         <nav className="flex items-center justify-between h-20">
           <Link to="/" className="flex flex-col items-center">
             <img
-              src="../../../assets/img/logo-la-voix-intime.png"
-              alt="La Voix Intime"
+              src={Logo}
+              alt="Logo - La Voix Intime"
               className="w-auto h-12 2xl:h-16"
             />
             <span className="text-sm font-medium text-white mt-1 2xl:text-base">
@@ -114,7 +115,7 @@ const Header = () => {
           {/* Navigation desktop */}
           <div className="hidden items-center space-x-1 md:flex 2xl:text-xl">
             {navigationItems.map((item) =>
-              item.label === "Reserver" ? (
+              item.label === "Réserver" ? (
                 <button
                   key={item.path}
                   onClick={() => handleNavClick(item.path)}
@@ -207,7 +208,7 @@ const Header = () => {
                 <div className="flex-1 p-6">
                   <nav className="space-y-4">
                     {navigationItems.map((item, index) =>
-                      item.label === "Reserver" ? (
+                      item.label === "Réserver" ? (
                         <motion.div
                           key={item.path}
                           initial={{ opacity: 0, x: 20 }}
