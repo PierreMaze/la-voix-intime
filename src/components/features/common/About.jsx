@@ -9,7 +9,7 @@ const About = () => {
             À propos
           </h2>
 
-          <div className="flex flex-col items-stretch justify-center gap-3 lg:gap-32 lg:py-16 lg:flex-row">
+          <div className="flex flex-col items-stretch justify-center gap-3 w-full lg:gap-32 lg:py-16 lg:flex-row">
             <img
               src={aboutPicture}
               alt="About"

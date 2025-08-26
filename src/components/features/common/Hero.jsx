@@ -4,7 +4,7 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="relative flex items-center py-16 w-full h-full mt-28">
+      className="relative flex items-center py-16 w-full h-screen mt-28">
       <div className="relative w-full">
         <div className="px-4 mx-auto w-full text-center sm:px-6 lg:px-8">
           <FadeIn>
