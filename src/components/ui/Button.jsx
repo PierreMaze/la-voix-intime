@@ -1,7 +1,7 @@
 export const Button = ({
   children,
   variant = "primary",
-  undefinede = "",
+ undefinede = "",
   ...props
 }) => {
   const baseClasses =
@@ -14,7 +14,7 @@ export const Button = ({
       "bg-slate-700 hover:bg-white hover:text-purple-900 text-white shadow-lg shadow-slate-700/25 hover:shadow-gray-200/50",
     outline:
       "border border-purple-50 text-purple-50 hover:bg-white hover:text-purple-900 hover:border-purple-300",
-    yellow:
+    purple:
       "relative bg-gradient-to-r from-purple-500 to-blue-600 text-white shadow-lg shadow-purple-500/25 overflow-hidden group",
   };
 
@@ -22,12 +22,12 @@ export const Button = ({
     <button
       className={`${baseClasses}${variants[variant]}${className}`}
       {...props}>
-      {variant === "yellow" && (
+      {variant === "purple" && (
         <div className="absolute inset-0 bg-white transition-transform duration-300 ease-out transform translate-y-full group-hover:translate-y-0"></div>
       )}
       <span
         className={`relative z-10 ${
-          variant === "yellow"
+          variant === "purple"
             ? "group-hover:text-purple-900 transition-colors duration-300"
             : ""}`}>
         {children}
