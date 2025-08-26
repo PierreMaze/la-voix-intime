@@ -17,7 +17,7 @@ const navigationItems = [
     path: "#price",
   },
   {
-    label: "Tirage gratuit",
+    label: "Tirages gratuits",
     path: "#free-draw",
   },
   {

@@ -7,7 +7,7 @@ const FreeDraw = () => {
         <FadeIn>
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-white uppercase mb-4 md:text-4xl">
-              Tirage gratuits
+              Tirages gratuits
             </h2>
             <h3 className="text-lg text-purple-200 md:text-xl">
               Découvrez nos tirages génériques gratuits sur YouTube !
@@ -36,8 +36,8 @@ const FreeDraw = () => {
         <FadeIn>
           <div className="w-full text-start lg:text-center mb-8">
             <p className="leading-relaxed text-purple-100">
-              Ce tirage s'adresse à tout le monde, il ne peut donc pas répondre
-              à toutes vos questions.
+              Ce tirage s'adresse au collectif, il ne peut donc pas répondre à
+              toutes vos questions.
             </p>
           </div>
         </FadeIn>

@@ -27,17 +27,17 @@ const About = () => {
                 <strong className="text-purple-300">
                   n’est pas de prédire votre avenir
                 </strong>
-                , mais de vous accompagnez dans l’écoute de votre propre vérité
+                , mais de vous accompagner dans l’écoute de votre propre vérité
                 intérieure.
               </p>
               <p className="mt-4">
-                À travers les Tarots et les Oracles, je vous aides à éclairer
-                les messages subtils que votre inconscient souhaite partager
-                avec vous.
+                À travers les Tarots et les Oracles, je vous aide à éclairer les
+                messages subtils que votre inconscient souhaite partager avec
+                vous.
               </p>
               <p className="mt-4">
                 Je suis comme une passerelle, une traductrice des murmures de
-                votre âme, afin que vous puissiez les entendre avec plus de
+                votre Âme, afin que vous puissiez les entendre avec plus de
                 clarté.
               </p>
               <p className="mt-4">

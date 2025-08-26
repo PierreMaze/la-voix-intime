@@ -1,5 +1,6 @@
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import Logo from "../../../assets/img/logo-la-voix-intime.png";
 
 const Footer = () => {
   return (
@@ -52,8 +53,8 @@ const Footer = () => {
         {/* Logo et copyright */}
         <div className="flex flex-col items-center">
           <img
-            src="../../../assets/img/logo-la-voix-intime.png"
-            alt="La Voix Intime"
+            src={Logo}
+            alt="Logo - La Voix Intime"
             className="w-auto h-16 mb-4"
           />
           <span className="text-lg font-medium text-white mb-4">
