@@ -1,8 +1,8 @@
-// import Contact from "../features/common/Contact";
 import About from "../components/features/common/About";
+import Faq from "../components/features/common/Faq";
+import FreeDraw from "../components/features/common/FreeDraw";
 import Hero from "../components/features/common/Hero";
 import Price from "../components/features/common/price/Index";
-// import Projects from "../features/projects/index.jsx";
 
 const Home = () => {
   return (
@@ -16,12 +16,12 @@ const Home = () => {
       <section id="price" className="h-fit">
         <Price />
       </section>
-      {/*<section id="timeline" className="h-fit">
-        <Timeline />
+      <section id="timeline" className="h-fit">
+        <FreeDraw />
       </section>
-      <section id="contact" className="h-fit">
-        <Contact />
-      </section> */}
+      <section id="faq" className="h-fit">
+        <Faq />
+      </section>
     </>
   );
 };
