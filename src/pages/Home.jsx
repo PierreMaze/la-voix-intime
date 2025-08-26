@@ -1,7 +1,7 @@
 // import Contact from "../features/common/Contact";
 import About from "../components/features/common/About";
 import Hero from "../components/features/common/Hero";
-// import Timeline from "../features/common/Timeline";
+import Price from "../features/common/price/Index";
 // import Projects from "../features/projects/index.jsx";
 
 const Home = () => {
@@ -13,10 +13,10 @@ const Home = () => {
       <section id="about" className="h-fit">
         <About />
       </section>
-      {/* <section id="projects" className="h-fit">
-        <Projects />
+      <section id="price" className="h-fit">
+        <Price />
       </section>
-      <section id="timeline" className="h-fit">
+      {/*<section id="timeline" className="h-fit">
         <Timeline />
       </section>
       <section id="contact" className="h-fit">
