@@ -1,9 +1,8 @@
-import { Button } from "../../ui/Button";
 import { FadeIn } from "../../ui/FadeIn";
 
 const Hero = () => {
   return (
-    <section id="home" className="relative flex items-center min-h-screen">
+    <section id="home" className="relative flex items-center h-full mt-32">
       <div className="relative w-full">
         <div className="px-4 mx-auto text-center max-w-5xl sm:px-6 lg:px-8">
           <FadeIn>
@@ -20,37 +19,24 @@ const Hero = () => {
 
           <FadeIn className="mt-8 md:mt-10">
             <div className="flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:gap-4 sm:items-center">
-              <Button
-                variant="yellow"
-                className="px-6 py-3 w-full text-base sm:w-auto md:text-lg">
-                Réserver un tirage
-              </Button>
-              <Button
-                variant="outline"
-                className="px-6 py-3 w-full text-base sm:w-auto md:text-lg">
+              <button className="relative inline-flex items-center justify-center px-6 py-3 w-full text-base font-medium text-white rounded shadow-lg transition-all duration-300 sm:w-auto md:text-lg focus:outline-none bg-gradient-to-r from-purple-500 to-blue-600 shadow-purple-500/25 overflow-hidden group">
+                <div className="absolute inset-0 bg-white transition-transform duration-300 ease-out transform translate-y-full group-hover:translate-y-0"></div>
+                <span className="relative z-10 transition-colors duration-300 group-hover:text-purple-900">
+                  Réserver un tirage
+                </span>
+              </button>
+              <button className="inline-flex items-center justify-center px-6 py-3 w-full text-base font-medium border rounded transition-all duration-300 sm:w-auto md:text-lg focus:outline-none border-purple-50 text-purple-50 hover:bg-white hover:text-purple-900 hover:border-purple-300">
                 Découvrir les tirages gratuits sur YouTube
-              </Button>
+              </button>
             </div>
           </FadeIn>
 
           <FadeIn className="mt-10 md:mt-14">
             <a
-              href="#skills"
+              href="#about"
               aria-label="Aller à la section suivante"
-              className="inline-flex items-center justify-center mx-auto w-12 h-12 border rounded-full transition-colors duration-300 border-white/30 text-white/80 hover:text-white hover:border-white/60">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth="1.5"
-                stroke="currentColor"
-                className="w-6 h-6 animate-bounce">
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M19.5 8.25l-7.5 7.5-7.5-7.5"
-                />
-              </svg>
+              className="inline-flex items-center justify-center pt-12 mx-auto w-12 h-12 transition-colors duration-300">
+              <iframe src="https://lottie.host/embed/bb7634e2-3692-4d30-8002-9dc962154b2c/W9fHZGS0aA.lottie"></iframe>
             </a>
           </FadeIn>
         </div>
