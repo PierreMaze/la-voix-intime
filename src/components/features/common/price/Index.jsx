@@ -1,3 +1,4 @@
+import { FadeIn } from "../../../ui/FadeIn";
 import NotePaypal from "../../NotePaypal";
 import CardPrice from "./CardPrice";
 
@@ -35,13 +36,24 @@ const Price = () => {
   return (
     <section
       id="price"
-      className="relative flex flex-col items-center px-4 h-full mt-32">
+      className="relative flex flex-col items-center px-4 py-16 h-full">
       <div className="w-full max-w-6xl">
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 mb-12">
-          <CardPrice {...card1Data} />
-          <CardPrice {...card2Data} />
-        </div>
-        <NotePaypal />
+        <FadeIn>
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-white uppercase mb-4 md:text-4xl">
+              Tarifs
+            </h2>
+          </div>
+        </FadeIn>
+        <FadeIn>
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 mb-12">
+            <CardPrice {...card1Data} />
+            <CardPrice {...card2Data} />
+          </div>
+        </FadeIn>
+        <FadeIn>
+          <NotePaypal />
+        </FadeIn>
       </div>
     </section>
   );
