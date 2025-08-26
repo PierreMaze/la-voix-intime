@@ -1,4 +1,4 @@
-const OptimizedImage = ({ src, alt, className = "", ...props }) => {
+const OptimizedImage = ({ src, alt, undefinede = "", ...props }) => {
   // Vérifier si src est une chaîne de caractères
   const getImageSource = (source) => {
     // Si ce n'est pas une chaîne, c'est probablement un import d'image

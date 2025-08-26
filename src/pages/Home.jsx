@@ -1,7 +1,7 @@
 // import Contact from "../features/common/Contact";
 import About from "../components/features/common/About";
 import Hero from "../components/features/common/Hero";
-import Price from "../features/common/price/Index";
+import Price from "../components/features/common/price/Index";
 // import Projects from "../features/projects/index.jsx";
 
 const Home = () => {
