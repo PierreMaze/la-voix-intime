@@ -1,4 +1,5 @@
 import { FadeIn } from "../ui/FadeIn";
+import LogoPaypal from "/assets/img/logo-paypal.png";
 
 const NotePaypal = () => {
   return (
@@ -7,7 +8,7 @@ const NotePaypal = () => {
         <p className="text-purple-100">Paiement sécurisé via</p>
 
         <div className="flex p-3 my-4 border rounded-lg shadow-lg bg-purple-200/60 backdrop-blur-sm border-white/30">
-          <img src="/assets/img/logo-paypal.png" alt="PayPal" className="h-8" />
+          <img src={LogoPaypal} alt="PayPal" className="h-8" />
         </div>
         <p className="w-full text-xs text-purple-50">
           2€ de frais de gestion par Paypal peuvent s'appliquer lors du paiement
