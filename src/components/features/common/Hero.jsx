@@ -4,9 +4,9 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="relative flex items-center py-16 h-full mt-28">
-      <div className="relative w-full">
-        <div className="px-4 mx-auto w-full text-center sm:px-6 lg:px-8">
+      className="relative flex items-center py-16 w-full h-full mt-28">
+      <div className="relative">
+        <div className="px-4 mx-auto text-center sm:px-6 lg:px-8">
           <FadeIn>
             <h1 className="text-3xl font-extrabold tracking-tight text-purple-50 sm:text-4xl md:text-5xl lg:text-6xl">
               Découvrez le langage secret de votre Inconscient
