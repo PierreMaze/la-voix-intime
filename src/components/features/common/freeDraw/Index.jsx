@@ -1,4 +1,5 @@
-import { FadeIn } from "../../ui/FadeIn";
+import { FadeIn } from "../../../ui/FadeIn";
+import YouTubeVideo from "./YouTubeVideo";
 
 const FreeDraw = () => {
   return (
@@ -18,19 +19,10 @@ const FreeDraw = () => {
 
         <FadeIn>
           <div className="mx-auto max-w-4xl mb-12">
-            <div
-              className="relative w-full rounded-2xl shadow-2xl overflow-hidden"
-              style={{ paddingBottom: "56.25%" }}>
-              <iframe
-                className="absolute top-0 left-0 w-full h-full"
-                src="https://www.youtube.com/embed/D8t-DoDVuqI?si=g0f-uzNGQlOZSH2O"
-                title="YouTube video player"
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerPolicy="strict-origin-when-cross-origin"
-                allowFullScreen
-              />
-            </div>
+            <YouTubeVideo
+              videoId="D8t-DoDVuqI"
+              title="Tirage gratuit - La Voix Intime"
+            />
           </div>
         </FadeIn>
 
