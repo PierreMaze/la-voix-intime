@@ -3,6 +3,7 @@ import Faq from "../components/features/common/Faq";
 import FreeDraw from "../components/features/common/freeDraw/Index";
 import Hero from "../components/features/common/Hero";
 import Price from "../components/features/common/price/Index";
+import Reviews from "../components/features/common/reviews/Index";
 
 const Home = () => {
   return (
@@ -16,8 +17,11 @@ const Home = () => {
       <section id="price" className="h-fit">
         <Price />
       </section>
-      <section id="timeline" className="h-fit">
+      <section id="free-draw" className="h-fit">
         <FreeDraw />
+      </section>
+      <section id="reviews" className="h-fit">
+        <Reviews />
       </section>
       <section id="faq" className="h-fit">
         <Faq />
