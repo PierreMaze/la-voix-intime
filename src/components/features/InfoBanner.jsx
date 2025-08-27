@@ -50,7 +50,7 @@ const InfoBanner = () => {
 
             <div className="flex flex-col items-center gap-1 text-xs sm:flex-row sm:gap-3 text-white/80">
               <span>Contactez-moi en attendant :</span>
-              <div className="flex items-center gap-3">
+              <div className="flex flex-col items-center gap-2 sm:flex-row sm:gap-3">
                 <a
                   href="mailto:lavoixintime@gmail.com"
                   className="flex items-center gap-1 transition-colors duration-200 text-purple-300 hover:text-purple-200">

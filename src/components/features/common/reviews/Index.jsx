@@ -52,7 +52,7 @@ const Reviews = () => {
         <FadeIn>
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-white mb-4">
-              Il m'ont fait confiance
+              Ils m'ont fait confiance
             </h2>
             <div className="w-16 h-0.mx-auto 5 bg-purple-400"></div>
           </div>
