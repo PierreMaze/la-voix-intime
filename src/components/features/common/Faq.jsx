@@ -62,7 +62,7 @@ const Faq = () => {
         "J'ai pu observer, lors des tirages en présentiel, que l'inconscient de la personne à qui je fais les tirages, se déconnecte à plusieurs reprises. Comme un signal radio où il y aurait de la friture sur la ligne. La personne me regarde, cherche dans mon regard des approbations et perd sa concentration. Je dois me reconnecter et cela coupe la fluidité des messages. Cette façon d'effectuer les tirages permet d'avoir un signal clair et inninterrompu.",
     },
     {
-      question: "Quand sera disponible la réservation en ligne ?",
+      question: "Quand sera disponible la réservation sur le site ?",
       answer:
         "Nous travaillons sur l'intégration de la réservation par le calendrier. Nous vous invitons à réserver par téléphone (06 46 84 93 52) ou par mail (lavoixintime@gmail.com). Nous mettons tout en œuvre pour l'avancement du calendrier.",
     },
