@@ -4,7 +4,9 @@ import { FadeIn } from "../ui/FadeIn";
 const InfoBanner = () => {
   const [isVisible, setIsVisible] = useState(true);
 
-  const handleClose = () => {
+  const handleClose = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
     setIsVisible(false);
   };
 
@@ -18,7 +20,7 @@ const InfoBanner = () => {
             <button
               onClick={handleClose}
               onTouchEnd={handleClose}
-              className="absolute z-50 p-3 rounded-full transition-colors duration-200 top-1 right-3 sm:top-2 sm:right-2 text-white/60 hover:text-white bg-black/20"
+              className="absolute z-50 p-3 transition-colors duration-200 top-1 right-3 sm:top-2 sm:right-2 text-white/60 hover:text-white"
               aria-label="Fermer la banderole"
               type="button">
               <svg
