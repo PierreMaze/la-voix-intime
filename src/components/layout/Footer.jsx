@@ -9,7 +9,7 @@ const Footer = () => {
         {/* Réseaux sociaux */}
         <div className="flex justify-center gap-6 px-8 mb-8">
           <a
-            href="https://github.com/PierreMaze"
+            href="https://www.facebook.com/people/La-Voix-Intime/61579102867193/"
             title="Facebook"
             target="_blank"
             rel="noopener noreferrer"
@@ -17,7 +17,7 @@ const Footer = () => {
             <FaFacebook className="transition-colors hover:text-blue-300" />
           </a>
           <a
-            href="https://fr.linkedin.com/in/pierremazelaygue"
+            href="https://www.instagram.com/lavoixintime?igsh=MWl4bGR2MnNnc2VkaQ=="
             title="Instagram"
             target="_blank"
             rel="noopener noreferrer"

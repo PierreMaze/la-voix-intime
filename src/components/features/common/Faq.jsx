@@ -15,8 +15,7 @@ const FAQItem = ({ question, answer, isOpen, onToggle }) => {
         <div className="flex-shrink-0">
           <svg
             className={`w-5 h-5 text-purple-300 transition-transform duration-300 ${
-              isOpen ? "rotate-180" : ""
-            }`}
+              isOpen ? "rotate-180" : ""}`}
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
@@ -33,8 +32,7 @@ const FAQItem = ({ question, answer, isOpen, onToggle }) => {
 
       <div
         className={`overflow-hidden transition-all duration-300 ease-in-out ${
-          isOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
-        }`}>
+          isOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"}`}>
         <div className="pr-4 pb-6">
           <p className="text-base leading-relaxed text-white/90">{answer}</p>
         </div>
@@ -48,29 +46,20 @@ const Faq = () => {
 
   const faqData = [
     {
-      question: "Comment fonctionne un tirage de cartes ?",
+      question: "Dois-je croire aux tirages que vous effectuez?",
       answer:
-        "Un tirage de cartes est une consultation intuitive où je tire des cartes spécifiques pour répondre à vos questions. Chaque carte révèle des aspects de votre situation actuelle et vous guide vers des perspectives nouvelles. La séance dure environ 45 minutes et se déroule dans un cadre bienveillant et confidentiel.",
+        "Ce n'est pas une question de croyance mais de résonance. Il y a, à l'intérieur de vous, des parties qui se sentent reconnues, apaisées, entendues. Voilà le signal! Si ce n'est pas le cas, c'est que quelque chose en vous est encore immature, peut-être des zones de confort avec des bénéfices secondaires vous empêchent-ils d'accéder à certaines compréhensions. Ce n'est pas grave. L'intérêt de l'enregistrement audio est qu'il vous permet de réécouter le tirage un peu plus tard avec une meilleure réceptivité.",
     },
     {
-      question: "Quels types de questions puis-je poser ?",
+      question: "Puis-je poser une question spécifique lors des tirages?",
       answer:
-        "Vous pouvez poser des questions sur tous les aspects de votre vie : relations, carrière, développement personnel, décisions importantes, ou simplement pour obtenir des éclairages sur votre chemin de vie. Les cartes vous offrent des perspectives et des conseils pour avancer avec plus de clarté et de confiance.",
+        "Votre inconscient a un message à vous transmettre. Parfois cela passe par une réponse plus générale ou sur un sujet plus profond, qui englobe la source de beaucoup de vos questionnements intérieurs. En général, l'inconscient, lorsque l'on lui donne de l'espace pour s'exprimer, en profite pour traiter quelque chose d'important, de crucial pour votre évolution. En activant cette mise en lumière dans la conscience, souvent, beaucoup de crises existentielles, n'étant que des ramifications du sujet principal, se règlent d'elles-mêmes.",
     },
     {
-      question: "Les tirages sont-ils en ligne ou en personne ?",
+      question:
+        "Pourquoi ne vous montrez-vous pas lors des tirages, on ne voit que vos mains?",
       answer:
-        "Je propose des consultations en ligne via visioconférence, ce qui vous permet de bénéficier d'un tirage depuis le confort de votre espace personnel. Cette approche moderne conserve toute la magie et l'authenticité d'une consultation traditionnelle tout en offrant une grande flexibilité.",
-    },
-    {
-      question: "Combien de temps dure une séance ?",
-      answer:
-        "Une séance complète dure environ 45 minutes. Ce temps permet d'explorer en profondeur votre question, de tirer les cartes appropriées et de vous donner des explications détaillées. Je prends le temps nécessaire pour que vous compreniez pleinement les messages qui vous sont destinés.",
-    },
-    {
-      question: "Comment réserver une consultation ?",
-      answer:
-        "Vous pouvez réserver votre consultation directement via le bouton 'Réserver un tirage' sur cette page. Je vous proposerai des créneaux disponibles et nous conviendrons ensemble du moment qui vous convient le mieux. Un lien de visioconférence vous sera envoyé avant la séance.",
+        "J'ai pu observer, lors des tirages en présentiel, que l'inconscient de la personne à qui je fais les tirages, se déconnecte à plusieurs reprises. Comme un signal radio où il y aurait de la friture sur la ligne. La personne me regarde, cherche dans mon regard des approbations et perd sa concentration. Je dois me reconnecter et cela coupe la fluidité des messages. Cette façon d'effectuer les tirages permet d'avoir un signal clair et inninterrompu.",
     },
   ];
 
@@ -112,7 +101,7 @@ const Faq = () => {
             <div className="flex justify-center space-x-6">
               {/* Icône Mail */}
               <a
-                href="mailto:votre-email@example.com"
+                href="mailto:lavoixintime@gmail.com"
                 className="flex items-center justify-center w-12 h-12 rounded-full transition-all duration-300 transform bg-gradient-to-r from-purple-500 to-blue-600 hover:from-purple-600 hover:to-blue-700 hover:scale-105"
                 title="Envoyer un email">
                 <svg
@@ -132,7 +121,7 @@ const Faq = () => {
 
               {/* Icône Téléphone */}
               <a
-                href="tel:+33123456789"
+                href="tel:+33646849352"
                 className="flex items-center justify-center w-12 h-12 rounded-full transition-all duration-300 transform bg-gradient-to-r from-purple-500 to-blue-600 hover:from-purple-600 hover:to-blue-700 hover:scale-105"
                 title="Appeler">
                 <svg

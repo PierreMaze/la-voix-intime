@@ -21,12 +21,16 @@ const Hero = () => {
 
           <FadeIn className="mt-8 md:mt-16">
             <div className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-              <button className="px-8 py-3 text-base font-medium text-white rounded-lg transition-all duration-300 transform bg-gradient-to-r from-purple-500 to-blue-600 hover:from-purple-600 hover:to-blue-700 hover:scale-105">
+              <a
+                href="#to-book"
+                className="px-8 py-3 text-base font-medium text-white rounded-lg transition-all duration-300 transform bg-gradient-to-r from-purple-500 to-blue-600 hover:from-purple-600 hover:to-blue-700 hover:scale-105">
                 Réserver un tirage
-              </button>
-              <button className="px-8 py-3 text-base font-medium border rounded-lg transition-all duration-300 transform text-purple-50 border-purple-50 hover:bg-white hover:text-purple-900 hover:border-purple-300 hover:scale-105">
+              </a>
+              <a
+                href="#free-draw"
+                className="px-8 py-3 text-base font-medium border rounded-lg transition-all duration-300 transform text-purple-50 border-purple-50 hover:bg-white hover:text-purple-900 hover:border-purple-300 hover:scale-105">
                 Découvrir les tirages gratuits sur YouTube
-              </button>
+              </a>
             </div>
           </FadeIn>
 
