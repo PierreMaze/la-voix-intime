@@ -42,7 +42,7 @@ const Reviews = () => {
       rating: 5,
       date: "2025-08-24",
       comment:
-        "Merci ! Toujours un réel plaisir pour ces moments de partage, Toujours des tirages d'une parfaite justesse du moment, clair et fluide, participe à la reflexion ! Merci aussi pour les tirages  du 'soir' belles options d'ouvertures de pensées. 🙏",
+        "Merci ! Toujours un réel plaisir pour ces moments de partage. Toujours des tirages d'une parfaite justesse du moment, clair et fluide, participe à la reflexion ! Merci aussi pour les tirages  du 'soir' belles options d'ouvertures de pensées. 🙏",
     },
   ];
 
