@@ -4,12 +4,12 @@ import { FadeIn } from "../../ui/FadeIn";
 // Composant FAQItem réutilisable
 const FAQItem = ({ question, answer, isOpen, onToggle }) => {
   return (
-    <div className="border-b border-slate-700/50 last:border-b-0">
+    <div className="border-b group border-white/10 last:border-b-0">
       <button
         onClick={onToggle}
-        className="flex items-center justify-between py-6 w-full text-left transition-colors duration-300 hover:text-purple-300 focus:outline-none focus:text-purple-300"
+        className="flex items-center justify-between py-6 w-full text-left transition-all duration-300 hover:text-purple-300 focus:outline-none"
         aria-expanded={isOpen}>
-        <h3 className="pr-4 text-base font-medium text-purple-50 lg:text-lg">
+        <h3 className="pr-4 text-lg font-medium text-white group-hover:text-purple-200 group-focus:text-purple-200">
           {question}
         </h3>
         <div className="flex-shrink-0">
@@ -36,9 +36,7 @@ const FAQItem = ({ question, answer, isOpen, onToggle }) => {
           isOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
         }`}>
         <div className="pr-4 pb-6">
-          <p className="text-xs leading-relaxed lg:text-base text-purple-200">
-            {answer}
-          </p>
+          <p className="text-base leading-relaxed text-white/90">{answer}</p>
         </div>
       </div>
     </div>
@@ -81,37 +79,80 @@ const Faq = () => {
   };
 
   return (
-    <section className="px-4 py-16 mx-auto w-full">
-      <FadeIn>
-        <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold uppercase text-purple-50 mb-4">
-            Questions Fréquentes
-          </h2>
-        </div>
-      </FadeIn>
+    <section className="relative px-4 py-16">
+      <div className="mx-auto max-w-4xl">
+        <FadeIn>
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-white mb-4">
+              Questions Fréquentes
+            </h2>
+            <div className="w-16 h-0.mx-auto 5 bg-purple-400"></div>
+          </div>
+        </FadeIn>
 
-      <FadeIn>
-        <div className="px-8 border rounded-2xl bg-slate-800/30 backdrop-blur-sm border-slate-700/50">
-          {faqData.map((item, index) => (
-            <FAQItem
-              key={index}
-              question={item.question}
-              answer={item.answer}
-              isOpen={openIndex === index}
-              onToggle={() => handleToggle(index)}
-            />
-          ))}
-        </div>
-      </FadeIn>
+        <FadeIn>
+          <div className="px-8 border rounded-2xl bg-white/5 backdrop-blur-sm border-white/10">
+            {faqData.map((item, index) => (
+              <FAQItem
+                key={index}
+                question={item.question}
+                answer={item.answer}
+                isOpen={openIndex === index}
+                onToggle={() => handleToggle(index)}
+              />
+            ))}
+          </div>
+        </FadeIn>
 
-      <FadeIn className="text-center mt-12">
-        <p className="text-purple-200 mb-6">
-          Vous avez d'autres questions ? N'hésitez pas à me contacter
-        </p>
-        <button className="inline-flex items-center justify-center px-6 py-3 text-base font-medium rounded shadow-lg transition-all duration-300 text-purple-50 focus:outline-none bg-gradient-to-r from-purple-500 to-blue-600 shadow-purple-500/25 hover:shadow-purple-500/40 hover:scale-105">
-          Me contacter
-        </button>
-      </FadeIn>
+        <FadeIn>
+          <div className="text-center mt-12">
+            <p className="text-white/80 mb-6">
+              Vous avez d'autres questions ? N'hésitez pas à me contacter
+            </p>
+            <div className="flex justify-center space-x-6">
+              {/* Icône Mail */}
+              <a
+                href="mailto:votre-email@example.com"
+                className="flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-r from-purple-500 to-blue-600 hover:from-purple-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105"
+                title="Envoyer un email">
+                <svg
+                  className="w-6 h-6 text-white"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                  />
+                </svg>
+              </a>
+
+              {/* Icône Téléphone */}
+              <a
+                href="tel:+33123456789"
+                className="flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-r from-purple-500 to-blue-600 hover:from-purple-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105"
+                title="Appeler">
+                <svg
+                  className="w-6 h-6 text-white"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </FadeIn>
+      </div>
     </section>
   );
 };
