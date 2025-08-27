@@ -4,9 +4,7 @@ import { FadeIn } from "../ui/FadeIn";
 const InfoBanner = () => {
   const [isVisible, setIsVisible] = useState(true);
 
-  const handleClose = (e) => {
-    e.preventDefault();
-    e.stopPropagation();
+  const handleClose = () => {
     setIsVisible(false);
   };
 
@@ -17,23 +15,26 @@ const InfoBanner = () => {
       <div className="fixed right-0 left-0 z-40 border-b top-16 bg-gradient-to-r from-purple-600/20 to-blue-600/20 backdrop-blur-sm border-purple-400/30">
         <div className="px-4 py-3 sm:px-16">
           <div className="flex flex-col items-center justify-between gap-2 text-center sm:flex-row sm:text-left sm:gap-4">
-            <button
-              onClick={handleClose}
-              onTouchStart={handleClose}
-              className="absolute z-50 p-3 transition-colors duration-200 top-1 right-3 sm:top-2 sm:right-2 text-white/60 hover:text-white"
-              aria-label="Fermer la banderole"
-              type="button">
-              <svg
-                className="w-6 h-6 sm:w-4 sm:h-4"
-                fill="currentColor"
-                viewBox="0 0 20 20">
-                <path
-                  fillRule="evenodd"
-                  d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-                  clipRule="evenodd"
-                />
-              </svg>
-            </button>
+            {/* Bouton de fermeture simplifié */}
+            <div className="absolute top-2 right-2 sm:top-3 sm:right-3 z-50">
+              <button
+                onClick={handleClose}
+                className="flex items-center justify-center w-8 h-8 sm:w-6 sm:h-6 text-white/60 hover:text-white transition-colors duration-200"
+                aria-label="Fermer la banderole">
+                <svg
+                  className="w-5 h-5 sm:w-4 sm:h-4"
+                  fill="currentColor"
+                  viewBox="0 0 20 20">
+                  <path
+                    fillRule="evenodd"
+                    d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                    clipRule="evenodd"
+                  />
+                </svg>
+              </button>
+            </div>
+
+            {/* Message principal */}
             <div className="flex items-center">
               <svg
                 className="w-5 h-5 text-yellow-400 mr-2 flex-shrink-0"
@@ -55,6 +56,7 @@ const InfoBanner = () => {
               </span>
             </div>
 
+            {/* Informations de contact */}
             <div className="flex flex-col items-center gap-1 text-xs sm:flex-row sm:gap-3 text-white/80">
               <span>Contactez-moi en attendant :</span>
               <div className="flex flex-col items-center gap-2 sm:flex-row sm:gap-3">
