@@ -13,7 +13,7 @@ const navigationItems = [
     path: "#about",
   },
   {
-    label: "Tarifs",
+    label: "Mes Tarifs",
     path: "#price",
   },
   {

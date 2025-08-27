@@ -34,23 +34,22 @@ const Price = () => {
   };
 
   return (
-    <section
-      id="price"
-      className="relative flex flex-col items-center px-4 py-16 scroll-p-60">
-      <div className="w-full max-w-6xl">
+    <section id="price" className="relative px-4 py-20">
+      <div className="mx-auto max-w-6xl">
         <FadeIn>
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-white uppercase mb-4 md:text-4xl">
-              Tarifs
-            </h2>
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-white mb-4">Mes Tarifs</h2>
+            <div className="w-16 h-0.mx-auto 5 bg-purple-400"></div>
           </div>
         </FadeIn>
+
         <FadeIn>
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 mb-12">
+          <div className="grid gap-8 md:grid-cols-2 mb-12">
             <CardPrice {...card1Data} />
             <CardPrice {...card2Data} />
           </div>
         </FadeIn>
+
         <FadeIn>
           <NotePaypal />
         </FadeIn>

@@ -11,19 +11,19 @@ const CardPrice = ({
 }) => {
   return (
     <FadeIn>
-      <div className="relative p-6 rounded-lg shadow-2xl transition-shadow duration-300 shadow-purple-500/25 bg-purple-50/80">
+      <div className="relative p-8 border rounded-2xl transition-all duration-300 bg-white/10 backdrop-blur-sm border-white/20 hover:border-purple-400/30">
         {badge && <BadgePrice />}
 
         <div className="text-center">
-          <h3 className="text-2xl font-bold text-gray-800 mb-4">{title}</h3>
-          <p className="text-4xl font-bold text-blue-600 mb-6">{price}</p>
+          <h3 className="text-2xl font-bold text-white mb-4">{title}</h3>
+          <p className="text-5xl font-bold text-purple-300 mb-8">{price}</p>
 
-          <div className="flex justify-center mb-8">
-            <ul className="text-sm lg:text-base text-start space-y-3">
+          <div className="mb-8">
+            <ul className="space-y-4 text-white/90">
               {detailsList.map((detail, index) => (
-                <li key={index} className="flex items-center">
-                  <span className="text-green-500 mr-2">☑️</span>
-                  <span className="text-gray-700">{detail}</span>
+                <li key={index} className="flex items-center justify-center">
+                  <span className="text-lg text-purple-400 mr-3">✓</span>
+                  <span className="text-base">{detail}</span>
                 </li>
               ))}
             </ul>
@@ -31,15 +31,12 @@ const CardPrice = ({
 
           <a
             href={button.href}
-            className="relative inline-flex items-center justify-center px-6 py-3 w-full text-base font-medium text-white rounded shadow-lg transition-all duration-300 sm:w-auto md:text-lg focus:outline-none bg-gradient-to-r from-purple-500 to-blue-600 shadow-purple-500/25 overflow-hidden group mb-4">
-            <div className="absolute inset-0 bg-white transition-transform duration-300 ease-out transform translate-y-full group-hover:translate-y-0"></div>
-            <span className="relative z-10 transition-colors duration-300 group-hover:text-purple-900">
-              {button.text}
-            </span>
+            className="inline-block px-8 py-3 text-base font-medium text-white rounded-lg transition-all duration-300 transform bg-gradient-to-r from-purple-500 to-blue-600 hover:from-purple-600 hover:to-blue-700 hover:scale-105 mb-6">
+            {button.text}
           </a>
 
           {disclaimer && (
-            <p className="text-xs text-gray-500 mt-4 text-start italic">
+            <p className="text-xs text-center text-white/90 italic">
               {disclaimer}
             </p>
           )}
