@@ -78,6 +78,20 @@ const Header = () => {
     setIsMobileMenuOpen(false);
   }, [location]);
 
+  // Bloquer le scroll quand le menu mobile est ouvert
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+
+    // Nettoyer lors du démontage du composant
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  }, [isMobileMenuOpen]);
+
   // Optimiser la fonction de navigation
   const handleNavClick = useCallback((path) => {
     if (path.startsWith("#")) {
@@ -101,13 +115,13 @@ const Header = () => {
     <header className={headerClasses}>
       <div className="px-8 mx-auto w-full max-w-6xl 2xl:max-w-[1850px]">
         <nav className="flex items-center justify-between h-24">
-          <Link to="/" className="flex flex-col items-center">
+          <Link to="/" className="flex items-center space-x-4">
             <img
               src={Logo}
               alt="Logo - La Voix Intime"
-              className="w-auto h-12 2xl:h-14"
+              className="w-auto h-12"
             />
-            <span className="text-sm font-medium text-white mt-1 2xl:text-base">
+            <span className="text-xl font-semibold text-white">
               La Voix Intime
             </span>
           </Link>
@@ -119,11 +133,8 @@ const Header = () => {
                 <button
                   key={item.path}
                   onClick={() => handleNavClick(item.path)}
-                  className="relative inline-flex items-center justify-center px-4 py-2 font-medium text-white rounded shadow-lg transition-all duration-300 focus:outline-none bg-gradient-to-r from-purple-500 to-blue-600 shadow-purple-500/25 overflow-hidden group">
-                  <div className="absolute inset-0 bg-white transition-transform duration-300 ease-out transform translate-y-full group-hover:translate-y-0"></div>
-                  <span className="relative z-10 transition-colors duration-300 group-hover:text-purple-900">
-                    {item.label}
-                  </span>
+                  className="px-8 py-3 text-base font-medium text-white rounded-lg transition-all duration-300 transform bg-gradient-to-r from-purple-500 to-blue-600 hover:from-purple-600 hover:to-blue-700 hover:scale-105">
+                  {item.label}
                 </button>
               ) : (
                 <button
@@ -223,11 +234,8 @@ const Header = () => {
                               handleNavClick(item.path);
                               setIsMobileMenuOpen(false);
                             }}
-                            className="relative inline-flex items-center justify-start px-4 py-3 w-full font-medium text-white rounded shadow-lg transition-all duration-300 focus:outline-none bg-gradient-to-r from-purple-500 to-blue-600 shadow-purple-500/25 overflow-hidden group">
-                            <div className="absolute inset-0 bg-white transition-transform duration-300 ease-out transform translate-y-full group-hover:translate-y-0"></div>
-                            <span className="relative z-10 transition-colors duration-300 group-hover:text-purple-900">
-                              {item.label}
-                            </span>
+                            className="px-4 py-3 w-full text-base font-medium text-white rounded-lg transition-all duration-300 bg-gradient-to-r from-purple-500 to-blue-600 hover:from-purple-600 hover:to-blue-700">
+                            {item.label}
                           </button>
                         </motion.div>
                       ) : (
