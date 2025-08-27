@@ -45,24 +45,23 @@ const About = () => {
             </p>
 
             <p className="text-lg leading-relaxed">
-              À travers les{" "}
-              <span className="font-medium text-blue-300">Tarots</span> et les{" "}
-              <span className="font-medium text-blue-300">Oracles</span>, je
-              vous aide à éclairer les messages subtils que votre inconscient
-              souhaite partager avec vous.
+              À travers{" "}
+              <span className="px-2 py-1 font-medium rounded text-blue-300 bg-blue-900/20">
+                les Tarots et les Oracles
+              </span>
+              , je vous aide à éclairer les messages subtils que votre
+              inconscient souhaite partager avec vous.
             </p>
 
             <p className="text-lg leading-relaxed">
-              Je suis comme une{" "}
-              <span className="font-medium text-purple-300">passerelle</span>,
-              une traductrice des murmures de votre Âme, afin que vous puissiez
-              les entendre avec plus de clarté.
+              Je suis comme une passerelle, une traductrice des murmures de
+              votre Âme, afin que vous puissiez les entendre avec plus de
+              clarté.
             </p>
 
             <p className="text-lg leading-relaxed">
-              Retrouver ce lien intime avec votre{" "}
-              <span className="font-medium text-gradient">Voix intérieure</span>
-              , c'est avancer avec confiance, sérénité et ouverture du cœur.
+              Retrouver ce lien intime avec votre Voix intérieure , c'est
+              avancer avec confiance, sérénité et ouverture du cœur.
             </p>
 
             {/* Séparateur subtil */}

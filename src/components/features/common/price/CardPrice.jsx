@@ -16,7 +16,7 @@ const CardPrice = ({
 
         <div className="text-center">
           <h3 className="text-2xl font-bold text-white mb-4">{title}</h3>
-          <p className="text-5xl font-bold text-purple-300 mb-8">{price}</p>
+          <p className="text-5xl font-bold text-blue-300 mb-8">{price}</p>
 
           <div className="mb-8">
             <ul className="space-y-4 text-white/90">

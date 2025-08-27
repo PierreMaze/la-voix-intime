@@ -4,7 +4,7 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="relative flex items-center py-16 w-full h-screen mt-20 lg:mt-28">
+      className="relative flex items-center py-16 w-full h-screen mt-8 lg:mt-16">
       <div className="relative w-full">
         <div className="px-4 mx-auto w-full text-center sm:px-6 lg:px-8">
           <FadeIn>
@@ -19,19 +19,13 @@ const Hero = () => {
             </p>
           </FadeIn>
 
-          <FadeIn className="mt-8 md:mt-10">
-            <div className="flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:gap-4 sm:items-center">
-              <button className="relative inline-flex items-center justify-center px-6 py-3 w-full text-base font-medium rounded shadow-lg transition-all duration-300 text-purple-50 sm:w-auto md:text-lg focus:outline-none bg-gradient-to-r from-purple-500 to-blue-600 shadow-purple-500/25 overflow-hidden group">
-                <div className="absolute inset-0 transition-transform duration-300 ease-out transform bg-purple-50 translate-y-full group-hover:translate-y-0"></div>
-                <span className="relative z-10 transition-colors duration-300 group-hover:text-purple-900">
-                  Réserver un tirage
-                </span>
+          <FadeIn className="mt-8 md:mt-16">
+            <div className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
+              <button className="px-8 py-3 text-base font-medium text-white rounded-lg transition-all duration-300 transform bg-gradient-to-r from-purple-500 to-blue-600 hover:from-purple-600 hover:to-blue-700 hover:scale-105">
+                Réserver un tirage
               </button>
-              <button className="relative inline-flex items-center justify-center px-6 py-3 w-full text-base font-medium border rounded transition-all duration-300 sm:w-auto md:text-lg focus:outline-none border-purple-50 text-purple-50 hover:bg-white hover:text-purple-900 hover:border-purple-300 overflow-hidden group">
-                <div className="absolute inset-0 transition-transform duration-300 ease-out transform bg-purple-50 translate-y-full group-hover:translate-y-0"></div>
-                <span className="relative z-10 transition-colors duration-300 group-hover:text-purple-900">
-                  Découvrir les tirages gratuits sur YouTube
-                </span>
+              <button className="px-8 py-3 text-base font-medium border rounded-lg transition-all duration-300 transform text-purple-50 border-purple-50 hover:bg-white hover:text-purple-900 hover:border-purple-300 hover:scale-105">
+                Découvrir les tirages gratuits sur YouTube
               </button>
             </div>
           </FadeIn>

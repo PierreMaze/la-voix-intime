@@ -13,7 +13,7 @@ const navigationItems = [
     path: "#about",
   },
   {
-    label: "Mes Tarifs",
+    label: "Mes tarifs",
     path: "#price",
   },
   {
@@ -142,8 +142,8 @@ const Header = () => {
                   onClick={() => handleNavClick(item.path)}
                   className={`px-4 py-2 transition-colors ${
                     activeSection === item.path.substring(1)
-                      ? "text-white"
-                      : "text-cyan-100 hover:text-white"
+                      ? "text-blue-300"
+                      : "text-white hover:text-blue-300"
                   }`}>
                   {item.label}
                 </button>

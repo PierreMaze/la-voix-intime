@@ -1,4 +1,4 @@
-import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { FaFacebook, FaInstagram } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import Logo from "../../../assets/img/logo-la-voix-intime.png";
 
@@ -10,19 +10,19 @@ const Footer = () => {
         <div className="flex justify-center gap-6 px-8 mb-8">
           <a
             href="https://github.com/PierreMaze"
-            title="Github"
+            title="Facebook"
             target="_blank"
             rel="noopener noreferrer"
             className="text-2xl transition-transform hover:rotate-12">
-            <FaGithub className="transition-colors hover:text-purple-600" />
+            <FaFacebook className="transition-colors hover:text-blue-300" />
           </a>
           <a
             href="https://fr.linkedin.com/in/pierremazelaygue"
-            title="LinkedIn"
+            title="Instagram"
             target="_blank"
             rel="noopener noreferrer"
             className="text-2xl transition-transform hover:rotate-12">
-            <FaLinkedin className="transition-colors hover:text-blue-600" />
+            <FaInstagram className="transition-colors hover:text-purple-300" />
           </a>
         </div>
 
