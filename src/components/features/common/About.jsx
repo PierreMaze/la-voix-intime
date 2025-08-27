@@ -29,28 +29,19 @@ const About = () => {
           {/* Texte */}
           <div className="space-y-6 text-white/90">
             <p className="text-lg leading-relaxed">
-              Depuis plus de{" "}
-              <span className="font-medium text-purple-300">30 ans</span>, je
-              chemine aux côtés de l'Art Divinatoire, guidée par la douceur et
-              la lumière qu'il peut offrir.
+              Depuis plus de 30 ans, je chemine aux côtés de l'Art Divinatoire,
+              guidée par la douceur et la lumière qu'il peut offrir.
             </p>
 
             <p className="text-lg leading-relaxed">
-              Mon intention{" "}
-              <span className="px-2 py-1 font-medium rounded text-purple-200 bg-purple-900/20">
-                n'est pas de prédire votre avenir
-              </span>
-              , mais de vous accompagner dans l'écoute de votre propre vérité
-              intérieure.
+              Mon intention n'est pas de prédire votre avenir , mais de vous
+              accompagner dans l'écoute de votre propre vérité intérieure.
             </p>
 
             <p className="text-lg leading-relaxed">
-              À travers{" "}
-              <span className="px-2 py-1 font-medium rounded text-blue-200 bg-blue-900/20">
-                les Tarots et les Oracles
-              </span>
-              , je vous aide à éclairer les messages subtils que votre
-              inconscient souhaite partager avec vous.
+              À travers les Tarots et les Oracles , je vous aide à éclairer les
+              messages subtils que votre inconscient souhaite partager avec
+              vous.
             </p>
 
             <p className="text-lg leading-relaxed">
