@@ -4,7 +4,7 @@ import CardReviews from "./CardReviews";
 const Reviews = () => {
   const reviewsData = [
     {
-      name: "Marie L.",
+      name: "Angelique D.",
       rating: 5,
       date: "2025-08-05",
       comment: "Je viens d'avoir un tirage magique ! Cela infuse merci.",
