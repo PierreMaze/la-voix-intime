@@ -10,14 +10,14 @@ const Reviews = () => {
       comment: "Je viens d'avoir un tirage magique ! Cela infuse merci.",
     },
     {
-      name: "Thomas B.",
+      name: "Keyshi",
       rating: 5,
       date: "2025-08-10",
       comment:
         "J'adore tes tirages, ils sont pleins de vérités cachés. La voix intime nous guide. Gratitude 🙏 ❤ 🫶",
     },
     {
-      name: "Sophie M.",
+      name: "Laurence L.",
       rating: 5,
       date: "2025-08-18",
       comment:
