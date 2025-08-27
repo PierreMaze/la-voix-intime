@@ -64,7 +64,7 @@ const Faq = () => {
     {
       question: "Quand sera disponible la réservation ?",
       answer:
-        "Nous travaillons sur l'intégration de la réservation. Nous vous invitons à réserver par téléphone ou par mail. Nous mettons tout en œuvre pour de l'avancement de la réservation.",
+        "Nous travaillons sur l'intégration de la réservation. Nous vous invitons à réserver par téléphone ou par mail. Nous mettons tout en œuvre pour l'avancement de la réservation.",
     },
   ];
 
