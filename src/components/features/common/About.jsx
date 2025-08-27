@@ -1,4 +1,5 @@
 import aboutPicture from "../../../../assets/img/about-picture.png";
+import OptimizedImage from "../../ui/OptimizedImage";
 
 const About = () => {
   return (
@@ -16,10 +17,11 @@ const About = () => {
           <div className="flex justify-center lg:justify-start">
             <div className="relative">
               <div className="absolute inset-0 rounded-full blur-xl bg-gradient-to-br from-purple-500/20 to-blue-500/20"></div>
-              <img
+              <OptimizedImage
                 src={aboutPicture}
                 alt="Portrait de la voyante - La Voix Intime"
                 className="relative w-64 h-64 rounded-full shadow-lg lg:w-80 lg:h-80 object-cover"
+                loading="eager"
               />
             </div>
           </div>
