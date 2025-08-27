@@ -37,13 +37,6 @@ const Reviews = () => {
       comment:
         "Merci à ton tirage effectué ce samedi. Cela m’a éclairé et cela à rejoint le programme que j’effectue sur moi en neurosciences (reprogrammation dans des domaines clés de la vie). Je vous la recommande ! 😉🤗",
     },
-    {
-      name: "Marc F.",
-      rating: 5,
-      date: "2025-08-24",
-      comment:
-        "Merci ! Toujours un réel plaisir pour ces moments de partage. Toujours des tirages d'une parfaite justesse du moment, clair et fluide, participe à la reflexion ! Merci aussi pour les tirages  du 'soir' belles options d'ouvertures de pensées. 🙏",
-    },
   ];
 
   return (
