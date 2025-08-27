@@ -39,7 +39,7 @@ const Header = () => {
 
   // Mémoriser les sections pour éviter de les recalculer à chaque rendu
   const sections = useMemo(
-    () => ["home", "about", "price", "free-draw", "to-book"],
+    () => ["home", "about", "price", "free-draw", "faq", "to-book"],
     []
   );
 
