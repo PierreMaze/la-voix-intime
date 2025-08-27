@@ -17,10 +17,10 @@ const InfoBanner = () => {
           <div className="flex flex-col items-center justify-between gap-2 text-center sm:flex-row sm:text-left sm:gap-4">
             <button
               onClick={handleClose}
-              className="absolute z-50 p-2 transition-colors duration-200 top-1 right-1 sm:top-2 sm:right-2 text-white/60 hover:text-white"
+              className="absolute z-50 p-3 transition-colors duration-200 top-1 left-1 sm:top-2 sm:right-2 text-white/60 hover:text-white"
               aria-label="Fermer la banderole">
               <svg
-                className="w-5 h-5 sm:w-4 sm:h-4"
+                className="w-6 h-6 sm:w-4 sm:h-4"
                 fill="currentColor"
                 viewBox="0 0 20 20">
                 <path
