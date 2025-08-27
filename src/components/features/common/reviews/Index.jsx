@@ -24,7 +24,7 @@ const Reviews = () => {
         "Par avance, merci pour ton regard pertinent, tes lumières inspirantes et tes partages éclairés ! 🙏 💕",
     },
     {
-      name: "Marie D.",
+      name: "Marie",
       rating: 5,
       date: "2025-08-15",
       comment:
