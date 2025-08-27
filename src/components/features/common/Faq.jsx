@@ -64,7 +64,7 @@ const Faq = () => {
     {
       question: "Quand sera disponible la réservation ?",
       answer:
-        "Nous travaillons sur l'intégration de la réservation. Nous vous invitons à réserver par téléphone ou par mail. Nous mettons tout en œuvre pour l'avancement de la réservation.",
+        "Nous travaillons sur l'intégration de la réservation par le calendrier. Nous vous invitons à réserver par téléphone (06 46 84 93 52) ou par mail (lavoixintime@gmail.com). Nous mettons tout en œuvre pour l'avancement du calendrier.",
     },
   ];
 
