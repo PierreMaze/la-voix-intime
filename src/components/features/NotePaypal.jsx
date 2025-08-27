@@ -8,7 +8,7 @@ const NotePaypal = () => {
       <div className="flex flex-col items-center justify-center text-center mt-12">
         <p className="text-white">Paiement sécurisé via</p>
 
-        <div className="flex p-3 my-4 border rounded-lg shadow-lg bg-white-50 backdrop-blur-sm border-white/30">
+        <div className="flex p-3 my-4 border rounded-lg shadow-lg bg-white-50 backdrop-blur-sm border-white/90">
           <OptimizedImage
             src={LogoPaypal}
             alt="PayPal"
