@@ -1,0 +1,28 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://lavoixintime.fr/sitemap.xml
+
+# Désactiver l'exploration des fichiers de développement
+Disallow: /node_modules/
+Disallow: /src/
+Disallow: /package.json
+Disallow: /pnpm-lock.yaml
+Disallow: /vite.config.js
+Disallow: /tailwind.config.js
+Disallow: /postcss.config.js
+
+# Permettre l'exploration des ressources importantes
+Allow: /assets/
+Allow: /favicon.ico
+
+# Optimisations pour les moteurs de recherche
+# Permettre l'exploration de toutes les pages publiques
+Allow: /legal
+Allow: /about
+Allow: /price
+Allow: /faq
+
+# Délai de crawl recommandé (en secondes)
+Crawl-delay: 1

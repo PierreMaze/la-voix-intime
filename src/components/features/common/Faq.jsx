@@ -9,7 +9,7 @@ const FAQItem = ({ question, answer, isOpen, onToggle }) => {
         onClick={onToggle}
         className="flex items-center justify-between py-6 w-full text-left transition-all duration-300 hover:text-purple-300"
         aria-expanded={isOpen}>
-        <h3 className="pr-4 text-lg font-medium text-white group-hover:text-purple-200 group-focus:text-purple-200">
+        <h3 className="pr-4 text-base font-medium text-white lg:text-lg group-hover:text-purple-200 group-focus:text-purple-200">
           {question}
         </h3>
         <div className="flex-shrink-0">
