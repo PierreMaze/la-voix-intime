@@ -68,7 +68,7 @@ const Reviews = () => {
         <FadeIn>
           <div className="text-center mt-16">
             <a
-              href="#to-book"
+              href="#faq"
               className="inline-block px-8 py-3 text-base font-medium text-white rounded-lg transition-all duration-300 transform bg-gradient-to-r from-purple-500 to-blue-600 hover:from-purple-600 hover:to-blue-700 hover:scale-105">
               Réserver un tirage
             </a>

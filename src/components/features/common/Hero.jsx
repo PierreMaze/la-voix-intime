@@ -22,7 +22,7 @@ const Hero = () => {
           <FadeIn className="mt-8 md:mt-16">
             <div className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
               <a
-                href="#to-book"
+                href="#price"
                 className="px-8 py-3 text-base font-medium text-white rounded-lg transition-all duration-300 transform bg-gradient-to-r from-purple-500 to-blue-600 hover:from-purple-600 hover:to-blue-700 hover:scale-105">
                 Réserver un tirage
               </a>

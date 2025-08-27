@@ -13,7 +13,7 @@ const Price = () => {
     ],
     button: {
       text: "Réserver",
-      href: "#to-book",
+      href: "#faq",
     },
     disclaimer:
       "* A domicile sur le Bassin d'Arcachon. Des frais de déplacement peuvent s'appliquer.",
@@ -26,7 +26,7 @@ const Price = () => {
     detailsList: ["Votre guidance", "Enregistrement MP3", "Réécoute illimité*"],
     button: {
       text: "Réserver",
-      href: "#to-book",
+      href: "#faq",
     },
     disclaimer:
       "* Vous serez la seule personne à le possèder. Il ne sera pas possible de vous le renvoyer.",
