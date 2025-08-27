@@ -28,7 +28,7 @@ const Hero = () => {
               </a>
               <a
                 href="#free-draw"
-                className="px-8 py-3 text-base font-medium border rounded-lg transition-all duration-300 transform text-purple-50 border-purple-50 hover:bg-white hover:text-purple-900 hover:border-purple-300 hover:scale-105">
+                className="px-4 py-3 text-base font-medium border rounded-lg transition-all duration-300 transform text-purple-50 border-purple-50 hover:bg-white hover:text-purple-900 hover:border-purple-300 hover:scale-105">
                 Découvrir les tirages gratuits sur YouTube
               </a>
             </div>
