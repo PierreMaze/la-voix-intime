@@ -113,7 +113,7 @@ const Faq = () => {
               {/* Icône Mail */}
               <a
                 href="mailto:votre-email@example.com"
-                className="flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-r from-purple-500 to-blue-600 hover:from-purple-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105"
+                className="flex items-center justify-center w-12 h-12 rounded-full transition-all duration-300 transform bg-gradient-to-r from-purple-500 to-blue-600 hover:from-purple-600 hover:to-blue-700 hover:scale-105"
                 title="Envoyer un email">
                 <svg
                   className="w-6 h-6 text-white"
@@ -133,7 +133,7 @@ const Faq = () => {
               {/* Icône Téléphone */}
               <a
                 href="tel:+33123456789"
-                className="flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-r from-purple-500 to-blue-600 hover:from-purple-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105"
+                className="flex items-center justify-center w-12 h-12 rounded-full transition-all duration-300 transform bg-gradient-to-r from-purple-500 to-blue-600 hover:from-purple-600 hover:to-blue-700 hover:scale-105"
                 title="Appeler">
                 <svg
                   className="w-6 h-6 text-white"
