@@ -28,40 +28,53 @@
   }
 }
 
-/* Styles de base pour les composants */
-@layer components {
-  .container {
-    width: 100%;
-    max-width: 80rem;
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 2rem;
-    padding-right: 2rem;
+/* Animations personnalisées pour le composant About */
+@layer utilities {
+  .animate-fade-in {
+    animation: fadeIn 1s ease-out forwards;
   }
 
-  .btn {
-    display: inline-block;
-    padding: 0.75rem 1.5rem;
-    background-color: #5d7b8a;
-    color: white;
-    border-radius: 0.25rem;
-    font-weight: 500;
-    transition: all 0.3s;
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
   }
 
-  .btn:hover {
-    background-color: #4a6270;
-    transform: translateY(-0.125rem);
+  .animate-float-delayed {
+    animation: float 6s ease-in-out infinite 2s;
   }
 
-  .badge {
-    display: inline-block;
-    padding: 0.25rem 0.75rem;
-    margin-bottom: 0.5rem;
-    margin-right: 0.5rem;
-    font-size: 0.875rem;
-    border-radius: 9999px;
-    background-color: #e1e9ed;
-    color: #384a56;
+  .animate-float-slow {
+    animation: float 8s ease-in-out infinite 4s;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0px) rotate(0deg);
+    }
+    33% {
+      transform: translateY(-20px) rotate(120deg);
+    }
+    66% {
+      transform: translateY(-10px) rotate(240deg);
+    }
+  }
+
+  /* Effet de gradient pour le texte */
+  .text-gradient {
+    background: linear-gradient(135deg, #a855f7, #3b82f6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
 }

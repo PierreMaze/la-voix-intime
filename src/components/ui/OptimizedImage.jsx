@@ -1,4 +1,4 @@
-const OptimizedImage = ({ src, alt, undefinede = "", ...props }) => {
+const OptimizedImage = ({ src, alt, className, ...props }) => {
   // Vérifier si src est une chaîne de caractères
   const getImageSource = (source) => {
     // Si ce n'est pas une chaîne, c'est probablement un import d'image
@@ -27,7 +27,7 @@ const OptimizedImage = ({ src, alt, undefinede = "", ...props }) => {
       <img
         src={finalSrc}
         alt={alt}
-        className={className}
+        className={className || ""}
         loading="lazy"
         onError={(e) => {
           console.error(`Erreur de chargement de l'image: ${src}`);
