@@ -17,9 +17,12 @@ const InfoBanner = () => {
           <div className="flex flex-col items-center justify-between gap-2 text-center sm:flex-row sm:text-left sm:gap-4">
             <button
               onClick={handleClose}
-              className="absolute p-1 transition-colors duration-200 top-2 right-2 text-white/60 hover:text-white"
+              className="absolute z-50 p-2 transition-colors duration-200 top-1 right-1 sm:top-2 sm:right-2 text-white/60 hover:text-white"
               aria-label="Fermer la banderole">
-              <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+              <svg
+                className="w-5 h-5 sm:w-4 sm:h-4"
+                fill="currentColor"
+                viewBox="0 0 20 20">
                 <path
                   fillRule="evenodd"
                   d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
