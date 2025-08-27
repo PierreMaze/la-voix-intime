@@ -1,6 +1,6 @@
 import About from "../components/features/common/About";
 import Faq from "../components/features/common/Faq";
-import FreeDraw from "../components/features/common/FreeDraw";
+import FreeDraw from "../components/features/common/freeDraw/Index";
 import Hero from "../components/features/common/Hero";
 import Price from "../components/features/common/price/Index";
 
