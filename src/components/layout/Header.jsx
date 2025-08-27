@@ -125,7 +125,7 @@ const Header = () => {
               alt="Logo - La Voix Intime"
               className="w-auto h-12"
             />
-            <span className="text-xl font-black text-white">
+            <span className="font-serif text-xl font-bold text-white">
               La Voix Intime
             </span>
           </Link>

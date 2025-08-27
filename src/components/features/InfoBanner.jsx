@@ -12,7 +12,7 @@ const InfoBanner = () => {
 
   return (
     <FadeIn>
-      <div className="fixed z-50 top-4 right-4 max-w-sm">
+      <div className="fixed z-50 bottom-4 right-4 max-w-sm">
         <div className="border rounded-lg shadow-xl bg-gradient-to-r from-purple-600/95 to-blue-600/95 backdrop-blur-sm border-purple-400/30">
           {/* Bouton de fermeture */}
           <button
