@@ -34,12 +34,12 @@ const About = () => {
             </p>
 
             <p className="text-lg leading-relaxed">
-              Mon intention n'est pas de prédire votre avenir , mais de vous
+              Mon intention n'est pas de prédire votre avenir, mais de vous
               accompagner dans l'écoute de votre propre vérité intérieure.
             </p>
 
             <p className="text-lg leading-relaxed">
-              À travers les Tarots et les Oracles , je vous aide à éclairer les
+              À travers les Tarots et les Oracles, je vous aide à éclairer les
               messages subtils que votre inconscient souhaite partager avec
               vous.
             </p>
@@ -51,8 +51,8 @@ const About = () => {
             </p>
 
             <p className="text-lg leading-relaxed">
-              Retrouver ce lien intime avec votre Voix intérieure , c'est
-              avancer avec confiance, sérénité et ouverture du cœur.
+              Retrouver ce lien intime avec votre Voix intérieure, c'est avancer
+              avec confiance, sérénité et ouverture du cœur.
             </p>
 
             {/* Séparateur subtil */}
