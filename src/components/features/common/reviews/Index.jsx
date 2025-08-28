@@ -33,7 +33,7 @@ const Reviews = () => {
     {
       name: "Nadine N.",
       rating: 5,
-      date: "2025-08-22",
+      date: "2025-08-23",
       comment:
         "Merci à ton tirage effectué ce samedi. Cela m’a éclairé et cela à rejoint le programme que j’effectue sur moi en neurosciences (reprogrammation dans des domaines clés de la vie). Je vous la recommande ! 😉🤗",
     },
