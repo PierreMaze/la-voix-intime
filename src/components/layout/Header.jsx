@@ -30,7 +30,7 @@ const navigationItems = [
   },
   {
     label: "Réserver",
-    path: "#to-book",
+    path: "#price",
   },
 ];
 
@@ -43,7 +43,7 @@ const Header = () => {
 
   // Mémoriser les sections pour éviter de les recalculer à chaque rendu
   const sections = useMemo(
-    () => ["home", "about", "price", "free-draw", "faq", "to-book"],
+    () => ["home", "about", "price", "free-draw", "reviews", "faq"],
     []
   );
 
@@ -106,6 +106,19 @@ const Header = () => {
     }
   }, []);
 
+  // Fonction pour gérer le clic sur le logo
+  const handleLogoClick = useCallback(
+    (e) => {
+      // Si on est déjà sur la page d'accueil, remonter en haut
+      if (location.pathname === "/") {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
+      // Sinon, le Link to="/" gère la navigation normalement
+    },
+    [location.pathname]
+  );
+
   // Mémoriser les classes conditionnelles
   const headerClasses = useMemo(() => {
     return `fixed top-0 left-0 right-0 z-40 transition-all duration-1000 ${
@@ -119,13 +132,16 @@ const Header = () => {
     <header className={headerClasses}>
       <div className="px-8 mx-auto w-full max-w-6xl 2xl:max-w-[1850px]">
         <nav className="flex items-center justify-between h-24">
-          <Link to="/" className="flex items-center space-x-4">
+          <Link
+            to="/"
+            className="flex items-center space-x-4"
+            onClick={handleLogoClick}>
             <img
               src={Logo}
               alt="Logo - La Voix Intime"
               className="w-auto h-12"
             />
-            <span className="font-serif text-xl font-bold text-white">
+            <span className="font-serif text-2xl font-bold text-white">
               La Voix Intime
             </span>
           </Link>

@@ -1,8 +1,23 @@
+import { useCallback } from "react";
 import { FaFacebook, FaInstagram } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import Logo from "../../../assets/img/logo-la-voix-intime.png";
 
 const Footer = () => {
+  const location = useLocation();
+
+  // Fonction pour gérer le clic sur le logo
+  const handleLogoClick = useCallback(
+    (e) => {
+      // Si on est déjà sur la page d'accueil, remonter en haut
+      if (location.pathname === "/") {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
+      // Sinon, le Link to="/" gère la navigation normalement
+    },
+    [location.pathname]
+  );
   return (
     <footer className="pt-16 pb-12 text-center xl:pt-32 bg-dark text-light">
       <div className="mx-auto w-full max-w-6xl">
@@ -52,14 +67,19 @@ const Footer = () => {
 
         {/* Logo et copyright */}
         <div className="flex flex-col items-center">
-          <img
-            src={Logo}
-            alt="Logo - La Voix Intime"
-            className="w-auto h-16 mb-4"
-          />
-          <span className="text-lg font-medium text-white mb-4">
-            La Voix Intime
-          </span>
+          <Link
+            to="/"
+            onClick={handleLogoClick}
+            className="flex flex-col items-center">
+            <img
+              src={Logo}
+              alt="Logo - La Voix Intime"
+              className="w-auto h-16 transition-transform mb-4 hover:scale-105"
+            />
+            <span className="text-lg font-medium text-white mb-4">
+              La Voix Intime
+            </span>
+          </Link>
           <p className="text-sm text-purple-100">
             &copy; 2025 - Tous droits réservés.
           </p>
