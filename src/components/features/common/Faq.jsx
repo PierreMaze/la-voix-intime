@@ -34,7 +34,9 @@ const FAQItem = ({ question, answer, isOpen, onToggle }) => {
         className={`overflow-hidden transition-all duration-300 ease-in-out ${
           isOpen ? "max-h-full opacity-100" : "max-h-0 opacity-0"}`}>
         <div className="pr-4 pb-6">
-          <p className="text-base leading-relaxed text-white/90">{answer}</p>
+          <div className="text-base leading-relaxed text-white/90">
+            {answer}
+          </div>
         </div>
       </div>
     </div>
@@ -63,8 +65,24 @@ const Faq = () => {
     },
     {
       question: "Quand sera disponible la réservation sur le site ?",
-      answer:
-        "Nous travaillons sur l'intégration de la réservation par le calendrier. Nous vous invitons à réserver par téléphone (06 46 84 93 52) ou par mail (lavoixintime@gmail.com). Nous mettons tout en œuvre pour l'avancement du calendrier.",
+      answer: (
+        <>
+          Nous travaillons sur l'intégration de la réservation par le
+          calendrier. Nous vous invitons à réserver par téléphone (
+          <a
+            href="tel:+33646849352"
+            className="underline transition-colors underline-offset-4 hover:text-purple-300">
+            06 46 84 93 52
+          </a>
+          ) ou par mail (
+          <a
+            href="mailto:lavoixintime@gmail.com"
+            className="underline transition-colors underline-offset-4 hover:text-purple-300">
+            lavoixintime@gmail.com
+          </a>
+          ). Nous mettons tout en œuvre pour l'avancement du calendrier.
+        </>
+      ),
     },
   ];
 
