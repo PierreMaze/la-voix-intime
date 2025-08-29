@@ -76,7 +76,7 @@ const Footer = () => {
               alt="Logo - La Voix Intime"
               className="w-auto h-16 transition-transform mb-4 hover:scale-105"
             />
-            <span className="text-lg font-medium text-white mb-4">
+            <span className="font-serif text-2xl font-bold text-white mb-4">
               La Voix Intime
             </span>
           </Link>
