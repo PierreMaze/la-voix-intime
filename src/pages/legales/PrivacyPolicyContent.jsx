@@ -7,7 +7,7 @@ const PrivacyPolicyContent = () => {
   }, []);
 
   return (
-    <div className="pt-32 pb-8">
+    <div className="pt-16 pb-8">
       <div className="px-6 mx-auto max-w-4xl lg:px-8">
         {/* Bouton de retour en haut */}
         <div className="mb-8">
