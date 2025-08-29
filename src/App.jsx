@@ -3,6 +3,10 @@ import Layout from "./components/layout";
 import { StarField } from "./components/ui/StarField";
 import { useSmoothScroll } from "./hooks/useSmoothScroll.jsx";
 import Home from "./pages/Home";
+import GeneralConditionsOfSale from "./pages/legales/GeneralConditionsOfSale";
+import GeneralConditionsOfUse from "./pages/legales/GeneralConditionsOfUse";
+import LegalNotices from "./pages/legales/LegalNotices";
+import PrivacyPolicyContent from "./pages/legales/PrivacyPolicyContent";
 
 const router = createBrowserRouter([
   {
@@ -13,10 +17,22 @@ const router = createBrowserRouter([
         index: true,
         element: <Home />,
       },
-      // {
-      //   path: "legal",
-      //   element: <Legal />,
-      // },
+      {
+        path: "general-conditions-of-sale",
+        element: <GeneralConditionsOfSale />,
+      },
+      {
+        path: "general-conditions-of-use",
+        element: <GeneralConditionsOfUse />,
+      },
+      {
+        path: "legal-notices",
+        element: <LegalNotices />,
+      },
+      {
+        path: "privacy-policy",
+        element: <PrivacyPolicyContent />,
+      },
     ],
   },
 ]);
