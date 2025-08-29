@@ -4,7 +4,7 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="relative flex items-center py-16 w-full h-screen mt-8">
+      className="relative flex items-center py-16 w-full h-screen lg:mt-8">
       <div className="relative w-full">
         <div className="px-4 mx-auto w-full text-center sm:px-6 lg:px-8">
           <FadeIn>
@@ -13,13 +13,13 @@ const Hero = () => {
             </h1>
           </FadeIn>
 
-          <FadeIn className="mt-8 lg:mt-16">
+          <FadeIn className="mt-4 lg:mt-8">
             <p className="text-base sm:text-lg md:text-xl text-purple-100">
               Laisser les cartes vous guider pour éclairer votre chemin de vie
             </p>
           </FadeIn>
 
-          <FadeIn className="mt-8 md:mt-16">
+          <FadeIn className="mt-12 lg:mt-16">
             <div className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
               <a
                 href="#price"
