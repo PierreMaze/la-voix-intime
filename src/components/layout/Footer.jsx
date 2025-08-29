@@ -44,22 +44,22 @@ const Footer = () => {
         {/* Liens légaux - Mobile: colonne, Desktop: ligne */}
         <div className="flex flex-col items-center justify-center gap-4 px-2 md:flex-row md:gap-8 mb-8">
           <Link
-            to="/legal"
+            to="/legal-notices"
             className="text-sm underline transition-colors underline-offset-4 hover:text-purple-300">
             Mentions légales
           </Link>
           <Link
-            to="/legal"
+            to="/general-conditions-of-use"
             className="text-sm underline transition-colors underline-offset-4 hover:text-purple-300">
             Conditions Générales d'Utilisation
           </Link>
           <Link
-            to="/legal"
+            to="/general-conditions-of-sale"
             className="text-sm underline transition-colors underline-offset-4 hover:text-purple-300">
             Conditions Générales de Vente
           </Link>
           <Link
-            to="/legal"
+            to="/privacy-policy"
             className="text-sm underline transition-colors underline-offset-4 hover:text-purple-300">
             Politique de confidentialité
           </Link>
