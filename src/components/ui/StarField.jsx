@@ -84,7 +84,7 @@ export const StarField = () => {
         }}
       />
 
-      <style jsx>{`
+      <style>{`
         @keyframes twinkle {
           0% {
             opacity: 0.3;

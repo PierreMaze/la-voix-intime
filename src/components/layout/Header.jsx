@@ -30,7 +30,7 @@ const navigationItems = [
   },
   {
     label: "Réserver",
-    path: "#price",
+    path: "#faq-to-book",
   },
 ];
 
@@ -57,7 +57,7 @@ const legalNavigationItems = [
   },
   {
     label: "Réserver",
-    path: "/#price",
+    path: "/#faq-to-book",
   },
 ];
 
