@@ -13,7 +13,7 @@ const GeneralConditionsOfUse = () => {
         <div className="mb-8">
           <Link
             to="/"
-            className="relative inline-flex items-center px-6 py-3 text-base font-medium text-white border rounded-lg shadow-md transition-all duration-300 transform group bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 hover:shadow-lg hover:-translate-y-0.5 border-purple-500/30 hover:border-purple-400/50">
+            className="relative inline-flex items-center px-4 py-3 text-base font-medium text-white border rounded-lg shadow-md transition-all duration-300 transform group bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 hover:shadow-lg hover:-translate-y-0.5 border-purple-500/30 hover:border-purple-400/50">
             <div className="absolute inset-0 rounded-lg opacity-0 transition-opacity duration-300 bg-gradient-to-r from-purple-400/20 to-purple-600/20 group-hover:opacity-100"></div>
             <svg
               className="w-5 h-5 transition-transform duration-300 mr-2 group-hover:-translate-x-1"
@@ -27,12 +27,11 @@ const GeneralConditionsOfUse = () => {
                 d="M10 19l-7-7m0 0l7-7m-7 7h18"
               />
             </svg>
-            <span className="relative z-10">Retour à l'accueil</span>
           </Link>
         </div>
 
         <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-white mb-4">
+          <h1 className="text-xl lg:text-4xl font-bold text-white mb-4">
             Conditions Générales d'Utilisation
           </h1>
           <p className="text-gray-300">
