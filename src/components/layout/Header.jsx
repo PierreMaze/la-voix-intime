@@ -1,6 +1,6 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { useCallback, useEffect, useMemo, useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import Logo from "../../../assets/img/logo-la-voix-intime.png";
 
 const navigationItems = [
@@ -11,10 +11,6 @@ const navigationItems = [
   {
     label: "A propos",
     path: "#about",
-  },
-  {
-    label: "Mes tarifs",
-    path: "#price",
   },
   {
     label: "Tirages gratuits",
@@ -34,12 +30,40 @@ const navigationItems = [
   },
 ];
 
+const legalNavigationItems = [
+  {
+    label: "Accueil",
+    path: "/",
+  },
+  {
+    label: "Mentions Légales",
+    path: "/mentions-legales",
+  },
+  {
+    label: "Conditions Générales d'Utilisation",
+    path: "/conditions-generales-utilisation",
+  },
+  {
+    label: "Conditions Générales de Vente",
+    path: "/conditions-generales-vente",
+  },
+  {
+    label: "Politique de Confidentialité",
+    path: "/politique-confidentialite",
+  },
+  {
+    label: "Réserver",
+    path: "/#price",
+  },
+];
+
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
   const [isVisible, setIsVisible] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
 
   // Mémoriser les sections pour éviter de les recalculer à chaque rendu
   const sections = useMemo(
@@ -47,23 +71,41 @@ const Header = () => {
     []
   );
 
+  // Déterminer si on est sur une page légale
+  const isLegalPage = useMemo(() => {
+    return (
+      location.pathname.includes("/mentions-legales") ||
+      location.pathname.includes("/conditions-generales-utilisation") ||
+      location.pathname.includes("/conditions-generales-vente") ||
+      location.pathname.includes("/politique-confidentialite")
+    );
+  }, [location.pathname]);
+
+  // Sélectionner les éléments de navigation appropriés
+  const currentNavigationItems = useMemo(() => {
+    return isLegalPage ? legalNavigationItems : navigationItems;
+  }, [isLegalPage]);
+
   // Optimiser la fonction de gestion du scroll
   const handleScroll = useCallback(() => {
     setIsScrolled(window.scrollY > 0);
 
-    const currentSection = sections.find((section) => {
-      const element = document.getElementById(section);
-      if (element) {
-        const rect = element.getBoundingClientRect();
-        return rect.top <= 100 && rect.bottom >= 100;
-      }
-      return false;
-    });
+    // Ne gérer le scroll que sur la page d'accueil
+    if (!isLegalPage) {
+      const currentSection = sections.find((section) => {
+        const element = document.getElementById(section);
+        if (element) {
+          const rect = element.getBoundingClientRect();
+          return rect.top <= 100 && rect.bottom >= 100;
+        }
+        return false;
+      });
 
-    if (currentSection) {
-      setActiveSection(currentSection);
+      if (currentSection) {
+        setActiveSection(currentSection);
+      }
     }
-  }, [sections]);
+  }, [sections, isLegalPage]);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -80,7 +122,11 @@ const Header = () => {
 
   useEffect(() => {
     setIsMobileMenuOpen(false);
-  }, [location]);
+    // Réinitialiser l'état de la navigation quand on change de page
+    if (isLegalPage) {
+      setActiveSection("home");
+    }
+  }, [location, isLegalPage]);
 
   // Bloquer le scroll quand le menu mobile est ouvert
   useEffect(() => {
@@ -97,14 +143,28 @@ const Header = () => {
   }, [isMobileMenuOpen]);
 
   // Optimiser la fonction de navigation
-  const handleNavClick = useCallback((path) => {
-    if (path.startsWith("#")) {
-      const element = document.getElementById(path.substring(1));
-      if (element) {
-        element.scrollIntoView({ behavior: "smooth" });
+  const handleNavClick = useCallback(
+    (path) => {
+      if (path.startsWith("#")) {
+        const element = document.getElementById(path.substring(1));
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" });
+        }
+      } else if (path.startsWith("/#")) {
+        // Navigation vers une section spécifique de la page d'accueil
+        const section = path.substring(2); // Enlever "/#" pour obtenir "price"
+        navigate("/");
+        // Attendre que la navigation soit terminée, puis faire défiler
+        setTimeout(() => {
+          const element = document.getElementById(section);
+          if (element) {
+            element.scrollIntoView({ behavior: "smooth" });
+          }
+        }, 100);
       }
-    }
-  }, []);
+    },
+    [navigate]
+  );
 
   // Fonction pour gérer le clic sur le logo
   const handleLogoClick = useCallback(
@@ -148,27 +208,44 @@ const Header = () => {
 
           {/* Navigation desktop */}
           <div className="hidden items-center space-x-1 md:flex 2xl:text-xl">
-            {navigationItems.map((item) =>
-              item.label === "Réserver" ? (
-                <button
-                  key={item.path}
-                  onClick={() => handleNavClick(item.path)}
-                  className="px-8 py-3 text-base font-medium text-white rounded-lg transition-all duration-300 transform bg-gradient-to-r from-purple-500 to-blue-600 hover:from-purple-600 hover:to-blue-700 hover:scale-105">
-                  {item.label}
-                </button>
-              ) : (
+            {currentNavigationItems.map((item) => {
+              // Gestion spéciale pour le bouton Réserver
+              if (item.label === "Réserver") {
+                return (
+                  <button
+                    key={item.path}
+                    onClick={() => handleNavClick(item.path)}
+                    className="px-8 py-3 text-base font-medium text-white rounded-lg transition-all duration-300 transform bg-gradient-to-r from-purple-500 to-blue-600 hover:from-purple-600 hover:to-blue-700 hover:scale-105">
+                    {item.label}
+                  </button>
+                );
+              }
+
+              // Navigation pour les pages légales
+              if (isLegalPage) {
+                return (
+                  <Link
+                    key={item.path}
+                    to={item.path}
+                    className="px-4 py-2 text-white transition-colors hover:text-blue-300">
+                    {item.label}
+                  </Link>
+                );
+              }
+
+              // Navigation normale pour la page d'accueil
+              return (
                 <button
                   key={item.path}
                   onClick={() => handleNavClick(item.path)}
                   className={`px-4 py-2 transition-colors ${
                     activeSection === item.path.substring(1)
                       ? "text-blue-300"
-                      : "text-white hover:text-blue-300"
-                  }`}>
+                      : "text-white hover:text-blue-300"}`}>
                   {item.label}
                 </button>
-              )
-            )}
+              );
+            })}
           </div>
 
           {/* Bouton menu mobile */}
@@ -177,8 +254,7 @@ const Header = () => {
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
             <svg
               className={`w-8 h-8 ${
-                isMobileMenuOpen ? "text-red-500" : "text-white"
-              }`}
+                isMobileMenuOpen ? "text-red-500" : "text-white"}`}
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24">
@@ -238,51 +314,77 @@ const Header = () => {
                 {/* Liens de navigation */}
                 <div className="flex-1 p-6">
                   <nav className="space-y-4">
-                    {navigationItems.map((item, index) =>
-                      item.label === "Réserver" ? (
-                        <motion.div
-                          key={item.path}
-                          initial={{ opacity: 0, x: 20 }}
-                          animate={{ opacity: 1, x: 0 }}
-                          transition={{
-                            duration: 0.3,
-                            delay: index * 0.1,
-                            ease: "easeOut",
-                          }}>
-                          <button
+                    {currentNavigationItems.map((item, index) => {
+                      if (item.label === "Réserver") {
+                        return (
+                          <motion.div
+                            key={item.path}
+                            initial={{ opacity: 0, x: 20 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{
+                              duration: 0.3,
+                              delay: index * 0.1,
+                              ease: "easeOut",
+                            }}>
+                            <button
+                              onClick={() => {
+                                handleNavClick(item.path);
+                                setIsMobileMenuOpen(false);
+                              }}
+                              className="px-4 py-3 w-full text-base font-medium text-white rounded-lg transition-all duration-300 bg-gradient-to-r from-purple-500 to-blue-600 hover:from-purple-600 hover:to-blue-700">
+                              {item.label}
+                            </button>
+                          </motion.div>
+                        );
+                      } else if (isLegalPage) {
+                        // Navigation pour les pages légales
+                        return (
+                          <motion.div
+                            key={item.path}
+                            initial={{ opacity: 0, x: 20 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{
+                              duration: 0.3,
+                              delay: index * 0.1,
+                              ease: "easeOut",
+                            }}>
+                            <Link
+                              to={item.path}
+                              onClick={() => setIsMobileMenuOpen(false)}
+                              className="block px-4 py-3 w-full text-left rounded-lg transition-all duration-200 text-purple-300 hover:text-white">
+                              <span className="text-lg font-medium transition-transform duration-200 group-hover:translate-x-1">
+                                {item.label}
+                              </span>
+                            </Link>
+                          </motion.div>
+                        );
+                      } else {
+                        // Navigation normale pour la page d'accueil - garder exactement comme avant
+                        return (
+                          <motion.button
+                            key={item.path}
+                            initial={{ opacity: 0, x: 20 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{
+                              duration: 0.3,
+                              delay: index * 0.1,
+                              ease: "easeOut",
+                            }}
                             onClick={() => {
                               handleNavClick(item.path);
                               setIsMobileMenuOpen(false);
                             }}
-                            className="px-4 py-3 w-full text-base font-medium text-white rounded-lg transition-all duration-300 bg-gradient-to-r from-purple-500 to-blue-600 hover:from-purple-600 hover:to-blue-700">
-                            {item.label}
-                          </button>
-                        </motion.div>
-                      ) : (
-                        <motion.button
-                          key={item.path}
-                          initial={{ opacity: 0, x: 20 }}
-                          animate={{ opacity: 1, x: 0 }}
-                          transition={{
-                            duration: 0.3,
-                            delay: index * 0.1,
-                            ease: "easeOut",
-                          }}
-                          onClick={() => {
-                            handleNavClick(item.path);
-                            setIsMobileMenuOpen(false);
-                          }}
-                          className={`w-full text-left px-4 py-3 rounded-lg transition-all duration-200 group ${
-                            activeSection === item.path.substring(1)
-                              ? "bg-gray-50/10 text-gray-50 border border-gray-50/70"
-                              : "text-purple-300"
-                          }`}>
-                          <span className="text-lg font-medium transition-transform duration-200 group-hover:translate-x-1">
-                            {item.label}
-                          </span>
-                        </motion.button>
-                      )
-                    )}
+                            className={`w-full text-left px-4 py-3 rounded-lg transition-all duration-200 group ${
+                              activeSection === item.path.substring(1)
+                                ? "bg-gray-50/10 text-gray-50 border border-gray-50/70"
+                                : "text-purple-300"}`}>
+                            <span className="text-lg font-medium transition-transform duration-200 group-hover:translate-x-1">
+                              {item.label}
+                            </span>
+                          </motion.button>
+                        );
+                      }
+                    })}
                   </nav>
                 </div>
               </motion.div>

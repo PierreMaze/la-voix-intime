@@ -1,5 +1,6 @@
 import { Outlet } from "react-router-dom";
 import InfoBanner from "../features/InfoBanner";
+import HeaderDebug from "../test-debug/HeaderDebug";
 import Footer from "./Footer";
 import Header from "./Header";
 
@@ -12,6 +13,8 @@ const Layout = () => {
         <Outlet />
       </main>
       <Footer />
+      {/* Debug temporaire - à supprimer après */}
+      <HeaderDebug />
     </div>
   );
 };
