@@ -44,7 +44,7 @@ const FAQItem = ({ question, answer, isOpen, onToggle }) => {
 };
 
 const Faq = () => {
-  const [openIndex, setOpenIndex] = useState(null);
+  const [openIndex, setOpenIndex] = useState(3); // Ouvrir la dernière question par défaut (index 3)
 
   const faqData = [
     {
