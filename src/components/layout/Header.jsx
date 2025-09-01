@@ -65,6 +65,19 @@ const Header = () => {
   const location = useLocation();
   const navigate = useNavigate();
 
+  // Déterminer la page légale active
+  const activeLegalPage = useMemo(() => {
+    if (location.pathname.includes("/mentions-legales"))
+      return "/mentions-legales";
+    if (location.pathname.includes("/conditions-generales-utilisation"))
+      return "/conditions-generales-utilisation";
+    if (location.pathname.includes("/conditions-generales-vente"))
+      return "/conditions-generales-vente";
+    if (location.pathname.includes("/politique-confidentialite"))
+      return "/politique-confidentialite";
+    return null;
+  }, [location.pathname]);
+
   // Mémoriser les sections pour éviter de les recalculer à chaque rendu
   const sections = useMemo(
     () => ["home", "about", "price", "free-draw", "reviews", "faq"],
@@ -207,7 +220,7 @@ const Header = () => {
           </Link>
 
           {/* Navigation desktop */}
-          <div className="hidden items-center space-x-1 md:flex 2xl:text-xl">
+          <div className="hidden items-center space-x-2 md:flex">
             {currentNavigationItems.map((item) => {
               // Gestion spéciale pour le bouton Réserver
               if (item.label === "Réserver") {
@@ -223,11 +236,16 @@ const Header = () => {
 
               // Navigation pour les pages légales
               if (isLegalPage) {
+                const isActive = activeLegalPage === item.path;
                 return (
                   <Link
                     key={item.path}
                     to={item.path}
-                    className="px-4 py-2 text-white transition-colors hover:text-blue-300">
+                    className={`px-3 py-2 text-sm font-medium transition-colors ${
+                      isActive
+                        ? "text-blue-300 border-b-2 border-blue-300"
+                        : "text-white hover:text-blue-300"
+                    }`}>
                     {item.label}
                   </Link>
                 );
@@ -240,8 +258,9 @@ const Header = () => {
                   onClick={() => handleNavClick(item.path)}
                   className={`px-4 py-2 transition-colors ${
                     activeSection === item.path.substring(1)
-                      ? "text-blue-300"
-                      : "text-white hover:text-blue-300"}`}>
+                      ? "text-blue-300 border-b-2 border-blue-300"
+                      : "text-white hover:text-blue-300"
+                  }`}>
                   {item.label}
                 </button>
               );
@@ -254,7 +273,8 @@ const Header = () => {
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
             <svg
               className={`w-8 h-8 ${
-                isMobileMenuOpen ? "text-red-500" : "text-white"}`}
+                isMobileMenuOpen ? "text-red-500" : "text-white"
+              }`}
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24">
@@ -338,6 +358,7 @@ const Header = () => {
                         );
                       } else if (isLegalPage) {
                         // Navigation pour les pages légales
+                        const isActive = activeLegalPage === item.path;
                         return (
                           <motion.div
                             key={item.path}
@@ -351,7 +372,11 @@ const Header = () => {
                             <Link
                               to={item.path}
                               onClick={() => setIsMobileMenuOpen(false)}
-                              className="block px-4 py-3 w-full text-left rounded-lg transition-all duration-200 text-purple-300 hover:text-white">
+                              className={`block px-4 py-3 w-full text-left rounded-lg transition-all duration-200 ${
+                                isActive
+                                  ? "bg-gray-50/10 text-gray-50 border border-gray-50/70"
+                                  : "text-purple-300 hover:text-white"
+                              }`}>
                               <span className="text-lg font-medium transition-transform duration-200 group-hover:translate-x-1">
                                 {item.label}
                               </span>
@@ -377,7 +402,8 @@ const Header = () => {
                             className={`w-full text-left px-4 py-3 rounded-lg transition-all duration-200 group ${
                               activeSection === item.path.substring(1)
                                 ? "bg-gray-50/10 text-gray-50 border border-gray-50/70"
-                                : "text-purple-300"}`}>
+                                : "text-purple-300"
+                            }`}>
                             <span className="text-lg font-medium transition-transform duration-200 group-hover:translate-x-1">
                               {item.label}
                             </span>
