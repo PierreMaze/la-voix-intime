@@ -1,6 +1,5 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Layout from "./components/layout";
-import TestPage from "./components/test-debug/TestPage";
 import { StarField } from "./components/ui/StarField";
 import { useSmoothScroll } from "./hooks/useSmoothScroll.jsx";
 import Home from "./pages/Home";
@@ -17,10 +16,6 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <Home />,
-      },
-      {
-        path: "/test",
-        element: <TestPage />,
       },
       {
         path: "/conditions-generales-vente",
