@@ -13,7 +13,7 @@ const Price = () => {
     ],
     button: {
       text: "Réserver",
-      href: "#faq",
+      path: "/#faq-to-book",
     },
     disclaimer:
       "* A domicile sur le Bassin d'Arcachon. Des frais de déplacement peuvent s'appliquer.",
@@ -26,7 +26,7 @@ const Price = () => {
     detailsList: ["Votre guidance", "Enregistrement MP3", "Réécoute illimité*"],
     button: {
       text: "Réserver",
-      href: "#faq",
+      path: "/#faq-to-book",
     },
     disclaimer:
       "* Vous serez la seule personne à le possèder. Il ne sera pas possible de vous le renvoyer.",
@@ -39,7 +39,7 @@ const Price = () => {
         <FadeIn>
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-white mb-4">Mes tarifs</h2>
-            <div className="w-16 h-0.mx-auto 5 bg-purple-400"></div>
+            <div className="mx-auto w-16 h-1 bg-purple-400"></div>
           </div>
         </FadeIn>
 

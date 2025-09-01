@@ -1,15 +1,26 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { FadeIn } from "../../ui/FadeIn";
 
 // Composant FAQItem réutilisable
-const FAQItem = ({ question, answer, isOpen, onToggle }) => {
+const FAQItem = ({ question, answer, isOpen, onToggle, index, totalItems }) => {
+  // Ajouter un ID spécifique à la dernière question (celle sur la réservation)
+  const isLastItem = index === totalItems - 1;
+
   return (
-    <div className="border-b group border-white/10 last:border-b-0">
+    <div
+      id={isLastItem ? "faq-to-book" : undefined}
+      className={`border-b group border-white/10 last:border-b-0 ${
+        isLastItem ? "scroll-mt-16 lg:scroll-mt-64" : ""}`}>
       <button
         onClick={onToggle}
-        className="flex items-center justify-between py-6 w-full text-left transition-all duration-300 hover:text-purple-300"
+        className={`flex items-center justify-between py-6 w-full text-left transition-all duration-300 ${
+          isOpen ? "text-purple-300" : "hover:text-purple-300"}`}
         aria-expanded={isOpen}>
-        <h3 className="pr-4 text-base font-medium text-white lg:text-lg group-hover:text-purple-200 group-focus:text-purple-200">
+        <h3
+          className={`pr-4 text-base font-medium lg:text-lg ${
+            isOpen
+              ? "text-purple-300"
+              : "text-white group-hover:text-purple-200 group-focus:text-purple-200"}`}>
           {question}
         </h3>
         <div className="flex-shrink-0">
@@ -44,8 +55,6 @@ const FAQItem = ({ question, answer, isOpen, onToggle }) => {
 };
 
 const Faq = () => {
-  const [openIndex, setOpenIndex] = useState(3); // Ouvrir la dernière question par défaut (index 3)
-
   const faqData = [
     {
       question: "Dois-je croire aux tirages que vous effectuez ?",
@@ -86,6 +95,13 @@ const Faq = () => {
     },
   ];
 
+  const [openIndex, setOpenIndex] = useState(faqData.length - 1); // Ouvrir la dernière question par défaut
+
+  // Ouvrir automatiquement le dernier onglet au montage du composant
+  useEffect(() => {
+    setOpenIndex(faqData.length - 1);
+  }, [faqData.length]);
+
   const handleToggle = (index) => {
     setOpenIndex(openIndex === index ? null : index);
   };
@@ -103,10 +119,12 @@ const Faq = () => {
         </FadeIn>
 
         <FadeIn>
-          <div className="px-8 border rounded-2xl bg-white/5 backdrop-blur-sm border-white/10">
+          <div className="px-8 border rounded-2xl bg-black/10 backdrop-blur-sm border-white/20">
             {faqData.map((item, index) => (
               <FAQItem
                 key={index}
+                index={index}
+                totalItems={faqData.length}
                 question={item.question}
                 answer={item.answer}
                 isOpen={openIndex === index}
