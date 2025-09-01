@@ -175,7 +175,7 @@ const PrivacyPolicyContent = () => {
                         href="https://www.paypal.com/fr/webapps/mpp/ua/privacy-full"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="underline text-purple-400 hover:text-purple-300">
+                        className="underline text-purple-400 hover:text-purple-300 break-all sm:break-normal">
                         https://www.paypal.com/fr/webapps/mpp/ua/privacy-full
                       </a>
                     </span>
