@@ -21,15 +21,35 @@ export default defineConfig({
       output: {
         assetFileNames: "assets/[name].[hash][extname]",
         // Code splitting optimisé
-        manualChunks: {
+        manualChunks: (id) => {
           // Séparer React et ses dépendances
-          "react-vendor": ["react", "react-dom"],
+          if (id.includes("react") || id.includes("react-dom")) {
+            return "react-vendor";
+          }
           // Séparer React Router
-          router: ["react-router-dom"],
+          if (id.includes("react-router")) {
+            return "router";
+          }
           // Séparer Framer Motion (composant lourd)
-          "framer-motion": ["framer-motion"],
+          if (id.includes("framer-motion")) {
+            return "framer-motion";
+          }
           // Séparer les icônes
-          icons: ["react-icons"],
+          if (id.includes("react-icons")) {
+            return "icons";
+          }
+          // Séparer les composants UI
+          if (id.includes("/components/ui/")) {
+            return "ui-components";
+          }
+          // Séparer les pages
+          if (id.includes("/pages/")) {
+            return "pages";
+          }
+          // Séparer les composants features
+          if (id.includes("/components/features/")) {
+            return "features";
+          }
         },
         // Optimisation des chunks
         chunkFileNames: "js/[name].[hash].js",
