@@ -20,23 +20,30 @@ const LazyFAQItem = lazy(
               <div
                 id={isLastItem ? "faq-to-book" : undefined}
                 className={`border-b group border-white/10 last:border-b-0 ${
-                  isLastItem ? "scroll-mt-16 lg:scroll-mt-64" : ""}`}>
+                  isLastItem ? "scroll-mt-16 lg:scroll-mt-64" : ""
+                }`}>
                 <button
                   onClick={onToggle}
                   className={`flex items-center justify-between py-6 w-full text-left transition-all duration-300 ${
-                    isOpen ? "text-purple-300" : "hover:text-purple-300"}`}
-                  aria-expanded={isOpen}>
+                    isOpen ? "text-purple-300" : "hover:text-purple-300"
+                  }`}
+                  aria-expanded={isOpen}
+                  aria-label={`${
+                    isOpen ? "Fermer" : "Ouvrir"
+                  } la question: ${question}`}>
                   <h3
                     className={`pr-4 text-base font-medium lg:text-lg ${
                       isOpen
                         ? "text-purple-300"
-                        : "text-white group-hover:text-purple-200 group-focus:text-purple-200"}`}>
+                        : "text-white group-hover:text-purple-200 group-focus:text-purple-200"
+                    }`}>
                     {question}
                   </h3>
                   <div className="flex-shrink-0">
                     <svg
                       className={`w-5 h-5 text-purple-300 transition-transform duration-300 ${
-                        isOpen ? "rotate-180" : ""}`}
+                        isOpen ? "rotate-180" : ""
+                      }`}
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -53,9 +60,10 @@ const LazyFAQItem = lazy(
 
                 <div
                   className={`overflow-hidden transition-all duration-300 ease-in-out ${
-                    isOpen ? "max-h-full opacity-100" : "max-h-0 opacity-0"}`}>
+                    isOpen ? "max-h-full opacity-100" : "max-h-0 opacity-0"
+                  }`}>
                   <div className="pr-4 pb-6">
-                    <div className="text-base leading-relaxed text-white/90">
+                    <div className="text-base leading-relaxed text-white">
                       {answer}
                     </div>
                   </div>
@@ -77,23 +85,28 @@ const FAQItem = ({ question, answer, isOpen, onToggle, index, totalItems }) => {
     <div
       id={isLastItem ? "faq-to-book" : undefined}
       className={`border-b group border-white/10 last:border-b-0 ${
-        isLastItem ? "scroll-mt-16 lg:scroll-mt-64" : ""}`}>
+        isLastItem ? "scroll-mt-16 lg:scroll-mt-64" : ""
+      }`}>
       <button
         onClick={onToggle}
         className={`flex items-center justify-between py-6 w-full text-left transition-all duration-300 ${
-          isOpen ? "text-purple-300" : "hover:text-purple-300"}`}
-        aria-expanded={isOpen}>
+          isOpen ? "text-purple-300" : "hover:text-purple-300"
+        }`}
+        aria-expanded={isOpen}
+        aria-label={`${isOpen ? "Fermer" : "Ouvrir"} la question: ${question}`}>
         <h3
           className={`pr-4 text-base font-medium lg:text-lg ${
             isOpen
               ? "text-purple-300"
-              : "text-white group-hover:text-purple-200 group-focus:text-purple-200"}`}>
+              : "text-white group-hover:text-purple-200 group-focus:text-purple-200"
+          }`}>
           {question}
         </h3>
         <div className="flex-shrink-0">
           <svg
             className={`w-5 h-5 text-purple-300 transition-transform duration-300 ${
-              isOpen ? "rotate-180" : ""}`}
+              isOpen ? "rotate-180" : ""
+            }`}
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
@@ -110,11 +123,10 @@ const FAQItem = ({ question, answer, isOpen, onToggle, index, totalItems }) => {
 
       <div
         className={`overflow-hidden transition-all duration-300 ease-in-out ${
-          isOpen ? "max-h-full opacity-100" : "max-h-0 opacity-0"}`}>
+          isOpen ? "max-h-full opacity-100" : "max-h-0 opacity-0"
+        }`}>
         <div className="pr-4 pb-6">
-          <div className="text-base leading-relaxed text-white/90">
-            {answer}
-          </div>
+          <div className="text-base leading-relaxed text-white">{answer}</div>
         </div>
       </div>
     </div>
@@ -235,7 +247,7 @@ const Faq = () => {
 
         <FadeIn>
           <div className="text-center mt-12">
-            <p className="text-white/80 mb-6">
+            <p className="text-white mb-6">
               Vous avez d'autres questions ? N'hésitez pas à me contacter
             </p>
             <div className="flex justify-center space-x-6">
@@ -243,7 +255,8 @@ const Faq = () => {
               <a
                 href="mailto:lavoixintime@gmail.com"
                 className="flex items-center justify-center w-12 h-12 rounded-full transition-all duration-300 transform bg-gradient-to-r from-purple-500 to-blue-600 hover:from-purple-600 hover:to-blue-700 hover:scale-105"
-                title="Envoyer un email">
+                title="Envoyer un email"
+                aria-label="Envoyer un email à lavoixintime@gmail.com">
                 <svg
                   className="w-6 h-6 text-white"
                   fill="none"
@@ -263,7 +276,8 @@ const Faq = () => {
               <a
                 href="tel:+33646849352"
                 className="flex items-center justify-center w-12 h-12 rounded-full transition-all duration-300 transform bg-gradient-to-r from-purple-500 to-blue-600 hover:from-purple-600 hover:to-blue-700 hover:scale-105"
-                title="Appeler">
+                title="Appeler"
+                aria-label="Appeler au 06 46 84 93 52">
                 <svg
                   className="w-6 h-6 text-white"
                   fill="none"

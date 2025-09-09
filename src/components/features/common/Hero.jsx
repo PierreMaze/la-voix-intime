@@ -32,7 +32,7 @@ const Hero = () => {
           </h1>
 
           <FadeIn className="mt-4 lg:mt-8">
-            <p className="text-base sm:text-lg md:text-xl text-purple-100">
+            <p className="text-base text-white sm:text-lg md:text-xl">
               Laisser les cartes vous guider pour éclairer votre chemin de vie
             </p>
           </FadeIn>
@@ -41,12 +41,14 @@ const Hero = () => {
             <div className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
               <a
                 href="#price"
-                className="px-8 py-3 text-base font-medium text-white rounded-lg transition-all duration-300 transform bg-gradient-to-r from-purple-500 to-blue-600 hover:from-purple-600 hover:to-blue-700 hover:scale-105">
+                className="px-8 py-3 text-base font-medium text-white rounded-lg transition-all duration-300 transform bg-gradient-to-r from-purple-500 to-blue-600 hover:from-purple-600 hover:to-blue-700 hover:scale-105"
+                aria-label="Réserver un tirage de cartes - Aller à la section tarifs">
                 Réserver un tirage
               </a>
               <a
                 href="#free-draw"
-                className="px-4 py-3 text-base font-medium border rounded-lg transition-all duration-300 transform text-purple-50 border-purple-50 hover:bg-white hover:text-purple-900 hover:border-purple-300 hover:scale-105">
+                className="px-4 py-3 text-base font-medium border rounded-lg transition-all duration-300 transform text-purple-50 border-purple-50 hover:bg-white hover:text-purple-900 hover:border-purple-300 hover:scale-105"
+                aria-label="Découvrir les tirages gratuits sur YouTube - Aller à la section vidéos">
                 Découvrir les tirages gratuits sur YouTube
               </a>
             </div>

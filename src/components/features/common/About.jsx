@@ -43,7 +43,7 @@ const About = () => {
           </div>
 
           {/* Texte */}
-          <div className="space-y-6 text-white/90">
+          <div className="text-white space-y-6">
             <p className="text-lg leading-relaxed">
               Depuis plus de 30 ans, je chemine aux côtés de l'Art Divinatoire,
               guidée par la douceur et la lumière qu'il peut offrir.
@@ -74,7 +74,7 @@ const About = () => {
             {/* Séparateur subtil */}
             <div className="pt-6">
               <div className="w-12 h-px bg-purple-400/50"></div>
-              <p className="text-sm text-purple-200 mt-4 italic">
+              <p className="text-sm text-purple-300 mt-4 italic">
                 ✨ Laissez-vous guider vers votre vérité intérieure ✨
               </p>
             </div>
