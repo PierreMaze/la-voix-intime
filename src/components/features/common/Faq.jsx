@@ -1,5 +1,72 @@
-import { useEffect, useState } from "react";
+import { Suspense, lazy, useEffect, useState } from "react";
 import { FadeIn } from "../../ui/FadeIn";
+
+// Lazy loading du composant FAQItem
+const LazyFAQItem = lazy(
+  () =>
+    new Promise((resolve) => {
+      setTimeout(() => {
+        resolve({
+          default: ({
+            question,
+            answer,
+            isOpen,
+            onToggle,
+            index,
+            totalItems,
+          }) => {
+            const isLastItem = index === totalItems - 1;
+            return (
+              <div
+                id={isLastItem ? "faq-to-book" : undefined}
+                className={`border-b group border-white/10 last:border-b-0 ${
+                  isLastItem ? "scroll-mt-16 lg:scroll-mt-64" : ""}`}>
+                <button
+                  onClick={onToggle}
+                  className={`flex items-center justify-between py-6 w-full text-left transition-all duration-300 ${
+                    isOpen ? "text-purple-300" : "hover:text-purple-300"}`}
+                  aria-expanded={isOpen}>
+                  <h3
+                    className={`pr-4 text-base font-medium lg:text-lg ${
+                      isOpen
+                        ? "text-purple-300"
+                        : "text-white group-hover:text-purple-200 group-focus:text-purple-200"}`}>
+                    {question}
+                  </h3>
+                  <div className="flex-shrink-0">
+                    <svg
+                      className={`w-5 h-5 text-purple-300 transition-transform duration-300 ${
+                        isOpen ? "rotate-180" : ""}`}
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M19 9l-7 7-7-7"
+                      />
+                    </svg>
+                  </div>
+                </button>
+
+                <div
+                  className={`overflow-hidden transition-all duration-300 ease-in-out ${
+                    isOpen ? "max-h-full opacity-100" : "max-h-0 opacity-0"}`}>
+                  <div className="pr-4 pb-6">
+                    <div className="text-base leading-relaxed text-white/90">
+                      {answer}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            );
+          },
+        });
+      }, 200);
+    })
+);
 
 // Composant FAQItem réutilisable
 const FAQItem = ({ question, answer, isOpen, onToggle, index, totalItems }) => {
@@ -55,6 +122,16 @@ const FAQItem = ({ question, answer, isOpen, onToggle, index, totalItems }) => {
 };
 
 const Faq = () => {
+  const [isDataLoaded, setIsDataLoaded] = useState(false);
+
+  // Simuler le chargement des données FAQ
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsDataLoaded(true);
+    }, 400);
+    return () => clearTimeout(timer);
+  }, []);
+
   const faqData = [
     {
       question: "Dois-je croire aux tirages que vous effectuez ?",
@@ -120,17 +197,39 @@ const Faq = () => {
 
         <FadeIn>
           <div className="px-8 border rounded-2xl bg-black/10 backdrop-blur-sm border-white/20">
-            {faqData.map((item, index) => (
-              <FAQItem
-                key={index}
-                index={index}
-                totalItems={faqData.length}
-                question={item.question}
-                answer={item.answer}
-                isOpen={openIndex === index}
-                onToggle={() => handleToggle(index)}
-              />
-            ))}
+            {isDataLoaded
+              ? faqData.map((item, index) => (
+                  <Suspense
+                    key={index}
+                    fallback={
+                      <div className="py-6 border-b animate-pulse border-white/10 last:border-b-0">
+                        <div className="flex items-center justify-between">
+                          <div className="w-3/4 h-6 bg-gray-700 rounded"></div>
+                          <div className="w-5 h-5 bg-gray-700 rounded"></div>
+                        </div>
+                      </div>
+                    }>
+                    <LazyFAQItem
+                      index={index}
+                      totalItems={faqData.length}
+                      question={item.question}
+                      answer={item.answer}
+                      isOpen={openIndex === index}
+                      onToggle={() => handleToggle(index)}
+                    />
+                  </Suspense>
+                ))
+              : // Skeleton loader pendant le chargement des données
+                Array.from({ length: 4 }).map((_, index) => (
+                  <div
+                    key={index}
+                    className="py-6 border-b animate-pulse border-white/10 last:border-b-0">
+                    <div className="flex items-center justify-between">
+                      <div className="w-3/4 h-6 bg-gray-700 rounded"></div>
+                      <div className="w-5 h-5 bg-gray-700 rounded"></div>
+                    </div>
+                  </div>
+                ))}
           </div>
         </FadeIn>
 

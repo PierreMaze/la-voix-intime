@@ -1,4 +1,23 @@
+import { Suspense, lazy } from "react";
 import { FadeIn } from "../../ui/FadeIn";
+
+// Lazy loading de l'animation Lottie pour ne pas bloquer le LCP
+const LazyLottieAnimation = lazy(
+  () =>
+    new Promise((resolve) => {
+      setTimeout(() => {
+        resolve({
+          default: () => (
+            <iframe
+              src="https://lottie.host/embed/bb7634e2-3692-4d30-8002-9dc962154b2c/W9fHZGS0aA.lottie"
+              loading="lazy"
+              title="Animation Lottie"
+              style={{ width: "150px", height: "150px" }}></iframe>
+          ),
+        });
+      }, 1000); // Délai pour laisser le LCP se définir d'abord
+    })
+);
 
 const Hero = () => {
   return (
@@ -7,11 +26,10 @@ const Hero = () => {
       className="relative flex items-center py-16 w-full h-screen lg:mt-8">
       <div className="relative w-full">
         <div className="px-4 mx-auto w-full text-center sm:px-6 lg:px-8">
-          <FadeIn>
-            <h1 className="text-3xl font-extrabold tracking-tight text-purple-50 sm:text-4xl md:text-5xl lg:text-6xl">
-              Découvrez le langage secret de votre Inconscient
-            </h1>
-          </FadeIn>
+          {/* Titre principal - Élément LCP critique - Pas de FadeIn */}
+          <h1 className="text-3xl font-extrabold tracking-tight text-purple-50 sm:text-4xl md:text-5xl lg:text-6xl">
+            Découvrez le langage secret de votre Inconscient
+          </h1>
 
           <FadeIn className="mt-4 lg:mt-8">
             <p className="text-base sm:text-lg md:text-xl text-purple-100">
@@ -34,9 +52,16 @@ const Hero = () => {
             </div>
           </FadeIn>
 
-          <FadeIn className="mt-10 lg:mt-20">
+          <FadeIn className="mt-20">
             <div className="inline-flex items-center justify-center mx-auto transition-colors duration-300 scale-75 -mt-12 lg:scale-100">
-              <iframe src="https://lottie.host/embed/bb7634e2-3692-4d30-8002-9dc962154b2c/W9fHZGS0aA.lottie"></iframe>
+              <Suspense
+                fallback={
+                  <div className="flex items-center justify-center p-4 rounded-full animate-pulse bg-gray-800/50">
+                    <div className="w-8 h-8 border-4 rounded-full animate-spin border-purple-400 border-t-transparent"></div>
+                  </div>
+                }>
+                <LazyLottieAnimation />
+              </Suspense>
             </div>
           </FadeIn>
         </div>

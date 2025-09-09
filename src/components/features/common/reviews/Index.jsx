@@ -1,7 +1,20 @@
+import { lazy, Suspense, useEffect, useState } from "react";
 import { FadeIn } from "../../../ui/FadeIn";
-import CardReviews from "./CardReviews";
+
+// Lazy loading du composant CardReviews
+const LazyCardReviews = lazy(() => import("./CardReviews"));
 
 const Reviews = () => {
+  const [isDataLoaded, setIsDataLoaded] = useState(false);
+
+  // Simuler le chargement des données
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsDataLoaded(true);
+    }, 300);
+    return () => clearTimeout(timer);
+  }, []);
+
   const reviewsData = [
     {
       name: "Angelique D.",
@@ -53,15 +66,53 @@ const Reviews = () => {
 
         <FadeIn>
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {reviewsData.map((review, index) => (
-              <CardReviews
-                key={index}
-                name={review.name}
-                rating={review.rating}
-                date={review.date}
-                comment={review.comment}
-              />
-            ))}
+            {isDataLoaded
+              ? reviewsData.map((review, index) => (
+                  <Suspense
+                    key={index}
+                    fallback={
+                      <div className="p-6 border rounded-2xl animate-pulse bg-white/10 backdrop-blur-sm border-white/20">
+                        <div className="flex items-center mb-4">
+                          <div className="w-10 h-10 bg-gray-700 rounded-full mr-3"></div>
+                          <div>
+                            <div className="w-24 h-4 bg-gray-700 rounded mb-2"></div>
+                            <div className="w-16 h-3 bg-gray-700 rounded"></div>
+                          </div>
+                        </div>
+                        <div className="space-y-2">
+                          <div className="h-4 bg-gray-700 rounded"></div>
+                          <div className="w-3/4 h-4 bg-gray-700 rounded"></div>
+                          <div className="w-1/2 h-4 bg-gray-700 rounded"></div>
+                        </div>
+                      </div>
+                    }>
+                    <LazyCardReviews
+                      name={review.name}
+                      rating={review.rating}
+                      date={review.date}
+                      comment={review.comment}
+                    />
+                  </Suspense>
+                ))
+              : // Skeleton loader pendant le chargement des données
+                Array.from({ length: 6 }).map((_, index) => (
+                  <div
+                    key={index}
+                    className="p-6 border rounded-2xl animate-pulse bg-white/10 backdrop-blur-sm border-white/20">
+                    <div className="flex items-center mb-4">
+                      <div className="w-10 h-10 bg-gray-700 rounded-full mr-3"></div>
+                      <div>
+                        <div className="w-24 h-4 bg-gray-700 rounded mb-2"></div>
+                        <div className="w-16 h-3 bg-gray-700 rounded"></div>
+                      </div>
+                    </div>
+                    <div className="space-y-2">
+                      <div className="h-4 bg-gray-700 rounded"></div>
+                      <div className="w-3/4 h-4 bg-gray-700 rounded"></div>
+                      <div className="w-1/2 h-4 bg-gray-700 rounded"></div>
+                    </div>
+                  </div>
+                ))}
           </div>
         </FadeIn>
 

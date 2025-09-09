@@ -1,5 +1,19 @@
-import aboutPicture from "../../../../assets/img/about-picture.png";
+import { Suspense, lazy } from "react";
 import OptimizedImage from "../../ui/OptimizedImage";
+
+// Lazy loading de l'image
+const LazyAboutImage = lazy(() =>
+  import("../../../../assets/img/about-picture.png").then((module) => ({
+    default: () => (
+      <OptimizedImage
+        src={module.default}
+        alt="Portrait de la voyante - La Voix Intime"
+        className="relative w-64 h-64 rounded-full shadow-lg lg:w-80 lg:h-80 object-cover"
+        loading="eager"
+      />
+    ),
+  }))
+);
 
 const About = () => {
   return (
@@ -17,12 +31,14 @@ const About = () => {
           <div className="flex justify-center lg:justify-start">
             <div className="relative">
               <div className="absolute inset-0 rounded-full blur-xl bg-gradient-to-br from-purple-500/20 to-blue-500/20"></div>
-              <OptimizedImage
-                src={aboutPicture}
-                alt="Portrait de la voyante - La Voix Intime"
-                className="relative w-64 h-64 rounded-full shadow-lg lg:w-80 lg:h-80 object-cover"
-                loading="eager"
-              />
+              <Suspense
+                fallback={
+                  <div className="relative flex items-center justify-center w-64 h-64 bg-gray-800 rounded-full shadow-lg animate-pulse lg:w-80 lg:h-80">
+                    <div className="w-16 h-16 border-4 rounded-full animate-spin border-purple-400 border-t-transparent"></div>
+                  </div>
+                }>
+                <LazyAboutImage />
+              </Suspense>
             </div>
           </div>
 

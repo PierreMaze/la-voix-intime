@@ -1,6 +1,9 @@
+import { Suspense, lazy } from "react";
 import { FadeIn } from "../../../ui/FadeIn";
-import NotePaypal from "../../NotePaypal";
-import CardPrice from "./CardPrice";
+
+// Lazy loading des composants
+const LazyCardPrice = lazy(() => import("./CardPrice"));
+const LazyNotePaypal = lazy(() => import("../../NotePaypal"));
 
 const Price = () => {
   const card1Data = {
@@ -45,13 +48,49 @@ const Price = () => {
 
         <FadeIn>
           <div className="grid gap-8 md:grid-cols-2 mb-12">
-            <CardPrice {...card1Data} />
-            <CardPrice {...card2Data} />
+            <Suspense
+              fallback={
+                <div className="p-8 border rounded-2xl animate-pulse bg-white/10 backdrop-blur-sm border-white/20">
+                  <div className="h-8 bg-gray-700 rounded mb-4"></div>
+                  <div className="h-12 bg-gray-700 rounded mb-8"></div>
+                  <div className="space-y-4">
+                    <div className="h-4 bg-gray-700 rounded"></div>
+                    <div className="h-4 bg-gray-700 rounded"></div>
+                    <div className="h-4 bg-gray-700 rounded"></div>
+                  </div>
+                  <div className="h-12 bg-gray-700 rounded mt-8"></div>
+                </div>
+              }>
+              <LazyCardPrice {...card1Data} />
+            </Suspense>
+            <Suspense
+              fallback={
+                <div className="p-8 border rounded-2xl animate-pulse bg-white/10 backdrop-blur-sm border-white/20">
+                  <div className="h-8 bg-gray-700 rounded mb-4"></div>
+                  <div className="h-12 bg-gray-700 rounded mb-8"></div>
+                  <div className="space-y-4">
+                    <div className="h-4 bg-gray-700 rounded"></div>
+                    <div className="h-4 bg-gray-700 rounded"></div>
+                    <div className="h-4 bg-gray-700 rounded"></div>
+                  </div>
+                  <div className="h-12 bg-gray-700 rounded mt-8"></div>
+                </div>
+              }>
+              <LazyCardPrice {...card2Data} />
+            </Suspense>
           </div>
         </FadeIn>
 
         <FadeIn>
-          <NotePaypal />
+          <Suspense
+            fallback={
+              <div className="p-6 border rounded-2xl animate-pulse bg-white/10 backdrop-blur-sm border-white/20">
+                <div className="h-4 bg-gray-700 rounded mb-2"></div>
+                <div className="w-3/4 h-4 bg-gray-700 rounded"></div>
+              </div>
+            }>
+            <LazyNotePaypal />
+          </Suspense>
         </FadeIn>
       </div>
     </section>
