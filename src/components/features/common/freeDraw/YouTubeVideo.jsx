@@ -57,8 +57,7 @@ const YouTubeVideo = ({ videoId, title, className }) => {
     return (
       <div
         className={`flex items-center justify-center bg-gray-800 rounded-2xl ${
-          className || ""
-        }`}
+          className || ""}`}
         style={{ paddingBottom: "56.25%" }}>
         <div className="text-center text-white">
           <p className="text-lg mb-2">Erreur de chargement de la vidéo</p>
@@ -71,8 +70,7 @@ const YouTubeVideo = ({ videoId, title, className }) => {
   return (
     <div
       className={`relative w-full rounded-2xl shadow-2xl overflow-hidden ${
-        className || ""
-      }`}
+        className || ""}`}
       style={{ paddingBottom: "56.25%" }}>
       {/* Spinner de chargement */}
       {isLoading && (
@@ -108,25 +106,26 @@ const YouTubeVideo = ({ videoId, title, className }) => {
         </Suspense>
       ) : (
         <div className="absolute inset-0 flex items-center justify-center bg-gray-900 rounded-2xl">
-          <div className="p-8 text-center text-white">
-            <div className="mb-6">
+          <div className="p-3 mx-auto text-center text-white sm:p-4 max-w-xs sm:max-w-md">
+            <div className="mb-2 sm:mb-3">
               <svg
-                className="mx-auto w-16 h-16 text-purple-400 mb-4"
+                className="mx-auto w-8 h-8 sm:w-10 sm:h-10 text-purple-400"
                 fill="currentColor"
                 viewBox="0 0 24 24">
                 <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
               </svg>
             </div>
-            <h3 className="text-xl font-semibold mb-4">Vidéo YouTube</h3>
-            <p className="text-white mb-6">
-              Cette vidéo est hébergée sur YouTube. En cliquant sur "Charger la
-              vidéo", vous acceptez que YouTube puisse déposer des cookies.
+            <h3 className="text-sm font-semibold sm:text-base mb-2">
+              Vidéo YouTube
+            </h3>
+            <p className="text-xs leading-tight text-gray-300 sm:text-sm mb-3">
+              Acceptez les cookies YouTube pour voir la vidéo
             </p>
             <button
               onClick={handleConsent}
-              className="px-6 py-3 text-white rounded-lg transition-all duration-300 transform bg-gradient-to-r from-purple-500 to-blue-600 hover:from-purple-600 hover:to-blue-700 hover:scale-105"
+              className="px-4 py-2 w-fit text-xs font-medium text-white rounded-lg transition-all duration-300 transform sm:text-sm bg-gradient-to-r from-purple-500 to-blue-600 hover:from-purple-600 hover:to-blue-700 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 focus:ring-offset-gray-900"
               aria-label="Charger la vidéo YouTube et accepter les cookies">
-              Charger la vidéo
+              Acceptez les cookies YouTube
             </button>
           </div>
         </div>
