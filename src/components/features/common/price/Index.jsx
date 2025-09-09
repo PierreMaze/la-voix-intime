@@ -1,6 +1,25 @@
+import { Suspense, lazy } from "react";
 import { FadeIn } from "../../../ui/FadeIn";
 import NotePaypal from "../../NotePaypal";
-import CardPrice from "./CardPrice";
+
+// Lazy loading des composants (utile pour les composants plus complexes)
+const CardPrice = lazy(() => import("./CardPrice"));
+
+// Composant de chargement pour les cartes
+const CardLoadingFallback = () => (
+  <div className="relative p-8 border rounded-2xl animate-pulse bg-white/10 backdrop-blur-sm border-white/20">
+    <div className="text-center">
+      <div className="h-8 bg-gray-700 rounded mb-4"></div>
+      <div className="h-16 bg-gray-700 rounded mb-8"></div>
+      <div className="space-y-4 mb-8">
+        <div className="h-4 bg-gray-700 rounded"></div>
+        <div className="h-4 bg-gray-700 rounded"></div>
+        <div className="h-4 bg-gray-700 rounded"></div>
+      </div>
+      <div className="h-12 bg-gray-700 rounded mb-6"></div>
+    </div>
+  </div>
+);
 
 const Price = () => {
   const card1Data = {
@@ -45,8 +64,12 @@ const Price = () => {
 
         <FadeIn>
           <div className="grid gap-8 md:grid-cols-2 mb-12">
-            <CardPrice {...card1Data} />
-            <CardPrice {...card2Data} />
+            <Suspense fallback={<CardLoadingFallback />}>
+              <CardPrice {...card1Data} />
+            </Suspense>
+            <Suspense fallback={<CardLoadingFallback />}>
+              <CardPrice {...card2Data} />
+            </Suspense>
           </div>
         </FadeIn>
 

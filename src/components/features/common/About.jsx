@@ -1,5 +1,13 @@
+import { Suspense } from "react";
 import aboutPicture from "../../../../assets/img/about-picture.png";
 import OptimizedImage from "../../ui/OptimizedImage";
+
+// Composant de chargement pour l'image
+const ImageLoadingFallback = () => (
+  <div className="relative w-64 h-64 bg-gray-800 rounded-full shadow-lg animate-pulse lg:w-80 lg:h-80">
+    <div className="absolute inset-0 rounded-full bg-gradient-to-br from-purple-500/10 to-blue-500/10"></div>
+  </div>
+);
 
 const About = () => {
   return (
@@ -17,12 +25,14 @@ const About = () => {
           <div className="flex justify-center lg:justify-start">
             <div className="relative">
               <div className="absolute inset-0 rounded-full blur-xl bg-gradient-to-br from-purple-500/20 to-blue-500/20"></div>
-              <OptimizedImage
-                src={aboutPicture}
-                alt="Portrait de la voyante - La Voix Intime"
-                className="relative w-64 h-64 rounded-full shadow-lg lg:w-80 lg:h-80 object-cover"
-                loading="eager"
-              />
+              <Suspense fallback={<ImageLoadingFallback />}>
+                <OptimizedImage
+                  src={aboutPicture}
+                  alt="Portrait de la voyante - La Voix Intime"
+                  className="relative w-64 h-64 rounded-full shadow-lg lg:w-80 lg:h-80 object-cover"
+                  loading="lazy"
+                />
+              </Suspense>
             </div>
           </div>
 

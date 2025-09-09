@@ -1,5 +1,17 @@
 import { Suspense, useEffect, useState } from "react";
 
+// Composant de chargement amélioré pour la vidéo
+const VideoLoadingFallback = () => (
+  <div className="absolute inset-0 z-10 flex items-center justify-center bg-gray-900">
+    <div className="flex flex-col items-center">
+      <div className="w-16 h-16 border-4 rounded-full animate-spin border-purple-400 border-t-transparent"></div>
+      <p className="text-sm text-center text-white mt-4">
+        Chargement de la vidéo...
+      </p>
+    </div>
+  </div>
+);
+
 const YouTubeVideo = ({ videoId, title, className }) => {
   const [isLoading, setIsLoading] = useState(true);
   const [hasError, setHasError] = useState(false);
@@ -44,24 +56,10 @@ const YouTubeVideo = ({ videoId, title, className }) => {
       }`}
       style={{ paddingBottom: "56.25%" }}>
       {/* Spinner de chargement */}
-      {isLoading && (
-        <div className="absolute inset-0 z-10 flex items-center justify-center bg-gray-900">
-          <div className="flex flex-col items-center">
-            <div className="w-16 h-16 border-4 rounded-full animate-spin border-purple-400 border-t-transparent"></div>
-            <p className="text-sm text-center text-white mt-4">
-              Chargement de la vidéo...
-            </p>
-          </div>
-        </div>
-      )}
+      {isLoading && <VideoLoadingFallback />}
 
       {/* Iframe YouTube */}
-      <Suspense
-        fallback={
-          <div className="absolute inset-0 flex items-center justify-center bg-gray-900">
-            <div className="text-white">Chargement...</div>
-          </div>
-        }>
+      <Suspense fallback={<VideoLoadingFallback />}>
         <iframe
           className="absolute top-0 left-0 w-full h-full"
           src={`https://www.youtube.com/embed/${videoId}?si=g0f-uzNGQlOZSH2O`}

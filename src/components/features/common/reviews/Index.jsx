@@ -2,6 +2,7 @@ import { FadeIn } from "../../../ui/FadeIn";
 import CardReviews from "./CardReviews";
 
 const Reviews = () => {
+  // Données statiques des avis - chargement immédiat
   const reviewsData = [
     {
       name: "Angelique D.",
@@ -14,28 +15,28 @@ const Reviews = () => {
       rating: 5,
       date: "2025-08-10",
       comment:
-        "J'adore tes tirages, ils sont pleins de vérités cachés. La voix intime nous guide. Gratitude 🙏 ❤ 🫶",
+        "J'adore tes tirages, ils sont pleins de vérités cachés. La voix intime nous guide. Gratitude 🙏 ❤ 🫶",
     },
     {
       name: "Laurence L.",
       rating: 5,
       date: "2025-08-18",
       comment:
-        "Par avance, merci pour ton regard pertinent, tes lumières inspirantes et tes partages éclairés ! 🙏 💕",
+        "Par avance, merci pour ton regard pertinent, tes lumières inspirantes et tes partages éclairés ! 🙏 💕",
     },
     {
       name: "Marie",
       rating: 5,
       date: "2025-08-15",
       comment:
-        "Merci beaucoup pour ce tirage et pour toutes tes explications. C’était vraiment très intéressant et enrichissant. Tu as partagé énormément d’informations utiles qui permettent d’y voir plus clair et d’apporter de nouvelles pistes de réflexion (pour moi en tout cas, surtout actuellement). Encore un grand Merci ! J'ai beaucoup aimé ta façon d’expliquer, claire et bienveillante, ce qui rend le tout encore plus précieux ! 🙏 Et le cadrage est plutôt réussi pour une première ! 😉👏",
+        "Merci beaucoup pour ce tirage et pour toutes tes explications. C'était vraiment très intéressant et enrichissant. Tu as partagé énormément d'informations utiles qui permettent d'y voir plus clair et d'apporter de nouvelles pistes de réflexion (pour moi en tout cas, surtout actuellement). Encore un grand Merci ! J'ai beaucoup aimé ta façon d'expliquer, claire et bienveillante, ce qui rend le tout encore plus précieux ! 🙏 Et le cadrage est plutôt réussi pour une première ! 😉👏",
     },
     {
       name: "Nadine N.",
       rating: 5,
       date: "2025-08-23",
       comment:
-        "Merci à ton tirage effectué ce samedi. Cela m’a éclairé et cela à rejoint le programme que j’effectue sur moi en neurosciences (reprogrammation dans des domaines clés de la vie). Je vous la recommande ! 😉🤗",
+        "Merci à ton tirage effectué ce samedi. Cela m'a éclairé et cela à rejoint le programme que j'effectue sur moi en neurosciences (reprogrammation dans des domaines clés de la vie). Je vous la recommande ! 😉🤗",
     },
   ];
 

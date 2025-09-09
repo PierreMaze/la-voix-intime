@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { FadeIn } from "../../ui/FadeIn";
 
 // Composant FAQItem réutilisable
@@ -55,6 +55,9 @@ const FAQItem = ({ question, answer, isOpen, onToggle, index, totalItems }) => {
 };
 
 const Faq = () => {
+  const [openIndex, setOpenIndex] = useState(3); // Ouvrir la dernière question par défaut
+
+  // Données statiques de la FAQ - chargement immédiat
   const faqData = [
     {
       question: "Dois-je croire aux tirages que vous effectuez ?",
@@ -70,7 +73,7 @@ const Faq = () => {
       question:
         "Pourquoi ne vous montrez-vous pas lors des tirages, on ne voit que vos mains ?",
       answer:
-        "J'ai pu observer, lors des tirages en présentiel, que l'inconscient de la personne à qui je fais les tirages, se déconnecte à plusieurs reprises. Comme un signal radio où il y aurait de la friture sur la ligne. La personne me regarde, cherche dans mon regard des approbations et perd sa concentration. Je dois me reconnecter et cela coupe la fluidité des messages. Cette façon d'effectuer les tirages permet d'avoir un signal clair et inninterrompu.",
+        "J'ai pu observer, lors des tirages en présentiel, que l'inconscient de la personne à qui je fais les tirages, se déconnecte à plusieurs reprises. Comme un signal radio où il y aurait de la friture sur la ligne. La personne me regarde, cherche dans mon regard des approbations et perd sa concentration. Je dois me reconnecter et cela coupe la fluidité des messages. Cette façon d'effectuer les tirages permet d'avoir un signal clair et inninterrompu.",
     },
     {
       question: "Quand sera disponible la réservation sur le site ?",
@@ -94,13 +97,6 @@ const Faq = () => {
       ),
     },
   ];
-
-  const [openIndex, setOpenIndex] = useState(faqData.length - 1); // Ouvrir la dernière question par défaut
-
-  // Ouvrir automatiquement le dernier onglet au montage du composant
-  useEffect(() => {
-    setOpenIndex(faqData.length - 1);
-  }, [faqData.length]);
 
   const handleToggle = (index) => {
     setOpenIndex(openIndex === index ? null : index);
