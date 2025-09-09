@@ -11,9 +11,9 @@ const FreeDraw = () => {
               Tirages gratuits
             </h2>
             <div className="w-16 h-0.mx-auto 5 bg-purple-400 mb-6"></div>
-            <h3 className="text-lg text-purple-200 md:text-xl">
+            <p className="text-lg text-purple-200 md:text-xl">
               Découvrez nos tirages génériques gratuits sur YouTube !
-            </h3>
+            </p>
           </div>
         </FadeIn>
 
@@ -28,7 +28,7 @@ const FreeDraw = () => {
 
         <FadeIn>
           <div className="text-center mb-12">
-            <p className="mx-auto text-lg leading-relaxed text-white/90 max-w-2xl">
+            <p className="mx-auto text-lg leading-relaxed text-white max-w-2xl">
               Ce tirage s'adresse au collectif, il ne peut donc pas répondre à
               toutes vos questions.
             </p>
@@ -41,7 +41,8 @@ const FreeDraw = () => {
               href="https://www.youtube.com/@lavoixintime"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block px-8 py-3 text-base font-medium text-white rounded-lg transition-all duration-300 transform bg-gradient-to-r from-purple-500 to-blue-600 hover:from-purple-600 hover:to-blue-700 hover:scale-105">
+              className="inline-block px-8 py-3 text-base font-medium text-white rounded-lg transition-all duration-300 transform bg-gradient-to-r from-purple-500 to-blue-600 hover:from-purple-600 hover:to-blue-700 hover:scale-105"
+              aria-label="S'abonner à la chaîne YouTube La Voix Intime - Lien externe">
               S'abonner à la chaîne
             </a>
           </div>

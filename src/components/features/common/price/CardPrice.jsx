@@ -21,7 +21,7 @@ const CardPrice = ({
           </p>
 
           <div className="flex justify-center mb-8">
-            <ul className="space-y-4 text-white/90 text-start">
+            <ul className="text-white space-y-4 text-start">
               {detailsList.map((detail, index) => (
                 <li key={index} className="flex items-center">
                   <span className="text-lg text-purple-400 mr-3">✓</span>
@@ -35,20 +35,22 @@ const CardPrice = ({
             // Navigation avec anchor ou route interne
             <a
               href={button.path}
-              className="inline-block px-8 py-3 text-base font-medium text-white rounded-lg transition-all duration-300 transform bg-gradient-to-r from-purple-500 to-blue-600 hover:from-purple-600 hover:to-blue-700 hover:scale-105 mb-6">
+              className="inline-block px-8 py-3 text-base font-medium text-white rounded-lg transition-all duration-300 transform bg-gradient-to-r from-purple-500 to-blue-600 hover:from-purple-600 hover:to-blue-700 hover:scale-105 mb-6"
+              aria-label={`${button.text} - ${title} - Aller à la section réservation`}>
               {button.text}
             </a>
           ) : (
             // Lien externe
             <a
               href={button.href}
-              className="inline-block px-8 py-3 text-base font-medium text-white rounded-lg transition-all duration-300 transform bg-gradient-to-r from-purple-500 to-blue-600 hover:from-purple-600 hover:to-blue-700 hover:scale-105 mb-6">
+              className="inline-block px-8 py-3 text-base font-medium text-white rounded-lg transition-all duration-300 transform bg-gradient-to-r from-purple-500 to-blue-600 hover:from-purple-600 hover:to-blue-700 hover:scale-105 mb-6"
+              aria-label={`${button.text} - ${title} - Lien externe`}>
               {button.text}
             </a>
           )}
 
           {disclaimer && (
-            <p className="text-xs text-center text-white/90 italic">
+            <p className="text-xs text-center text-white italic">
               {disclaimer}
             </p>
           )}
