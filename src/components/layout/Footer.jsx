@@ -93,7 +93,7 @@ const Footer = () => {
               La Voix Intime
             </span>
           </Link>
-          <p className="text-sm text-purple-100">
+          <p className="text-sm text-white">
             &copy; 2025 - Tous droits réservés.
           </p>
         </div>

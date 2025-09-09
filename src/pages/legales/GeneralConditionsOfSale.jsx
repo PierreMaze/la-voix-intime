@@ -34,7 +34,7 @@ const GeneralConditionsOfSale = () => {
           <h1 className="text-xl font-bold text-white lg:text-4xl mb-4">
             Conditions Générales de Vente
           </h1>
-          <p className="text-gray-300">
+          <p className="text-white">
             Dernière mise à jour : {new Date().toLocaleDateString("fr-FR")}
           </p>
         </div>
@@ -46,7 +46,7 @@ const GeneralConditionsOfSale = () => {
               1. Préambule
             </h2>
             <div className="p-4 border rounded-lg bg-purple-500/10 border-purple-500/20 mb-4">
-              <p className="text-gray-300">
+              <p className="text-white">
                 <strong>La Voix Intime</strong>
                 <br />
                 Frédérique CAIGNARD
@@ -77,7 +77,7 @@ const GeneralConditionsOfSale = () => {
                 SIRET : [Numéro SIRET]<em> à venir</em>
               </p>
             </div>
-            <p className="text-gray-300">
+            <p className="text-white">
               Les présentes conditions générales de vente (CGV) s'appliquent à
               toutes les prestations de services conclues par La Voix Intime
               auprès de ses clients, quelles que soient les clauses pouvant
@@ -90,10 +90,10 @@ const GeneralConditionsOfSale = () => {
             <h2 className="text-2xl font-semibold text-white mb-4">
               2. Services Proposés
             </h2>
-            <p className="text-gray-300 mb-4">
+            <p className="text-white mb-4">
               La Voix Intime propose les services suivants :
             </p>
-            <ul className="text-gray-300 list-disc list-inside space-y-2 ml-4">
+            <ul className="text-white list-disc list-inside space-y-2 ml-4">
               <li>
                 Consultations de divination par présentiel ou{" "}
                 <a
@@ -112,7 +112,7 @@ const GeneralConditionsOfSale = () => {
               </li>
               <li>Tirages gratuits en ligne</li>
             </ul>
-            <p className="text-gray-300 mt-4">
+            <p className="text-white mt-4">
               Ces services sont proposés à titre de développement personnel. Ils
               ne constituent en aucun cas une consultation médicale,
               psychologique ou juridique.
@@ -124,15 +124,15 @@ const GeneralConditionsOfSale = () => {
             <h2 className="text-2xl font-semibold text-white mb-4">
               3. Tarifs et Modalités de Paiement
             </h2>
-            <p className="text-gray-300 mb-4">
+            <p className="text-white mb-4">
               Les tarifs de nos services sont exprimés en euros et hors taxes.
               La TVA n'est pas applicable (BIC - Bénéfices Industriels et
               Commerciaux).
             </p>
-            <p className="text-gray-300 mb-4">
+            <p className="text-white mb-4">
               Les modalités de paiement acceptées sont :
             </p>
-            <ul className="text-gray-300 list-disc list-inside space-y-2 ml-4">
+            <ul className="text-white list-disc list-inside space-y-2 ml-4">
               <li>
                 Paiement par{" "}
                 <a
@@ -166,7 +166,7 @@ const GeneralConditionsOfSale = () => {
                 existant
               </li>
             </ul>
-            <p className="text-gray-300 mt-4">
+            <p className="text-white mt-4">
               <strong>Sécurité :</strong> Le paiement s'effectue via{" "}
               <a
                 href="https://www.paypal.com"
@@ -187,7 +187,7 @@ const GeneralConditionsOfSale = () => {
             <h2 className="text-2xl font-semibold text-white mb-4">
               4. Réservation et Annulation
             </h2>
-            <p className="text-gray-300 mb-4">
+            <p className="text-white mb-4">
               <strong>Réservation :</strong> Les consultations se réservent
               exclusivement via le système{" "}
               <a
@@ -200,7 +200,7 @@ const GeneralConditionsOfSale = () => {
               intégré au <strong className="text-purple-300">site</strong>. Vous
               devez :
             </p>
-            <ul className="text-gray-300 list-disc list-inside space-y-2 ml-4 mb-4">
+            <ul className="text-white list-disc list-inside space-y-2 ml-4 mb-4">
               <li>Choisir un créneau disponible dans le calendrier</li>
               <li>
                 Remplir le formulaire avec vos informations de contact (Nom,
@@ -218,7 +218,7 @@ const GeneralConditionsOfSale = () => {
               </li>
               <li>Confirmer votre réservation</li>
             </ul>
-            <p className="text-gray-300 mb-4">
+            <p className="text-white mb-4">
               <strong>Annulation :</strong> Toute annulation doit être effectuée
               au minimum 24 heures avant la consultation prévue via{" "}
               <a
@@ -236,7 +236,7 @@ const GeneralConditionsOfSale = () => {
               </a>
               . En cas d'annulation tardive, des frais pourront être retenus.
             </p>
-            <p className="text-gray-300">
+            <p className="text-white">
               <strong>Report :</strong> En cas de force majeure, La Voix Intime
               se réserve le droit de reporter ou d'annuler une consultation.
               Dans ce cas, un nouveau rendez-vous vous sera proposé.
@@ -248,11 +248,11 @@ const GeneralConditionsOfSale = () => {
             <h2 className="text-2xl font-semibold text-white mb-4">
               5. Déroulement des Consultations
             </h2>
-            <p className="text-gray-300 mb-4">
+            <p className="text-white mb-4">
               Les consultations se déroulent dans un cadre confidentiel et
               bienveillant :
             </p>
-            <ul className="text-gray-300 list-disc list-inside space-y-2 ml-4">
+            <ul className="text-white list-disc list-inside space-y-2 ml-4">
               <li>Durée : La duré de la consultation est de 60 minutes</li>
               <li>
                 Support : Présentiel ou{" "}
@@ -277,14 +277,14 @@ const GeneralConditionsOfSale = () => {
             <h2 className="text-2xl font-semibold text-white mb-4">
               6. Garanties et Responsabilité
             </h2>
-            <p className="text-gray-300 mb-4">La Voix Intime s'engage à :</p>
-            <ul className="text-gray-300 list-disc list-inside space-y-2 ml-4">
+            <p className="text-white mb-4">La Voix Intime s'engage à :</p>
+            <ul className="text-white list-disc list-inside space-y-2 ml-4">
               <li>Fournir des services de qualité professionnelle</li>
               <li>Respecter la confidentialité des informations partagées</li>
               <li>Être ponctuelle aux rendez-vous</li>
               <li>Maintenir une approche éthique et bienveillante</li>
             </ul>
-            <p className="text-gray-300 mt-4">
+            <p className="text-white mt-4">
               <strong>Limitation de responsabilité :</strong> Les services de
               divination sont proposés à titre de divertissement et de
               développement personnel. La Voix Intime ne peut être tenue
@@ -298,19 +298,19 @@ const GeneralConditionsOfSale = () => {
             <h2 className="text-2xl font-semibold text-white mb-4">
               7. Protection des Données
             </h2>
-            <p className="text-gray-300 mb-4">
+            <p className="text-white mb-4">
               Conformément au RGPD, vos données personnelles sont collectées et
               traitées uniquement dans le cadre de nos services. Vous disposez
               des droits suivants :
             </p>
-            <ul className="text-gray-300 list-disc list-inside space-y-2 ml-4">
+            <ul className="text-white list-disc list-inside space-y-2 ml-4">
               <li>Droit d'accès à vos données</li>
               <li>Droit de rectification</li>
               <li>Droit à l'effacement</li>
               <li>Droit à la portabilité</li>
               <li>Droit d'opposition au traitement</li>
             </ul>
-            <p className="text-gray-300 mt-4">
+            <p className="text-white mt-4">
               Pour exercer ces droits, contactez-nous à{" "}
               <a
                 href="mailto:lavoixintime@gmail.com"
@@ -319,10 +319,10 @@ const GeneralConditionsOfSale = () => {
               </a>
             </p>
             <div className="p-4 border rounded-lg mt-4 bg-purple-500/10 border-purple-500/20">
-              <p className="text-sm text-gray-300 mb-2">
+              <p className="text-sm text-white mb-2">
                 <strong>Textes de loi de référence :</strong>
               </p>
-              <ul className="text-sm text-gray-300 space-y-1">
+              <ul className="text-sm text-white space-y-1">
                 <li>
                   • Règlement Général sur la Protection des Données (RGPD) :{" "}
                   <a
@@ -362,11 +362,11 @@ const GeneralConditionsOfSale = () => {
             <h2 className="text-2xl font-semibold text-white mb-4">
               8. Droit de Rétractation
             </h2>
-            <p className="text-gray-300 mb-4">
+            <p className="text-white mb-4">
               Conformément à la législation en vigueur, vous disposez d'un droit
               de rétractation de 14 jours à compter de la conclusion du contrat.
             </p>
-            <p className="text-gray-300">
+            <p className="text-white">
               Ce droit ne s'applique pas aux services entièrement exécutés avant
               la fin du délai de rétractation et dont l'exécution a commencé
               après accord préalable exprès du consommateur.
@@ -378,11 +378,11 @@ const GeneralConditionsOfSale = () => {
             <h2 className="text-2xl font-semibold text-white mb-4">
               9. Litiges et Médiation
             </h2>
-            <p className="text-gray-300 mb-4">
+            <p className="text-white mb-4">
               En cas de litige, nous vous invitons à nous contacter en priorité
               pour tenter de trouver une solution amiable.
             </p>
-            <p className="text-gray-300">
+            <p className="text-white">
               Si le litige persiste, vous pouvez faire appel à un médiateur de
               la consommation. Les litiges relèvent de la compétence des
               tribunaux français.
@@ -394,7 +394,7 @@ const GeneralConditionsOfSale = () => {
             <h2 className="text-2xl font-semibold text-white mb-4">
               10. Droit Applicable
             </h2>
-            <p className="text-gray-300">
+            <p className="text-white">
               Les présentes conditions générales de vente sont soumises au droit
               français. En cas de litige, les tribunaux français seront seuls
               compétents.
@@ -406,11 +406,11 @@ const GeneralConditionsOfSale = () => {
             <h2 className="text-2xl font-semibold text-white mb-4">
               11. Contact
             </h2>
-            <p className="text-gray-300 mb-4">
+            <p className="text-white mb-4">
               Pour toute question concernant ces conditions générales de vente,
               contactez-nous :
             </p>
-            <div className="text-gray-300 space-y-2">
+            <div className="text-white space-y-2">
               <p>
                 <strong>La Voix Intime</strong>
                 <br />

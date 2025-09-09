@@ -31,10 +31,10 @@ const GeneralConditionsOfUse = () => {
         </div>
 
         <div className="text-center mb-12">
-          <h1 className="text-xl lg:text-4xl font-bold text-white mb-4">
+          <h1 className="text-xl font-bold text-white lg:text-4xl mb-4">
             Conditions Générales d'Utilisation
           </h1>
-          <p className="text-gray-300">
+          <p className="text-white">
             Dernière mise à jour : {new Date().toLocaleDateString("fr-FR")}
           </p>
         </div>
@@ -43,7 +43,7 @@ const GeneralConditionsOfUse = () => {
           {/* Section 1 */}
           <div className="p-8 border rounded-2xl bg-white/5 backdrop-blur-sm border-white/10">
             <h2 className="text-2xl font-semibold text-white mb-4">1. Objet</h2>
-            <p className="text-gray-300 mb-4">
+            <p className="text-white mb-4">
               Les présentes conditions générales d'utilisation (CGU) régissent
               l'utilisation du site{" "}
               <a
@@ -55,14 +55,14 @@ const GeneralConditionsOfUse = () => {
               </a>{" "}
               et des services proposés par La Voix Intime.
             </p>
-            <p className="text-gray-300">
+            <p className="text-white">
               L'utilisation du <strong className="text-purple-300">site</strong>{" "}
               et des services implique l'acceptation pleine et entière des
               présentes conditions générales d'utilisation. Si vous n'acceptez
               pas ces conditions, veuillez ne pas utiliser le{" "}
               <strong className="text-purple-300">site</strong>.
             </p>
-            <p className="text-gray-300">
+            <p className="text-white">
               La Voix Intime se réserve le droit de modifier ces conditions à
               tout moment. Les modifications prendront effet dès leur
               publication sur le{" "}
@@ -75,14 +75,14 @@ const GeneralConditionsOfUse = () => {
             <h2 className="text-2xl font-semibold text-white mb-4">
               2. Acceptation des Conditions
             </h2>
-            <p className="text-gray-300 mb-4">
+            <p className="text-white mb-4">
               L'utilisation du <strong className="text-purple-300">site</strong>{" "}
               et des services implique l'acceptation pleine et entière des
               présentes conditions générales d'utilisation. Si vous n'acceptez
               pas ces conditions, veuillez ne pas utiliser le{" "}
               <strong className="text-purple-300">site</strong>.
             </p>
-            <p className="text-gray-300">
+            <p className="text-white">
               La Voix Intime se réserve le droit de modifier ces conditions à
               tout moment. Les modifications prendront effet dès leur
               publication sur le{" "}
@@ -95,18 +95,18 @@ const GeneralConditionsOfUse = () => {
             <h2 className="text-2xl font-semibold text-white mb-4">
               3. Description des Services
             </h2>
-            <p className="text-gray-300 mb-4">
+            <p className="text-white mb-4">
               La Voix Intime propose des services de divination et de tarologie,
               notamment :
             </p>
-            <ul className="text-gray-300 list-disc list-inside space-y-2 ml-4">
+            <ul className="text-white list-disc list-inside space-y-2 ml-4">
               <li>Consultations de divination par téléphone</li>
               <li>Lectures de tarot</li>
               <li>Tirages gratuits en ligne</li>
               <li>Conseils personnalisés</li>
               <li>Services de divination</li>
             </ul>
-            <p className="text-gray-300 mt-4">
+            <p className="text-white mt-4">
               Ces services sont proposés à titre de divertissement et de
               développement personnel. Ils ne constituent en aucun cas une
               consultation médicale, psychologique ou juridique.
@@ -118,12 +118,12 @@ const GeneralConditionsOfUse = () => {
             <h2 className="text-2xl font-semibold text-white mb-4">
               4. Utilisation du Site
             </h2>
-            <p className="text-gray-300 mb-4">
+            <p className="text-white mb-4">
               Vous vous engagez à utiliser le{" "}
               <strong className="text-purple-300">site</strong> de manière
               responsable et à respecter les règles suivantes :
             </p>
-            <ul className="text-gray-300 list-disc list-inside space-y-2 ml-4">
+            <ul className="text-white list-disc list-inside space-y-2 ml-4">
               <li>
                 Ne pas utiliser le{" "}
                 <strong className="text-purple-300">site</strong> à des fins
@@ -147,10 +147,10 @@ const GeneralConditionsOfUse = () => {
             <h2 className="text-2xl font-semibold text-white mb-4">
               5. Réservation et Paiement
             </h2>
-            <p className="text-gray-300 mb-4">
+            <p className="text-white mb-4">
               Pour réserver une consultation, vous devez :
             </p>
-            <ul className="text-gray-300 list-disc list-inside space-y-2 ml-4">
+            <ul className="text-white list-disc list-inside space-y-2 ml-4">
               <li>
                 Utiliser le système de réservation{" "}
                 <a
@@ -180,7 +180,7 @@ const GeneralConditionsOfUse = () => {
               </li>
               <li>Confirmer votre réservation</li>
             </ul>
-            <p className="text-gray-300 mt-4">
+            <p className="text-white mt-4">
               <strong>Paiement :</strong> Le paiement s'effectue exclusivement
               via{" "}
               <a
@@ -201,11 +201,11 @@ const GeneralConditionsOfUse = () => {
             <h2 className="text-2xl font-semibold text-white mb-4">
               6. Confidentialité et Données Personnelles
             </h2>
-            <p className="text-gray-300 mb-4">
+            <p className="text-white mb-4">
               La protection de vos données personnelles est importante pour
               nous. Nous nous engageons à :
             </p>
-            <ul className="text-gray-300 list-disc list-inside space-y-2 ml-4">
+            <ul className="text-white list-disc list-inside space-y-2 ml-4">
               <li>
                 Collecter uniquement les données nécessaires à la réservation
               </li>
@@ -234,7 +234,7 @@ const GeneralConditionsOfUse = () => {
                 conformément à leurs politiques de confidentialité
               </li>
             </ul>
-            <p className="text-gray-300 mt-4">
+            <p className="text-white mt-4">
               Pour plus d'informations, consultez notre politique de
               confidentialité.
             </p>
@@ -245,11 +245,11 @@ const GeneralConditionsOfUse = () => {
             <h2 className="text-2xl font-semibold text-white mb-4">
               7. Limitation de Responsabilité
             </h2>
-            <p className="text-gray-300 mb-4">
+            <p className="text-white mb-4">
               La Voix Intime s'efforce de fournir des informations et des
               services de qualité, mais ne peut garantir :
             </p>
-            <ul className="text-gray-300 list-disc list-inside space-y-2 ml-4">
+            <ul className="text-white list-disc list-inside space-y-2 ml-4">
               <li>L'exactitude absolue des prédictions</li>
               <li>
                 La disponibilité permanente du{" "}
@@ -301,14 +301,14 @@ const GeneralConditionsOfUse = () => {
             <h2 className="text-2xl font-semibold text-white mb-4">
               8. Propriété Intellectuelle
             </h2>
-            <p className="text-gray-300 mb-4">
+            <p className="text-white mb-4">
               L'ensemble du contenu du{" "}
               <strong className="text-purple-300">site</strong> (textes, images,
               logos, design) est protégé par les droits de propriété
               intellectuelle. Toute reproduction, représentation ou diffusion
               sans autorisation préalable est interdite.
             </p>
-            <p className="text-gray-300">
+            <p className="text-white">
               Les marques et logos utilisés sur le{" "}
               <strong className="text-purple-300">site</strong> sont la
               propriété de leurs détenteurs respectifs.
@@ -320,7 +320,7 @@ const GeneralConditionsOfUse = () => {
             <h2 className="text-2xl font-semibold text-white mb-4">
               9. Liens Hypertextes
             </h2>
-            <p className="text-gray-300 mb-4">
+            <p className="text-white mb-4">
               Le <strong className="text-purple-300">site</strong> peut contenir
               des liens vers des sites tiers (
               <a
@@ -365,7 +365,7 @@ const GeneralConditionsOfUse = () => {
               ). La Voix Intime n'exerce aucun contrôle sur ces sites et décline
               toute responsabilité quant à leur contenu.
             </p>
-            <p className="text-gray-300">
+            <p className="text-white">
               La création de liens vers le{" "}
               <strong className="text-purple-300">site</strong> est autorisée
               sous réserve de respecter les droits de propriété intellectuelle
@@ -378,7 +378,7 @@ const GeneralConditionsOfUse = () => {
             <h2 className="text-2xl font-semibold text-white mb-4">
               10. Droit Applicable et Juridiction
             </h2>
-            <p className="text-gray-300">
+            <p className="text-white">
               Les présentes conditions sont soumises au droit français. En cas
               de litige, les tribunaux français seront seuls compétents, sous
               réserve des règles de droit impératives.
@@ -390,11 +390,11 @@ const GeneralConditionsOfUse = () => {
             <h2 className="text-2xl font-semibold text-white mb-4">
               11. Contact
             </h2>
-            <p className="text-gray-300 mb-4">
+            <p className="text-white mb-4">
               Pour toute question concernant ces conditions générales
               d'utilisation, contactez-nous :
             </p>
-            <div className="text-gray-300 space-y-2">
+            <div className="text-white space-y-2">
               <p>
                 <strong>La Voix Intime</strong>
                 <br />

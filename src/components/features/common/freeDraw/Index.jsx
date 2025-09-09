@@ -11,7 +11,7 @@ const FreeDraw = () => {
               Tirages gratuits
             </h2>
             <div className="w-16 h-0.mx-auto 5 bg-purple-400 mb-6"></div>
-            <p className="text-lg text-purple-200 md:text-xl">
+            <p className="text-lg text-white md:text-xl">
               Découvrez nos tirages génériques gratuits sur YouTube !
             </p>
           </div>

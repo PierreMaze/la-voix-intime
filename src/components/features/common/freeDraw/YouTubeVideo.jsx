@@ -62,7 +62,7 @@ const YouTubeVideo = ({ videoId, title, className }) => {
         style={{ paddingBottom: "56.25%" }}>
         <div className="text-center text-white">
           <p className="text-lg mb-2">Erreur de chargement de la vidéo</p>
-          <p className="text-sm text-gray-400">Veuillez réessayer plus tard</p>
+          <p className="text-sm text-white">Veuillez réessayer plus tard</p>
         </div>
       </div>
     );
@@ -118,7 +118,7 @@ const YouTubeVideo = ({ videoId, title, className }) => {
               </svg>
             </div>
             <h3 className="text-xl font-semibold mb-4">Vidéo YouTube</h3>
-            <p className="text-gray-300 mb-6">
+            <p className="text-white mb-6">
               Cette vidéo est hébergée sur YouTube. En cliquant sur "Charger la
               vidéo", vous acceptez que YouTube puisse déposer des cookies.
             </p>

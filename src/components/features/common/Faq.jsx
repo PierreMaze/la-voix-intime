@@ -35,7 +35,7 @@ const LazyFAQItem = lazy(
                     className={`pr-4 text-base font-medium lg:text-lg ${
                       isOpen
                         ? "text-purple-300"
-                        : "text-white group-hover:text-purple-200 group-focus:text-purple-200"
+                        : "text-white group-hover:text-purple-300 group-focus:text-purple-300"
                     }`}>
                     {question}
                   </h3>
@@ -98,7 +98,7 @@ const FAQItem = ({ question, answer, isOpen, onToggle, index, totalItems }) => {
           className={`pr-4 text-base font-medium lg:text-lg ${
             isOpen
               ? "text-purple-300"
-              : "text-white group-hover:text-purple-200 group-focus:text-purple-200"
+              : "text-white group-hover:text-purple-300 group-focus:text-purple-300"
           }`}>
           {question}
         </h3>

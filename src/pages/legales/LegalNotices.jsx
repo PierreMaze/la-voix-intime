@@ -34,7 +34,7 @@ const LegalNotices = () => {
           <h1 className="text-xl font-bold text-white lg:text-4xl mb-4">
             Mentions Légales
           </h1>
-          <p className="text-gray-300">
+          <p className="text-white">
             Dernière mise à jour : {new Date().toLocaleDateString("fr-FR")}
           </p>
         </div>
@@ -46,7 +46,7 @@ const LegalNotices = () => {
               1. Éditeur du Site
             </h2>
             <div className="p-4 border rounded-lg bg-purple-500/10 border-purple-500/20 mb-4">
-              <p className="text-gray-300">
+              <p className="text-white">
                 <strong>La Voix Intime</strong>
                 <br />
                 Fréderique CAIGNARD
@@ -77,7 +77,7 @@ const LegalNotices = () => {
                 SIRET : [Numéro SIRET]
               </p>
             </div>
-            <p className="text-gray-300">
+            <p className="text-white">
               Ce <strong className="text-purple-300">site</strong> web est édité
               par La Voix Intime, professionnelle de la divination et de la
               tarologie.
@@ -89,7 +89,7 @@ const LegalNotices = () => {
             <h2 className="text-2xl font-semibold text-white mb-4">
               2. Hébergement
             </h2>
-            <p className="text-gray-300 mb-4">
+            <p className="text-white mb-4">
               Ce <strong className="text-purple-1 text-purple-300">site</strong>{" "}
               est hébergé par :
             </p>
@@ -98,7 +98,7 @@ const LegalNotices = () => {
               target="_blank"
               rel="noopener noreferrer"
               className="block p-4 border rounded-lg transition-all duration-300 bg-purple-500/10 border-purple-500/20 hover:bg-purple-500/20 hover:border-purple-400/40 hover:scale-[1.02]">
-              <p className="text-gray-300">
+              <p className="text-white">
                 <strong>Netlify</strong>
                 <br />
                 2325 3rd Street, Suite 296
@@ -120,7 +120,7 @@ const LegalNotices = () => {
             <h2 className="text-2xl font-semibold text-white mb-4">
               3. Propriété Intellectuelle
             </h2>
-            <p className="text-gray-300 mb-4">
+            <p className="text-white mb-4">
               L'ensemble de ce <strong className="text-purple-300">site</strong>{" "}
               relève de la législation française et internationale sur le droit
               d'auteur et la propriété intellectuelle. Tous les droits de
@@ -128,13 +128,13 @@ const LegalNotices = () => {
               téléchargeables et les représentations iconographiques et
               photographiques.
             </p>
-            <p className="text-gray-300 mb-4">
+            <p className="text-white mb-4">
               La reproduction de tout ou partie de ce{" "}
               <strong className="text-purple-300">site</strong> sur un support
               électronique quel qu'il soit est formellement interdite sauf
               autorisation expresse du directeur de la publication.
             </p>
-            <p className="text-gray-300">
+            <p className="text-white">
               Les marques et logos figurant sur le{" "}
               <strong className="text-purple-300">site</strong> sont des marques
               déposées par leurs propriétaires respectifs.
@@ -146,7 +146,7 @@ const LegalNotices = () => {
             <h2 className="text-2xl font-semibold text-white mb-4">
               4. Responsabilité
             </h2>
-            <p className="text-gray-300 mb-4">
+            <p className="text-white mb-4">
               Les informations contenues sur ce{" "}
               <strong className="text-purple-300">site</strong> sont aussi
               précises que possible et le{" "}
@@ -154,7 +154,7 @@ const LegalNotices = () => {
               périodiquement remis à jour, mais peut toutefois contenir des
               inexactitudes, des omissions ou des lacunes.
             </p>
-            <p className="text-gray-300 mb-4">
+            <p className="text-white mb-4">
               Si vous constatez une lacune, erreur ou ce qui parait être un
               dysfonctionnement, merci de bien vouloir le signaler par email à
               l'adresse{" "}
@@ -165,7 +165,7 @@ const LegalNotices = () => {
               </a>
               .
             </p>
-            <p className="text-gray-300">
+            <p className="text-white">
               La responsabilité de La Voix Intime ne saurait être engagée en cas
               d'erreur ou d'omission dans le contenu de ce{" "}
               <strong className="text-purple-300">site</strong>.
@@ -177,13 +177,13 @@ const LegalNotices = () => {
             <h2 className="text-2xl font-semibold text-white mb-4">
               5. Liens Hypertextes
             </h2>
-            <p className="text-gray-300 mb-4">
+            <p className="text-white mb-4">
               Les liens hypertextes mis en place dans le cadre du présent{" "}
               <strong className="text-purple-300">site </strong> web en
               direction d'autres ressources présentes sur le réseau Internet ne
               sauraient engager la responsabilité de La Voix Intime.
             </p>
-            <p className="text-gray-300">
+            <p className="text-white">
               La Voix Intime n'exerce aucun contrôle sur ces{" "}
               <strong className="text-purple-300">sites</strong> et décline
               toute responsabilité quant à leur contenu.
@@ -195,7 +195,7 @@ const LegalNotices = () => {
             <h2 className="text-2xl font-semibold text-white mb-4">
               6. Cookies
             </h2>
-            <p className="text-gray-300 mb-4">
+            <p className="text-white mb-4">
               Le <strong className="text-purple-300">site</strong> peut-être
               amené à vous demander l'acceptation des cookies pour des besoins
               de statistiques et d'affichage. Un cookie ne nous permet pas de
@@ -203,7 +203,7 @@ const LegalNotices = () => {
               informations relatives à la navigation de votre ordinateur sur
               notre <strong className="text-purple-300">site</strong>.
             </p>
-            <p className="text-gray-300">
+            <p className="text-white">
               Vous pouvez librement accepter ou refuser les cookies en modifiant
               les paramètres de votre navigateur.
             </p>
@@ -214,7 +214,7 @@ const LegalNotices = () => {
             <h2 className="text-2xl font-semibold text-white mb-4">
               7. Droit Applicable
             </h2>
-            <p className="text-gray-300">
+            <p className="text-white">
               Tout litige en relation avec l'utilisation du{" "}
               <strong className="text-purple-300">site</strong>{" "}
               <a
@@ -235,12 +235,12 @@ const LegalNotices = () => {
             <h2 className="text-2xl font-semibold text-white mb-4">
               8. Protection des Données Personnelles
             </h2>
-            <p className="text-gray-300 mb-4">
+            <p className="text-white mb-4">
               Conformément aux dispositions de la loi n° 78-17 du 6 janvier 1978
               modifiée, vous disposez d'un droit d'accès, de modification et de
               suppression des données qui vous concernent.
             </p>
-            <p className="text-gray-300 mb-4">
+            <p className="text-white mb-4">
               Pour exercer ce droit, adressez-vous à :{" "}
               <a
                 href="mailto:lavoixintime@gmail.com"
@@ -249,10 +249,10 @@ const LegalNotices = () => {
               </a>
             </p>
             <div className="p-4 border rounded-lg mt-4 bg-purple-500/10 border-purple-500/20">
-              <p className="text-sm text-gray-300 mb-2">
+              <p className="text-sm text-white mb-2">
                 <strong>Textes de loi de référence :</strong>
               </p>
-              <ul className="text-sm text-gray-300 space-y-1">
+              <ul className="text-sm text-white space-y-1">
                 <li>
                   • Loi Informatique et Libertés :{" "}
                   <a
@@ -282,11 +282,11 @@ const LegalNotices = () => {
             <h2 className="text-2xl font-semibold text-white mb-4">
               9. Contact
             </h2>
-            <p className="text-gray-300 mb-4">
+            <p className="text-white mb-4">
               Pour toute question concernant ces mentions légales, vous pouvez
               nous contacter :
             </p>
-            <div className="text-gray-300 space-y-2">
+            <div className="text-white space-y-2">
               <p>
                 <strong>La Voix Intime</strong>
                 <br />

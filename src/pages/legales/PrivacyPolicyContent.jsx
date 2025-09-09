@@ -31,10 +31,10 @@ const PrivacyPolicyContent = () => {
         </div>
 
         <div className="text-center mb-12">
-          <h1 className="text-xl lg:text-4xl font-bold text-white mb-4">
+          <h1 className="text-xl font-bold text-white lg:text-4xl mb-4">
             Politique de Confidentialité
           </h1>
-          <p className="text-gray-300">
+          <p className="text-white">
             Dernière mise à jour : {new Date().toLocaleDateString("fr-FR")}
           </p>
         </div>
@@ -45,13 +45,13 @@ const PrivacyPolicyContent = () => {
             <h2 className="text-2xl font-semibold text-white mb-4">
               1. Introduction
             </h2>
-            <p className="text-gray-300 mb-4">
+            <p className="text-white mb-4">
               La Voix Intime ("nous", "notre", "nos") s'engage à protéger votre
               vie privée. Cette politique de confidentialité explique comment
               nous collectons, utilisons et protégeons vos informations
               personnelles lorsque vous utilisez notre service.
             </p>
-            <p className="text-gray-300">
+            <p className="text-white">
               En utilisant notre service, vous acceptez les pratiques décrites
               dans cette politique.
             </p>
@@ -67,7 +67,7 @@ const PrivacyPolicyContent = () => {
                 <h3 className="text-lg font-medium text-white mb-2">
                   Informations que vous nous fournissez :
                 </h3>
-                <ul className="text-gray-300 space-y-2 ml-4">
+                <ul className="text-white space-y-2 ml-4">
                   <li>• Nom et prénom</li>
                   <li>• Adresse e-mail</li>
                   <li>• Numéro de téléphone</li>
@@ -102,7 +102,7 @@ const PrivacyPolicyContent = () => {
                 <h3 className="text-lg font-medium text-white mb-2">
                   Informations collectées automatiquement :
                 </h3>
-                <ul className="text-gray-300 space-y-2 ml-4">
+                <ul className="text-white space-y-2 ml-4">
                   <li>• Adresse IP et données de localisation</li>
                   <li>• Type de navigateur et système d'exploitation</li>
                   <li>
@@ -127,7 +127,7 @@ const PrivacyPolicyContent = () => {
                 <h3 className="text-lg font-medium text-white mb-2">
                   Services tiers utilisés :
                 </h3>
-                <ul className="text-gray-300 space-y-2 ml-4">
+                <ul className="text-white space-y-2 ml-4">
                   <li>
                     • <strong>Calendly</strong> : Gestion des réservations et
                     calendrier
@@ -180,7 +180,7 @@ const PrivacyPolicyContent = () => {
                     </span>
                   </li>
                 </ul>
-                <p className="text-sm text-gray-300 mt-2">
+                <p className="text-sm text-white mt-2">
                   Ces services ont leurs propres politiques de confidentialité.
                   Nous vous invitons à les consulter.
                 </p>
@@ -193,7 +193,7 @@ const PrivacyPolicyContent = () => {
             <h2 className="text-2xl font-semibold text-white mb-4">
               3. Comment nous utilisons vos informations
             </h2>
-            <ul className="text-gray-300 space-y-2">
+            <ul className="text-white space-y-2">
               <li>• Fournir et maintenir notre service</li>
               <li>• Traiter vos paiements et commandes</li>
               <li>• Communiquer avec vous concernant votre réservation</li>
@@ -211,12 +211,12 @@ const PrivacyPolicyContent = () => {
             <h2 className="text-2xl font-semibold text-white mb-4">
               4. Partage de vos informations
             </h2>
-            <p className="text-gray-300 mb-4">
+            <p className="text-white mb-4">
               Nous ne vendons, n'échangeons ni ne louons vos informations
               personnelles à des tiers. Nous pouvons partager vos informations
               uniquement dans les cas suivants :
             </p>
-            <ul className="text-gray-300 space-y-2">
+            <ul className="text-white space-y-2">
               <li>• Avec votre consentement explicite</li>
               <li>
                 • Avec nos prestataires de services de confiance (paiement,
@@ -232,12 +232,12 @@ const PrivacyPolicyContent = () => {
             <h2 className="text-2xl font-semibold text-white mb-4">
               5. Sécurité de vos données
             </h2>
-            <p className="text-gray-300 mb-4">
+            <p className="text-white mb-4">
               Nous mettons en place des mesures de sécurité appropriées pour
               protéger vos informations personnelles contre l'accès non
               autorisé, la modification, la divulgation ou la destruction.
             </p>
-            <p className="text-gray-300">
+            <p className="text-white">
               Cependant, aucune méthode de transmission sur Internet ou de
               stockage électronique n'est 100% sécurisée. Nous nous efforçons
               d'utiliser des moyens commercialement acceptables pour protéger
@@ -250,10 +250,10 @@ const PrivacyPolicyContent = () => {
             <h2 className="text-2xl font-semibold text-white mb-4">
               6. Vos droits
             </h2>
-            <p className="text-gray-300 mb-4">
+            <p className="text-white mb-4">
               Conformément au RGPD, vous avez les droits suivants :
             </p>
-            <ul className="text-gray-300 space-y-2">
+            <ul className="text-white space-y-2">
               <li>• Droit d'accès à vos données personnelles</li>
               <li>• Droit de rectification de vos données</li>
               <li>• Droit à l'effacement de vos données</li>
@@ -262,10 +262,10 @@ const PrivacyPolicyContent = () => {
               <li>• Droit d'opposition au traitement</li>
             </ul>
             <div className="p-4 border rounded-lg mt-4 bg-purple-500/10 border-purple-500/20">
-              <p className="text-sm text-gray-300 mb-2">
+              <p className="text-sm text-white mb-2">
                 <strong>Textes de loi de référence :</strong>
               </p>
-              <ul className="text-sm text-gray-300 space-y-1">
+              <ul className="text-sm text-white space-y-1">
                 <li>
                   • Règlement Général sur la Protection des Données (RGPD) :{" "}
                   <a
@@ -305,14 +305,14 @@ const PrivacyPolicyContent = () => {
             <h2 className="text-2xl font-semibold text-white mb-4">
               7. Cookies et technologies similaires
             </h2>
-            <p className="text-gray-300 mb-4">
+            <p className="text-white mb-4">
               Nous utilisons des cookies et des technologies similaires pour
               améliorer votre expérience sur notre{" "}
               <strong className="text-purple-300">site</strong>. Vous pouvez
               contrôler l'utilisation des cookies via les paramètres de votre
               navigateur.
             </p>
-            <p className="text-gray-300">
+            <p className="text-white">
               Les cookies nous aident à analyser le trafic du{" "}
               <strong className="text-purple-300">site</strong>, à mémoriser vos
               préférences et à fournir un contenu personnalisé.
@@ -324,11 +324,11 @@ const PrivacyPolicyContent = () => {
             <h2 className="text-2xl font-semibold text-white mb-4">
               8. Nous contacter
             </h2>
-            <p className="text-gray-300 mb-4">
+            <p className="text-white mb-4">
               Si vous avez des questions concernant cette politique de
               confidentialité ou souhaitez exercer vos droits, contactez-nous :
             </p>
-            <div className="text-gray-300 space-y-2">
+            <div className="text-white space-y-2">
               <p>
                 • Email :{" "}
                 <a
@@ -364,7 +364,7 @@ const PrivacyPolicyContent = () => {
             <h2 className="text-2xl font-semibold text-white mb-4">
               9. Modifications de cette politique
             </h2>
-            <p className="text-gray-300">
+            <p className="text-white">
               Nous pouvons mettre à jour cette politique de confidentialité de
               temps à autre. Nous vous informerons de tout changement important
               en publiant la nouvelle politique sur cette page et en mettant à
