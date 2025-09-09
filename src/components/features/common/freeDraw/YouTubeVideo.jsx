@@ -10,7 +10,7 @@ const LazyYouTubeIframe = lazy(
           default: ({ videoId, title, onLoad, onError }) => (
             <iframe
               className="absolute top-0 left-0 w-full h-full"
-              src={`https://www.youtube.com/embed/${videoId}?si=g0f-uzNGQlOZSH2O`}
+              src={`https://www.youtube-nocookie.com/embed/${videoId}?modestbranding=1&rel=0&showinfo=0&controls=1&disablekb=0&fs=1&cc_load_policy=0&iv_load_policy=3&autohide=0&playsinline=1`}
               title={title || "YouTube video player"}
               frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -29,6 +29,7 @@ const LazyYouTubeIframe = lazy(
 const YouTubeVideo = ({ videoId, title, className }) => {
   const [isLoading, setIsLoading] = useState(true);
   const [hasError, setHasError] = useState(false);
+  const [userConsent, setUserConsent] = useState(false);
 
   useEffect(() => {
     // Simuler un délai de chargement pour une meilleure UX
@@ -46,6 +47,10 @@ const YouTubeVideo = ({ videoId, title, className }) => {
   const handleError = () => {
     setIsLoading(false);
     setHasError(true);
+  };
+
+  const handleConsent = () => {
+    setUserConsent(true);
   };
 
   if (hasError) {
@@ -81,25 +86,51 @@ const YouTubeVideo = ({ videoId, title, className }) => {
         </div>
       )}
 
-      {/* Iframe YouTube */}
-      <Suspense
-        fallback={
-          <div className="absolute inset-0 flex items-center justify-center bg-gray-900">
-            <div className="flex flex-col items-center">
-              <div className="w-16 h-16 border-4 rounded-full animate-spin border-purple-400 border-t-transparent"></div>
-              <p className="text-sm text-center text-white mt-4">
-                Chargement de la vidéo...
-              </p>
+      {/* Iframe YouTube ou bannière de consentement */}
+      {userConsent ? (
+        <Suspense
+          fallback={
+            <div className="absolute inset-0 flex items-center justify-center bg-gray-900">
+              <div className="flex flex-col items-center">
+                <div className="w-16 h-16 border-4 rounded-full animate-spin border-purple-400 border-t-transparent"></div>
+                <p className="text-sm text-center text-white mt-4">
+                  Chargement de la vidéo...
+                </p>
+              </div>
             </div>
+          }>
+          <LazyYouTubeIframe
+            videoId={videoId}
+            title={title}
+            onLoad={handleLoad}
+            onError={handleError}
+          />
+        </Suspense>
+      ) : (
+        <div className="absolute inset-0 flex items-center justify-center bg-gray-900 rounded-2xl">
+          <div className="p-8 text-center text-white">
+            <div className="mb-6">
+              <svg
+                className="mx-auto w-16 h-16 text-purple-400 mb-4"
+                fill="currentColor"
+                viewBox="0 0 24 24">
+                <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+              </svg>
+            </div>
+            <h3 className="text-xl font-semibold mb-4">Vidéo YouTube</h3>
+            <p className="text-gray-300 mb-6">
+              Cette vidéo est hébergée sur YouTube. En cliquant sur "Charger la
+              vidéo", vous acceptez que YouTube puisse déposer des cookies.
+            </p>
+            <button
+              onClick={handleConsent}
+              className="px-6 py-3 text-white rounded-lg transition-all duration-300 transform bg-gradient-to-r from-purple-500 to-blue-600 hover:from-purple-600 hover:to-blue-700 hover:scale-105"
+              aria-label="Charger la vidéo YouTube et accepter les cookies">
+              Charger la vidéo
+            </button>
           </div>
-        }>
-        <LazyYouTubeIframe
-          videoId={videoId}
-          title={title}
-          onLoad={handleLoad}
-          onError={handleError}
-        />
-      </Suspense>
+        </div>
+      )}
     </div>
   );
 };
