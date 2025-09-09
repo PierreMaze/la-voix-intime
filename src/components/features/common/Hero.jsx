@@ -13,13 +13,13 @@ const Hero = () => {
             </h1>
           </FadeIn>
 
-          <FadeIn className="mt-4 lg:mt-8">
-            <p className="text-base sm:text-lg md:text-xl text-purple-100">
+          <FadeIn className="py-2 mt-4 lg:mt-8 sm:py-3 lg:py-4">
+            <p className="text-base leading-relaxed sm:text-lg md:text-xl text-purple-100">
               Laisser les cartes vous guider pour éclairer votre chemin de vie
             </p>
           </FadeIn>
 
-          <FadeIn className="mt-12 lg:mt-16">
+          <FadeIn className="py-3 mt-12 lg:mt-16 sm:py-4 lg:py-6">
             <div className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
               <a
                 href="#price"
@@ -34,7 +34,7 @@ const Hero = () => {
             </div>
           </FadeIn>
 
-          <FadeIn className="mt-10 lg:mt-20">
+          <FadeIn className="py-4 mt-10 lg:mt-20 sm:py-6 lg:py-8">
             <div className="inline-flex items-center justify-center mx-auto transition-colors duration-300 scale-75 -mt-12 lg:scale-100">
               <iframe src="https://lottie.host/embed/bb7634e2-3692-4d30-8002-9dc962154b2c/W9fHZGS0aA.lottie"></iframe>
             </div>

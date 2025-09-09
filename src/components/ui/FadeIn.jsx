@@ -1,7 +1,10 @@
-import { useEffect, useRef } from "react";
+import { memo, useEffect, useRef } from "react";
 
-export const FadeIn = ({ children, className = "" }) => {
+export const FadeIn = memo(({ children, className }) => {
   const elementRef = useRef(null);
+
+  // Définir className avec une valeur par défaut
+  const finalClassName = className || "";
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -30,8 +33,10 @@ export const FadeIn = ({ children, className = "" }) => {
   return (
     <div
       ref={elementRef}
-      className={`opacity-0 translate-y-4 transition-all duration-500 ${className}`}>
+      className={`opacity-0 transition-all duration-500 translate-y-4${finalClassName}`}>
       {children}
     </div>
   );
-};
+});
+
+FadeIn.displayName = "FadeIn";

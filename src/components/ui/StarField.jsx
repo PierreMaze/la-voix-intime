@@ -1,6 +1,6 @@
-import { useMemo } from "react";
+import { memo, useMemo } from "react";
 
-export const StarField = () => {
+export const StarField = memo(() => {
   // Génération d'étoiles aléatoires (une seule fois)
   const stars = useMemo(() => {
     const starsArray = [];
@@ -98,4 +98,6 @@ export const StarField = () => {
       `}</style>
     </div>
   );
-};
+});
+
+StarField.displayName = "StarField";

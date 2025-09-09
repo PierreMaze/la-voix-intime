@@ -1,12 +1,28 @@
+import { lazy, Suspense } from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Layout from "./components/layout";
 import { StarField } from "./components/ui/StarField";
 import { useSmoothScroll } from "./hooks/useSmoothScroll.jsx";
 import Home from "./pages/Home";
-import GeneralConditionsOfSale from "./pages/legales/GeneralConditionsOfSale";
-import GeneralConditionsOfUse from "./pages/legales/GeneralConditionsOfUse";
-import LegalNotices from "./pages/legales/LegalNotices";
-import PrivacyPolicyContent from "./pages/legales/PrivacyPolicyContent";
+
+// Lazy loading des pages légales pour réduire le bundle initial
+const GeneralConditionsOfSale = lazy(() =>
+  import("./pages/legales/GeneralConditionsOfSale")
+);
+const GeneralConditionsOfUse = lazy(() =>
+  import("./pages/legales/GeneralConditionsOfUse")
+);
+const LegalNotices = lazy(() => import("./pages/legales/LegalNotices"));
+const PrivacyPolicyContent = lazy(() =>
+  import("./pages/legales/PrivacyPolicyContent")
+);
+
+// Composant de chargement optimisé
+const LoadingSpinner = () => (
+  <div className="flex items-center justify-center min-h-screen">
+    <div className="w-12 h-12 border-b-2 rounded-full animate-spin border-purple-500"></div>
+  </div>
+);
 
 const router = createBrowserRouter([
   {
@@ -19,19 +35,35 @@ const router = createBrowserRouter([
       },
       {
         path: "/conditions-generales-vente",
-        element: <GeneralConditionsOfSale />,
+        element: (
+          <Suspense fallback={<LoadingSpinner />}>
+            <GeneralConditionsOfSale />
+          </Suspense>
+        ),
       },
       {
         path: "/conditions-generales-utilisation",
-        element: <GeneralConditionsOfUse />,
+        element: (
+          <Suspense fallback={<LoadingSpinner />}>
+            <GeneralConditionsOfUse />
+          </Suspense>
+        ),
       },
       {
         path: "/mentions-legales",
-        element: <LegalNotices />,
+        element: (
+          <Suspense fallback={<LoadingSpinner />}>
+            <LegalNotices />
+          </Suspense>
+        ),
       },
       {
         path: "/politique-confidentialite",
-        element: <PrivacyPolicyContent />,
+        element: (
+          <Suspense fallback={<LoadingSpinner />}>
+            <PrivacyPolicyContent />
+          </Suspense>
+        ),
       },
     ],
   },

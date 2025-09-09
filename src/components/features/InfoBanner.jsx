@@ -1,13 +1,20 @@
-import { useState } from "react";
+import { memo, useCallback, useOptimistic, useState } from "react";
 
-const InfoBanner = () => {
+const InfoBanner = memo(() => {
   const [isVisible, setIsVisible] = useState(true);
+  const [optimisticVisible, setOptimisticVisible] = useOptimistic(isVisible);
 
-  const handleClose = () => {
-    setIsVisible(false);
-  };
+  const handleClose = useCallback(() => {
+    // Mise à jour optimiste immédiate
+    setOptimisticVisible(false);
 
-  if (!isVisible) return null;
+    // Simulation d'un appel serveur (dans un vrai projet, ce serait une API call)
+    setTimeout(() => {
+      setIsVisible(false);
+    }, 100);
+  }, [setOptimisticVisible]);
+
+  if (!optimisticVisible) return null;
 
   return (
     <div className="fixed z-50 bottom-4 right-4 max-w-sm">
@@ -85,6 +92,8 @@ const InfoBanner = () => {
       </div>
     </div>
   );
-};
+});
+
+InfoBanner.displayName = "InfoBanner";
 
 export default InfoBanner;

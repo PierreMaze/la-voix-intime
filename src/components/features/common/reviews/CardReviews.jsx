@@ -1,11 +1,11 @@
-import { useState } from "react";
+import { memo, useCallback, useMemo, useState } from "react";
 import { FadeIn } from "../../../ui/FadeIn";
 
-const CardReviews = ({ name, rating, date, comment }) => {
+const CardReviews = memo(({ name, rating, date, comment }) => {
   const [isExpanded, setIsExpanded] = useState(false);
 
-  // Fonction pour générer les étoiles
-  const renderStars = (rating) => {
+  // Fonction pour générer les étoiles - mémorisée
+  const renderStars = useCallback((rating) => {
     const stars = [];
     for (let i = 1; i <= 5; i++) {
       const starFill =
@@ -52,25 +52,34 @@ const CardReviews = ({ name, rating, date, comment }) => {
       );
     }
     return stars;
-  };
+  }, []);
 
-  // Fonction pour formater la date
-  const formatDate = (dateString) => {
+  // Fonction pour formater la date - mémorisée
+  const formatDate = useCallback((dateString) => {
     const date = new Date(dateString);
     return date.toLocaleDateString("fr-FR", {
       day: "numeric",
       month: "long",
       year: "numeric",
     });
-  };
+  }, []);
 
-  // Fonction pour tronquer le texte
-  const truncateText = (text, maxLength = 120) => {
+  // Fonction pour tronquer le texte - mémorisée
+  const truncateText = useCallback((text, maxLength = 120) => {
     if (text.length <= maxLength) return text;
     return text.substring(0, maxLength) + "...";
-  };
+  }, []);
 
-  const shouldShowExpand = comment.length > 120;
+  // Mémoriser les valeurs calculées
+  const shouldShowExpand = useMemo(
+    () => comment.length > 120,
+    [comment.length]
+  );
+  const formattedDate = useMemo(() => formatDate(date), [date, formatDate]);
+  const displayComment = useMemo(
+    () => (isExpanded ? comment : truncateText(comment)),
+    [isExpanded, comment, truncateText]
+  );
 
   return (
     <FadeIn>
@@ -82,12 +91,10 @@ const CardReviews = ({ name, rating, date, comment }) => {
           </div>
         </div>
 
-        <p className="text-sm text-white/60 mb-4">{formatDate(date)}</p>
+        <p className="text-sm text-white/60 mb-4">{formattedDate}</p>
 
         <div className="flex-grow">
-          <p className="leading-relaxed text-white/90">
-            {isExpanded ? comment : truncateText(comment)}
-          </p>
+          <p className="leading-relaxed text-white/90">{displayComment}</p>
 
           {shouldShowExpand && (
             <button
@@ -100,6 +107,8 @@ const CardReviews = ({ name, rating, date, comment }) => {
       </div>
     </FadeIn>
   );
-};
+});
+
+CardReviews.displayName = "CardReviews";
 
 export default CardReviews;

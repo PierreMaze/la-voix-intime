@@ -1,25 +1,33 @@
-import { useEffect, useRef, useState } from "react";
+import { memo, useCallback, useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 
-const DropdownMenu = ({ title, items }) => {
+const DropdownMenu = memo(({ title, items }) => {
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef(null);
 
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
-        setIsOpen(false);
-      }
-    };
+  const handleClickOutside = useCallback((event) => {
+    if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+      setIsOpen(false);
+    }
+  }, []);
 
+  const toggleDropdown = useCallback(() => {
+    setIsOpen((prev) => !prev);
+  }, []);
+
+  const closeDropdown = useCallback(() => {
+    setIsOpen(false);
+  }, []);
+
+  useEffect(() => {
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, []);
+  }, [handleClickOutside]);
 
   return (
     <div className="relative" ref={dropdownRef}>
       <button
-        onClick={() => setIsOpen(!isOpen)}
+        onClick={toggleDropdown}
         className="flex items-center gap-1 px-4 py-2 transition-colors text-dark/70 hover:text-accent">
         {title}
         <svg
@@ -45,7 +53,7 @@ const DropdownMenu = ({ title, items }) => {
               key={item.path}
               to={item.path}
               className="block px-4 py-2 transition-colors text-text-primary/70 hover:bg-background-primary hover:text-accent"
-              onClick={() => setIsOpen(false)}>
+              onClick={closeDropdown}>
               {item.label}
             </Link>
           ))}
@@ -53,6 +61,8 @@ const DropdownMenu = ({ title, items }) => {
       )}
     </div>
   );
-};
+});
+
+DropdownMenu.displayName = "DropdownMenu";
 
 export default DropdownMenu;

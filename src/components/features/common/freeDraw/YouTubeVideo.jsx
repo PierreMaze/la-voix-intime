@@ -1,26 +1,40 @@
-import { Suspense, useEffect, useState } from "react";
+import {
+  memo,
+  Suspense,
+  useCallback,
+  useEffect,
+  useState,
+  useTransition,
+} from "react";
 
-const YouTubeVideo = ({ videoId, title, className }) => {
+const YouTubeVideo = memo(({ videoId, title, className }) => {
   const [isLoading, setIsLoading] = useState(true);
   const [hasError, setHasError] = useState(false);
+  const [isPending, startTransition] = useTransition();
 
   useEffect(() => {
     // Simuler un délai de chargement pour une meilleure UX
     const timer = setTimeout(() => {
-      setIsLoading(false);
+      startTransition(() => {
+        setIsLoading(false);
+      });
     }, 1000);
 
     return () => clearTimeout(timer);
-  }, []);
+  }, [startTransition]);
 
-  const handleLoad = () => {
-    setIsLoading(false);
-  };
+  const handleLoad = useCallback(() => {
+    startTransition(() => {
+      setIsLoading(false);
+    });
+  }, [startTransition]);
 
-  const handleError = () => {
-    setIsLoading(false);
-    setHasError(true);
-  };
+  const handleError = useCallback(() => {
+    startTransition(() => {
+      setIsLoading(false);
+      setHasError(true);
+    });
+  }, [startTransition]);
 
   if (hasError) {
     return (
@@ -44,7 +58,7 @@ const YouTubeVideo = ({ videoId, title, className }) => {
       }`}
       style={{ paddingBottom: "56.25%" }}>
       {/* Spinner de chargement */}
-      {isLoading && (
+      {(isLoading || isPending) && (
         <div className="absolute inset-0 z-10 flex items-center justify-center bg-gray-900">
           <div className="flex flex-col items-center">
             <div className="w-16 h-16 border-4 rounded-full animate-spin border-purple-400 border-t-transparent"></div>
@@ -77,6 +91,8 @@ const YouTubeVideo = ({ videoId, title, className }) => {
       </Suspense>
     </div>
   );
-};
+});
+
+YouTubeVideo.displayName = "YouTubeVideo";
 
 export default YouTubeVideo;
