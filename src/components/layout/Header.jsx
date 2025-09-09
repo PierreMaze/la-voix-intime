@@ -232,7 +232,8 @@ const Header = () => {
                   <button
                     key={item.path}
                     onClick={() => handleNavClick(item.path)}
-                    className="px-8 py-3 text-base font-medium text-white rounded-lg transition-all duration-300 transform bg-gradient-to-r from-purple-500 to-blue-600 hover:from-purple-600 hover:to-blue-700 hover:scale-105">
+                    className="px-8 py-3 text-base font-medium text-white rounded-lg transition-all duration-300 transform bg-gradient-to-r from-purple-500 to-blue-600 hover:from-purple-600 hover:to-blue-700 hover:scale-105"
+                    aria-label={`${item.label} - Aller à la section réservation`}>
                     {item.label}
                   </button>
                 );
@@ -248,7 +249,8 @@ const Header = () => {
                     className={`px-3 py-2 text-sm font-medium transition-colors ${
                       isActive
                         ? "text-blue-300 border-b-2 border-blue-300"
-                        : "text-white hover:text-blue-300"}`}>
+                        : "text-white hover:text-blue-300"
+                    }`}>
                     {item.label}
                   </Link>
                 );
@@ -262,7 +264,9 @@ const Header = () => {
                   className={`px-4 py-2 transition-colors ${
                     activeSection === item.path.substring(1)
                       ? "text-blue-300 border-b-2 border-blue-300"
-                      : "text-white hover:text-blue-300"}`}>
+                      : "text-white hover:text-blue-300"
+                  }`}
+                  aria-label={`Aller à la section ${item.label}`}>
                   {item.label}
                 </button>
               );
@@ -272,13 +276,21 @@ const Header = () => {
           {/* Bouton menu mobile */}
           <button
             className="p-2 md:hidden"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            aria-label={
+              isMobileMenuOpen
+                ? "Fermer le menu de navigation"
+                : "Ouvrir le menu de navigation"
+            }
+            aria-expanded={isMobileMenuOpen}>
             <svg
               className={`w-8 h-8 ${
-                isMobileMenuOpen ? "text-red-500" : "text-white"}`}
+                isMobileMenuOpen ? "text-red-500" : "text-white"
+              }`}
               fill="none"
               stroke="currentColor"
-              viewBox="0 0 24 24">
+              viewBox="0 0 24 24"
+              aria-hidden="true">
               {isMobileMenuOpen ? (
                 <path
                   strokeLinecap="round"
@@ -352,7 +364,8 @@ const Header = () => {
                                 handleNavClick(item.path);
                                 setIsMobileMenuOpen(false);
                               }}
-                              className="px-4 py-3 w-full text-base font-medium text-white rounded-lg transition-all duration-300 bg-gradient-to-r from-purple-500 to-blue-600 hover:from-purple-600 hover:to-blue-700">
+                              className="px-4 py-3 w-full text-base font-medium text-white rounded-lg transition-all duration-300 bg-gradient-to-r from-purple-500 to-blue-600 hover:from-purple-600 hover:to-blue-700"
+                              aria-label={`${item.label} - Aller à la section réservation`}>
                               {item.label}
                             </button>
                           </motion.div>
@@ -376,7 +389,8 @@ const Header = () => {
                               className={`block px-4 py-3 w-full text-left rounded-lg transition-all duration-200 ${
                                 isActive
                                   ? "bg-gray-50/10 text-gray-50 border border-gray-50/70"
-                                  : "text-purple-300 hover:text-white"}`}>
+                                  : "text-purple-300 hover:text-white"
+                              }`}>
                               <span className="text-lg font-medium transition-transform duration-200 group-hover:translate-x-1">
                                 {item.label}
                               </span>
@@ -402,7 +416,9 @@ const Header = () => {
                             className={`w-full text-left px-4 py-3 rounded-lg transition-all duration-200 group ${
                               activeSection === item.path.substring(1)
                                 ? "bg-gray-50/10 text-gray-50 border border-gray-50/70"
-                                : "text-purple-300"}`}>
+                                : "text-purple-300"
+                            }`}
+                            aria-label={`Aller à la section ${item.label}`}>
                             <span className="text-lg font-medium transition-transform duration-200 group-hover:translate-x-1">
                               {item.label}
                             </span>

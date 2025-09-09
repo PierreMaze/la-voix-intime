@@ -28,16 +28,24 @@ const Footer = () => {
             title="Facebook"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-2xl transition-transform hover:rotate-12">
-            <FaFacebook className="transition-colors hover:text-blue-300" />
+            className="text-2xl transition-transform hover:rotate-12"
+            aria-label="Suivre La Voix Intime sur Facebook - Lien externe">
+            <FaFacebook
+              className="transition-colors hover:text-blue-300"
+              aria-hidden="true"
+            />
           </a>
           <a
             href="https://www.instagram.com/lavoixintime?igsh=MWl4bGR2MnNnc2VkaQ=="
             title="Instagram"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-2xl transition-transform hover:rotate-12">
-            <FaInstagram className="transition-colors hover:text-purple-300" />
+            className="text-2xl transition-transform hover:rotate-12"
+            aria-label="Suivre La Voix Intime sur Instagram - Lien externe">
+            <FaInstagram
+              className="transition-colors hover:text-purple-300"
+              aria-hidden="true"
+            />
           </a>
         </div>
 
@@ -45,22 +53,26 @@ const Footer = () => {
         <div className="flex flex-col items-center justify-center gap-4 px-2 md:flex-row md:gap-8 mb-8">
           <Link
             to="/mentions-legales"
-            className="text-sm underline transition-colors underline-offset-4 hover:text-purple-300">
+            className="text-sm underline transition-colors underline-offset-4 hover:text-purple-300"
+            aria-label="Lire les mentions légales">
             Mentions légales
           </Link>
           <Link
             to="/conditions-generales-utilisation"
-            className="text-sm underline transition-colors underline-offset-4 hover:text-purple-300">
+            className="text-sm underline transition-colors underline-offset-4 hover:text-purple-300"
+            aria-label="Lire les conditions générales d'utilisation">
             Conditions Générales d'Utilisation
           </Link>
           <Link
             to="/conditions-generales-vente"
-            className="text-sm underline transition-colors underline-offset-4 hover:text-purple-300">
+            className="text-sm underline transition-colors underline-offset-4 hover:text-purple-300"
+            aria-label="Lire les conditions générales de vente">
             Conditions Générales de Vente
           </Link>
           <Link
             to="/politique-confidentialite"
-            className="text-sm underline transition-colors underline-offset-4 hover:text-purple-300">
+            className="text-sm underline transition-colors underline-offset-4 hover:text-purple-300"
+            aria-label="Lire la politique de confidentialité">
             Politique de confidentialité
           </Link>
         </div>
@@ -70,7 +82,8 @@ const Footer = () => {
           <Link
             to="/"
             onClick={handleLogoClick}
-            className="flex flex-col items-center">
+            className="flex flex-col items-center"
+            aria-label="Retour à l'accueil - La Voix Intime">
             <img
               src={Logo}
               alt="Logo - La Voix Intime"
