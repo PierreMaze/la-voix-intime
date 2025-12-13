@@ -62,7 +62,7 @@ const Reviews = () => {
       rating: 5,
       date: "2025-12-13",
       comment:
-        "J’arrivais avec une question personnelle et ne savais pas trop à quoi m’attendre. Mais en me laissant guider par le tirage, j’ai découvert des réponses surprenantes. LA Voix Intime nous accompagne avec une écoute attentive et bienveillance. Une expérience apaisante que je recommande vivement. 🙏🏻",
+        "Je ne savais pas trop à quoi m’attendre. Mais en me laissant guider par le tirage, j’ai découvert des réponses surprenantes. La Voix Intime nous accompagne avec une écoute attentive et de bienveillance. Une expérience apaisante que je recommande vivement. 🙏🏻",
     },
   ];
 
