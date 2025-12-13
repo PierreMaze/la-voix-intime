@@ -1,6 +1,8 @@
 import { FadeIn } from "../../../ui/FadeIn";
 import YouTubeVideo from "./YouTubeVideo";
 
+const URL_VIDEO = "vNpf_UAar9g"
+
 const FreeDraw = () => {
   return (
     <section id="free-draw" className="relative px-4 py-20">
@@ -10,7 +12,7 @@ const FreeDraw = () => {
             <h2 className="text-4xl font-bold text-white mb-4">
               Tirages gratuits
             </h2>
-            <div className="w-16 h-0.mx-auto 5 bg-purple-400 mb-6"></div>
+            <div className="w-16 h-0.mx-auto 5 bg-violet-400 mb-6"></div>
             <p className="text-lg text-white md:text-xl">
               Découvrez nos tirages génériques gratuits sur YouTube !
             </p>
@@ -20,7 +22,7 @@ const FreeDraw = () => {
         <FadeIn>
           <div className="mx-auto max-w-4xl mb-12">
             <YouTubeVideo
-              videoId="D8t-DoDVuqI"
+              videoId={URL_VIDEO}
               title="Tirage gratuit - La Voix Intime"
             />
           </div>
@@ -38,10 +40,10 @@ const FreeDraw = () => {
         <FadeIn>
           <div className="text-center">
             <a
-              href="https://www.youtube.com/@lavoixintime"
+              href="https://www.youtube.com/@lavoixintime_?sub_confirmation=1"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block px-8 py-3 text-base font-medium text-white rounded-lg transition-all duration-300 transform bg-gradient-to-r from-purple-500 to-blue-600 hover:from-purple-600 hover:to-blue-700 hover:scale-105"
+              className="inline-block font-semibold px-8 py-3 text-base text-white rounded-lg transition-all duration-300 transform bg-gradient-to-r from-violet-600 to-indigo-600 hover:from-violet-700 hover:to-indigo-700 hover:scale-105"
               aria-label="S'abonner à la chaîne YouTube La Voix Intime - Lien externe">
               S'abonner à la chaîne
             </a>

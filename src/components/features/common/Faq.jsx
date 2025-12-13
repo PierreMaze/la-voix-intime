@@ -254,7 +254,7 @@ const Faq = () => {
               {/* Icône Mail */}
               <a
                 href="mailto:lavoixintime@gmail.com"
-                className="flex items-center justify-center w-12 h-12 rounded-full transition-all duration-300 transform bg-gradient-to-r from-purple-500 to-blue-600 hover:from-purple-600 hover:to-blue-700 hover:scale-105"
+                className="flex items-center justify-center w-12 h-12 rounded-full transition-all duration-300 transform bg-gradient-to-r from-violet-500 to-indigo-600 hover:from-violet-600 hover:to-indigo-700 hover:scale-105"
                 title="Envoyer un email"
                 aria-label="Envoyer un email à lavoixintime@gmail.com">
                 <svg
@@ -275,7 +275,7 @@ const Faq = () => {
               {/* Icône Téléphone */}
               <a
                 href="tel:+33646849352"
-                className="flex items-center justify-center w-12 h-12 rounded-full transition-all duration-300 transform bg-gradient-to-r from-purple-500 to-blue-600 hover:from-purple-600 hover:to-blue-700 hover:scale-105"
+                className="flex items-center justify-center w-12 h-12 rounded-full transition-all duration-300 transform bg-gradient-to-r from-violet-500 to-indigo-600 hover:from-violet-600 hover:to-indigo-700 hover:scale-105"
                 title="Appeler"
                 aria-label="Appeler au 06 46 84 93 52">
                 <svg

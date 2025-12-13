@@ -1,9 +1,11 @@
+// src/components/features/common/price/CardPrice.jsx
 import { FadeIn } from "../../../ui/FadeIn";
 import BadgePrice from "./BadgePrice";
+import PriceDisplay from "./PriceDisplay";
 
 const CardPrice = ({
   title,
-  price,
+  pricing,
   detailsList,
   button,
   disclaimer,
@@ -11,46 +13,41 @@ const CardPrice = ({
 }) => {
   return (
     <FadeIn>
-      <div className="relative p-8 border rounded-2xl transition-all duration-300 bg-white/10 backdrop-blur-sm border-white/20 hover:border-purple-400/30">
-        {badge && <BadgePrice />}
+      <div className="w-full max-w-xs lg:max-w-sm 2xl:max-w-md relative p-4 mb-2 border rounded-2xl transition-all duration-300 bg-white/10 backdrop-blur-sm border-white/20 hover:border-purple-400/30">
+        {badge && <BadgePrice {...badge} />}
 
         <div className="text-center">
-          <h3 className="text-2xl font-bold text-white mb-4">{title}</h3>
-          <p className="text-5xl font-bold font-numbers text-blue-200 mb-8">
-            {price}
-          </p>
+          <h3 className="mb-4 text-2xl lg:text-3xl font-bold 2xl:text-4xl  text-white">
+            {title}
+          </h3>
+
+          <PriceDisplay
+             pricing={pricing}
+          />
 
           <div className="flex justify-center mb-8">
-            <ul className="text-white space-y-4 text-start">
+            <ul className="space-y-2 text-left text-white">
               {detailsList.map((detail, index) => (
                 <li key={index} className="flex items-center">
-                  <span className="text-lg text-purple-400 mr-3">✓</span>
+                  <span className="mr-3 text-lg font-extrabold text-purple-400">
+                    ✓
+                  </span>
                   <span className="text-base">{detail}</span>
                 </li>
               ))}
             </ul>
           </div>
 
-          {button.path ? (
-            // Navigation avec anchor ou route interne
-            <a
-              href={button.path}
-              className="inline-block px-8 py-3 text-base font-medium text-white rounded-lg transition-all duration-300 transform bg-gradient-to-r from-purple-500 to-blue-600 hover:from-purple-600 hover:to-blue-700 hover:scale-105 mb-6"
-              aria-label={`${button.text} - ${title} - Aller à la section réservation`}>
-              {button.text}
-            </a>
-          ) : (
-            // Lien externe
-            <a
-              href={button.href}
-              className="inline-block px-8 py-3 text-base font-medium text-white rounded-lg transition-all duration-300 transform bg-gradient-to-r from-purple-500 to-blue-600 hover:from-purple-600 hover:to-blue-700 hover:scale-105 mb-6"
-              aria-label={`${button.text} - ${title} - Lien externe`}>
-              {button.text}
-            </a>
-          )}
+          <a
+            href={button.path || button.href}
+            className="inline-block font-semibold px-8 py-3 mb-6 text-base text-white transition-all duration-300 transform rounded-lg bg-gradient-to-r from-indigo-500 to-violet-600 hover:scale-105 hover:from-indigo-600 hover:to-violet-700"
+            aria-label={`${button.text} - ${title}`}
+          >
+            {button.text}
+          </a>
 
           {disclaimer && (
-            <p className="text-xs text-center text-white italic">
+            <p className="text-xs italic text-white">
               {disclaimer}
             </p>
           )}

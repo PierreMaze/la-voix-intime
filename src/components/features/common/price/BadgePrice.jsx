@@ -1,11 +1,24 @@
+// src/components/features/common/price/BadgePrice.jsx
 import { FadeIn } from "../../../ui/FadeIn";
 
-const BadgePrice = () => {
+const DEFAULT_BADGE_COLOR =
+  "bg-gradient-to-r from-purple-500 to-blue-600 shadow-purple-500/25";
+
+const BadgePrice = ({ label, color = DEFAULT_BADGE_COLOR }) => {
   return (
     <FadeIn>
-      <div className="absolute z-10 w-32 h-32 -top-12 -right-8 overflow-hidden">
-        <div className="absolute px-16 py-2 w-44 text-xs font-bold tracking-wider text-center text-white shadow-lg transform rotate-45 bg-gradient-to-r from-purple-500 to-blue-600 shadow-purple-500/25 top-2 -right-12">
-          POPULAIRE
+      <div className="absolute z-10 w-32 h-32 -top-8 -right-4 overflow-hidden">
+        <div
+          className={`
+            absolute w-44 text-xs font-bold tracking-wider
+            shadow-lg transform rotate-45
+            top-2 -right-12
+            ${color}
+          `}
+        >
+<div className="py-2 w-full px-16 text-center text-white">
+  {label}
+</div>
         </div>
       </div>
     </FadeIn>

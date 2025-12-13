@@ -123,7 +123,7 @@ const YouTubeVideo = ({ videoId, title, className }) => {
             </p>
             <button
               onClick={handleConsent}
-              className="px-4 py-2 w-fit text-xs font-medium text-white rounded-lg transition-all duration-300 transform sm:text-sm bg-gradient-to-r from-purple-500 to-blue-600 hover:from-purple-600 hover:to-blue-700 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 focus:ring-offset-gray-900"
+              className="px-4 py-2 w-fit text-xs font-semibold text-white rounded-lg transition-all duration-300 transform sm:text-sm bg-gradient-to-r from-purple-500 to-blue-600 hover:from-purple-600 hover:to-blue-700 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 focus:ring-offset-gray-900"
               aria-label="Charger la vidéo YouTube et accepter les cookies">
               Acceptez les cookies YouTube
             </button>

@@ -27,7 +27,7 @@ const Hero = () => {
       <div className="relative w-full">
         <div className="px-4 mx-auto w-full text-center sm:px-6 lg:px-8">
           {/* Titre principal - Élément LCP critique - Pas de FadeIn */}
-          <h1 className="text-3xl font-extrabold tracking-tight text-purple-50 sm:text-4xl md:text-5xl lg:text-6xl">
+          <h1 className="text-3xl font-extrabold tracking-tight text-violet-50 sm:text-4xl md:text-5xl lg:text-6xl">
             Découvrez le langage secret de votre Inconscient
           </h1>
 
@@ -41,13 +41,13 @@ const Hero = () => {
             <div className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
               <a
                 href="#price"
-                className="px-8 py-3 text-base font-medium text-white rounded-lg transition-all duration-300 transform bg-gradient-to-r from-purple-500 to-blue-600 hover:from-purple-600 hover:to-blue-700 hover:scale-105"
+                className="px-8 py-3 text-base font-semibold text-white rounded-lg transition-all duration-300 transform bg-gradient-to-r from-violet-500 to-indigo-600 hover:from-violet-600 hover:to-indigo-700 hover:scale-105"
                 aria-label="Réserver un tirage de cartes - Aller à la section tarifs">
                 Réserver un tirage
               </a>
               <a
                 href="#free-draw"
-                className="px-4 py-3 text-base font-medium border rounded-lg transition-all duration-300 transform text-purple-50 border-purple-50 hover:bg-white hover:text-purple-900 hover:border-purple-300 hover:scale-105"
+                className="px-4 py-3 text-base font-semibold border rounded-lg transition-all duration-300 transform text-violet-50 border-violet-50 hover:bg-white hover:text-violet-900 hover:border-violet-300 hover:scale-105"
                 aria-label="Découvrir les tirages gratuits sur YouTube - Aller à la section vidéos">
                 Découvrir les tirages gratuits sur YouTube
               </a>
@@ -59,7 +59,7 @@ const Hero = () => {
               <Suspense
                 fallback={
                   <div className="flex items-center justify-center p-4 rounded-full animate-pulse bg-gray-800/50">
-                    <div className="w-8 h-8 border-4 rounded-full animate-spin border-purple-400 border-t-transparent"></div>
+                    <div className="w-8 h-8 border-4 rounded-full animate-spin border-violet-400 border-t-transparent"></div>
                   </div>
                 }>
                 <LazyLottieAnimation />
