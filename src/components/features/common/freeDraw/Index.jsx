@@ -40,7 +40,7 @@ const FreeDraw = () => {
         <FadeIn>
           <div className="text-center">
             <a
-              href="https://www.youtube.com/@lavoixintime_?sub_confirmation=1"
+              href="https://www.youtube.com/@lavoixintime"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block font-semibold px-8 py-3 text-base text-white rounded-lg transition-all duration-300 transform bg-gradient-to-r from-violet-600 to-indigo-600 hover:from-violet-700 hover:to-indigo-700 hover:scale-105"
