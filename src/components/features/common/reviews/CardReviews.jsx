@@ -74,7 +74,7 @@ const CardReviews = ({ name, rating, date, comment }) => {
 
   return (
     <FadeIn>
-      <div className="flex flex-col p-6 h-full border rounded-xl transition-all duration-300 bg-white/5 backdrop-blur-sm border-white/10 hover:border-purple-400/30">
+      <div className="flex flex-col p-6 h-full border rounded-xl transition-all duration-300 bg-white/5 backdrop-blur-sm border-white/10 hover:border-violet-400/30">
         <div className="flex items-center justify-between mb-4">
           <h3 className="text-lg font-semibold text-white">{name}</h3>
           <div className="flex items-center space-x-1">
@@ -82,7 +82,7 @@ const CardReviews = ({ name, rating, date, comment }) => {
           </div>
         </div>
 
-        <p className="text-sm text-white mb-4">{formatDate(date)}</p>
+        <p className="text-sm text-indigo-200 mb-4">{formatDate(date)}</p>
 
         <div className="flex-grow">
           <p className="leading-relaxed text-white">
@@ -92,7 +92,7 @@ const CardReviews = ({ name, rating, date, comment }) => {
           {shouldShowExpand && (
             <button
               onClick={() => setIsExpanded(!isExpanded)}
-              className="text-sm font-medium transition-colors duration-200 mt-3 text-purple-400 hover:text-purple-300"
+              className="text-sm font-medium transition-colors duration-200 mt-3 text-white hover:text-violet-300"
               aria-label={`${
                 isExpanded ? "Réduire" : "Développer"
               } le commentaire de ${name}`}>

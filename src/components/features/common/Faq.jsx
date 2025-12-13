@@ -25,7 +25,7 @@ const LazyFAQItem = lazy(
                 <button
                   onClick={onToggle}
                   className={`flex items-center justify-between py-6 w-full text-left transition-all duration-300 ${
-                    isOpen ? "text-purple-300" : "hover:text-purple-300"
+                    isOpen ? "text-violet-300" : "hover:text-violet-300"
                   }`}
                   aria-expanded={isOpen}
                   aria-label={`${
@@ -34,14 +34,14 @@ const LazyFAQItem = lazy(
                   <h3
                     className={`pr-4 text-base font-medium lg:text-lg ${
                       isOpen
-                        ? "text-purple-300"
-                        : "text-white group-hover:text-purple-300 group-focus:text-purple-300"
+                        ? "text-violet-300"
+                        : "text-white group-hover:text-violet-300 group-focus:text-violet-300"
                     }`}>
                     {question}
                   </h3>
                   <div className="flex-shrink-0">
                     <svg
-                      className={`w-5 h-5 text-purple-300 transition-transform duration-300 ${
+                      className={`w-5 h-5 text-violet-300 transition-transform duration-300 ${
                         isOpen ? "rotate-180" : ""
                       }`}
                       fill="none"
@@ -90,21 +90,21 @@ const FAQItem = ({ question, answer, isOpen, onToggle, index, totalItems }) => {
       <button
         onClick={onToggle}
         className={`flex items-center justify-between py-6 w-full text-left transition-all duration-300 ${
-          isOpen ? "text-purple-300" : "hover:text-purple-300"
+          isOpen ? "text-violet-300" : "hover:text-violet-300"
         }`}
         aria-expanded={isOpen}
         aria-label={`${isOpen ? "Fermer" : "Ouvrir"} la question: ${question}`}>
         <h3
           className={`pr-4 text-base font-medium lg:text-lg ${
             isOpen
-              ? "text-purple-300"
-              : "text-white group-hover:text-purple-300 group-focus:text-purple-300"
+              ? "text-violet-300"
+              : "text-white group-hover:text-violet-300 group-focus:text-violet-300"
           }`}>
           {question}
         </h3>
         <div className="flex-shrink-0">
           <svg
-            className={`w-5 h-5 text-purple-300 transition-transform duration-300 ${
+            className={`w-5 h-5 text-violet-300 transition-transform duration-300 ${
               isOpen ? "rotate-180" : ""
             }`}
             fill="none"
@@ -169,13 +169,13 @@ const Faq = () => {
           calendrier. Nous vous invitons à réserver par téléphone (
           <a
             href="tel:+33646849352"
-            className="underline transition-colors underline-offset-4 hover:text-purple-300">
+            className="underline transition-colors underline-offset-4 hover:text-violet-300">
             06 46 84 93 52
           </a>
           ) ou par mail (
           <a
             href="mailto:lavoixintime@gmail.com"
-            className="underline transition-colors underline-offset-4 hover:text-purple-300">
+            className="underline transition-colors underline-offset-4 hover:text-violet-300">
             lavoixintime@gmail.com
           </a>
           ). Nous mettons tout en œuvre pour l'avancement du calendrier.
@@ -203,7 +203,7 @@ const Faq = () => {
             <h2 className="text-4xl font-bold text-white mb-4">
               Questions Fréquentes
             </h2>
-            <div className="w-16 h-0.mx-auto 5 bg-purple-400"></div>
+            <div className="w-16 h-0.mx-auto 5 bg-violet-400"></div>
           </div>
         </FadeIn>
 

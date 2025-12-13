@@ -40,7 +40,7 @@ const CardPrice = ({
 
           <a
             href={button.path || button.href}
-            className="inline-block font-semibold px-8 py-3 mb-6 text-base text-white transition-all duration-300 transform rounded-lg bg-gradient-to-r from-indigo-500 to-violet-600 hover:scale-105 hover:from-indigo-600 hover:to-violet-700"
+            className="inline-block font-semibold px-8 py-3 mb-6 text-base text-white transition-all duration-300 transform rounded-lg bg-gradient-to-r from-violet-500 to-indigo-600 hover:scale-105 hover:from-violet-600 hover:to-indigo-700"
             aria-label={`${button.text} - ${title}`}
           >
             {button.text}

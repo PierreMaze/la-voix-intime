@@ -232,7 +232,7 @@ const Header = () => {
                   <button
                     key={item.path}
                     onClick={() => handleNavClick(item.path)}
-                    className="px-8 py-3 text-base font-semibold text-white rounded-lg transition-all duration-300 transform bg-gradient-to-r from-indigo-500 to-violet-600 hover:from-indigo-600 hover:to-violet-700 hover:scale-105"
+                    className="px-8 py-3 text-base font-semibold text-white rounded-lg transition-all duration-300 transform bg-gradient-to-r from-violet-500 to-indigo-600 hover:from-violet-600 hover:to-indigo-700 hover:scale-105"
                     aria-label={`${item.label} - Aller à la section réservation`}>
                     {item.label}
                   </button>
