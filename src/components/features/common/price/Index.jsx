@@ -3,7 +3,6 @@
 import { Suspense, lazy } from "react";
 import { FadeIn } from "../../../ui/FadeIn";
 
-
 // Lazy loading des composants
 const LazyCardPrice = lazy(() => import("./CardPrice"));
 const LazyNotePaypal = lazy(() => import("../../NotePaypal"));
@@ -14,7 +13,7 @@ const Price = () => {
     pricing: {
       type: "single",
       amount: 20,
-    },    
+    },
     detailsList: [
       "WhatsApp ou Présentiel*",
       "Consultation de 30 minutes",
@@ -28,8 +27,7 @@ const Price = () => {
       "* A domicile sur le Bassin d'Arcachon. Des frais de déplacement peuvent s'appliquer.",
     badge: {
       label: "EVENEMENT",
-      color:
-        "bg-gradient-to-r from-red-800 to-pink-800 shadow-rose-500/25",
+      color: "bg-gradient-to-r from-red-800 to-pink-800 shadow-rose-500/25",
     },
   };
   const card2Data = {
@@ -37,7 +35,7 @@ const Price = () => {
     pricing: {
       type: "promo",
       current: 33,
-      original: 39,
+      original: "47",
     },
     detailsList: [
       "WhatsApp ou Présentiel*",
@@ -58,13 +56,9 @@ const Price = () => {
     pricing: {
       type: "promo",
       current: 40,
-      original: 49,
+      original: 55,
     },
-    detailsList: [
-      "Votre guidance",
-      "Enregistrement MP3",
-      "Réécoute illimité*",
-    ],
+    detailsList: ["Votre guidance", "Enregistrement MP3", "Réécoute illimité*"],
     button: {
       text: "Réserver",
       path: "/#faq-to-book",
@@ -77,7 +71,6 @@ const Price = () => {
         "bg-gradient-to-r from-orange-500 to-amber-600 shadow-orange-500/25",
     },
   };
-  
 
   return (
     <section id="price" className="relative px-4 py-20">
@@ -103,7 +96,8 @@ const Price = () => {
                   </div>
                   <div className="h-12 bg-gray-700 rounded mt-8"></div>
                 </div>
-              }>
+              }
+            >
               <LazyCardPrice {...card1Data} />
             </Suspense>
             <Suspense
@@ -118,7 +112,8 @@ const Price = () => {
                   </div>
                   <div className="h-12 bg-gray-700 rounded mt-8"></div>
                 </div>
-              }>
+              }
+            >
               <LazyCardPrice {...card2Data} />
             </Suspense>
             <Suspense
@@ -133,12 +128,12 @@ const Price = () => {
                   </div>
                   <div className="h-12 bg-gray-700 rounded mt-8"></div>
                 </div>
-              }>
+              }
+            >
               <LazyCardPrice {...card3Data} />
             </Suspense>
           </div>
         </FadeIn>
-        
 
         <FadeIn>
           <Suspense
@@ -147,7 +142,8 @@ const Price = () => {
                 <div className="h-4 bg-gray-700 rounded mb-2"></div>
                 <div className="w-3/4 h-4 bg-gray-700 rounded"></div>
               </div>
-            }>
+            }
+          >
             <LazyNotePaypal />
           </Suspense>
         </FadeIn>

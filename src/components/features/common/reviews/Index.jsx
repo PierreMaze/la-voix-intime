@@ -46,7 +46,7 @@ const Reviews = () => {
     {
       name: "Nadine N.",
       rating: 5,
-      date: "2025-12-03",
+      date: "2025-12-06",
       comment:
         "Merci à ton tirage effectué ce samedi. Cela m’a éclairé et cela à rejoint le programme que j’effectue sur moi en neurosciences (reprogrammation dans des domaines clés de la vie). Je vous la recommande ! 😉🤗",
     },
@@ -63,6 +63,13 @@ const Reviews = () => {
       date: "2025-12-13",
       comment:
         "Je ne savais pas trop à quoi m’attendre. Mais en me laissant guider par le tirage, j’ai découvert des réponses surprenantes. La Voix Intime nous accompagne avec une écoute attentive et de bienveillance. Une expérience apaisante que je recommande vivement. 🙏🏻",
+    },
+    {
+      name: "Sophie M.",
+      rating: 5,
+      date: "2025-12-21",
+      comment:
+        "Une séance profondément éclairante et apaisante. Le tirage a mis des mots sur des ressentis que je n’arrivais pas à formuler. J’en repars avec plus de clarté, de confiance et une vraie sensation d’alignement. Merci pour cette guidance juste, douce et sincère. 🙏✨",
     },
   ];
 
@@ -99,7 +106,8 @@ const Reviews = () => {
                           <div className="w-1/2 h-4 bg-gray-700 rounded"></div>
                         </div>
                       </div>
-                    }>
+                    }
+                  >
                     <LazyCardReviews
                       name={review.name}
                       rating={review.rating}
@@ -112,7 +120,8 @@ const Reviews = () => {
                 Array.from({ length: 6 }).map((_, index) => (
                   <div
                     key={index}
-                    className="p-6 border rounded-2xl animate-pulse bg-white/10 backdrop-blur-sm border-white/20">
+                    className="p-6 border rounded-2xl animate-pulse bg-white/10 backdrop-blur-sm border-white/20"
+                  >
                     <div className="flex items-center mb-4">
                       <div className="w-10 h-10 bg-gray-700 rounded-full mr-3"></div>
                       <div>
@@ -135,7 +144,8 @@ const Reviews = () => {
             <a
               href="#faq"
               className="inline-block px-8 py-3 text-base font-semibold text-white rounded-lg transition-all duration-300 transform bg-gradient-to-r from-violet-500 to-indigo-600 hover:from-violet-600 hover:to-indigo-700 hover:scale-105"
-              aria-label="Réserver un tirage de cartes - Aller à la section FAQ">
+              aria-label="Réserver un tirage de cartes - Aller à la section FAQ"
+            >
               Réserver un tirage
             </a>
           </div>

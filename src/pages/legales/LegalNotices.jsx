@@ -13,13 +13,15 @@ const LegalNotices = () => {
         <div className="mb-8">
           <Link
             to="/"
-            className="relative inline-flex items-center px-4 py-3 text-base font-medium text-white border rounded-lg shadow-md transition-all duration-300 transform group bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 hover:shadow-lg hover:-translate-y-0.5 border-purple-500/30 hover:border-purple-400/50">
+            className="relative inline-flex items-center px-4 py-3 text-base font-medium text-white border rounded-lg shadow-md transition-all duration-300 transform group bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 hover:shadow-lg hover:-translate-y-0.5 border-purple-500/30 hover:border-purple-400/50"
+          >
             <div className="absolute inset-0 rounded-lg opacity-0 transition-opacity duration-300 bg-gradient-to-r from-purple-400/20 to-purple-600/20 group-hover:opacity-100"></div>
             <svg
               className="w-5 h-5 transition-transform duration-300 mr-2 group-hover:-translate-x-1"
               fill="none"
               stroke="currentColor"
-              viewBox="0 0 24 24">
+              viewBox="0 0 24 24"
+            >
               <path
                 strokeLinecap="round"
                 strokeLinejoin="round"
@@ -52,29 +54,31 @@ const LegalNotices = () => {
                 Fréderique CAIGNARD
                 <br />
                 <a
-                  href="https://maps.google.com/?q=[Votre+adresse+complète]"
+                  href="https://www.google.fr/maps/place/33120+Arcachon/@44.6515203,-1.3194646,12z/data=!3m1!4b1!4m6!3m5!1s0xd549ef8c86711e3:0x40665174816f060!8m2!3d44.652297!4d-1.1785016!16zL20vMDVubTQ2?entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="underline transition-colors text-purple-400 hover:text-purple-300">
-                  [Adresse complète]
+                  className="underline transition-colors text-purple-400 hover:text-purple-300"
+                >
+                  Bassin d'Arcachon, FRANCE
                 </a>
-                <em> à venir</em>
                 <br />
                 Téléphone :{" "}
                 <a
                   href="tel:+33646849352"
-                  className="underline transition-colors text-purple-400 hover:text-purple-300">
+                  className="underline transition-colors text-purple-400 hover:text-purple-300"
+                >
                   06 46 84 93 52
                 </a>
                 <br />
                 Email :{" "}
                 <a
                   href="mailto:lavoixintime@gmail.com"
-                  className="underline transition-colors text-purple-400 hover:text-purple-300">
+                  className="underline transition-colors text-purple-400 hover:text-purple-300"
+                >
                   lavoixintime@gmail.com
                 </a>
                 <br />
-                SIRET : [Numéro SIRET]
+                SIRET : 898 845 391
               </p>
             </div>
             <p className="text-white">
@@ -97,7 +101,8 @@ const LegalNotices = () => {
               href="https://www.netlify.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="block p-4 border rounded-lg transition-all duration-300 bg-purple-500/10 border-purple-500/20 hover:bg-purple-500/20 hover:border-purple-400/40 hover:scale-[1.02]">
+              className="block p-4 border rounded-lg transition-all duration-300 bg-purple-500/10 border-purple-500/20 hover:bg-purple-500/20 hover:border-purple-400/40 hover:scale-[1.02]"
+            >
               <p className="text-white">
                 <strong>Netlify</strong>
                 <br />
@@ -160,7 +165,8 @@ const LegalNotices = () => {
               l'adresse{" "}
               <a
                 href="mailto:lavoixintime@gmail.com"
-                className="underline text-purple-400 hover:text-purple-300">
+                className="underline text-purple-400 hover:text-purple-300"
+              >
                 lavoixintime@gmail.com
               </a>
               .
@@ -218,11 +224,12 @@ const LegalNotices = () => {
               Tout litige en relation avec l'utilisation du{" "}
               <strong className="text-purple-300">site</strong>{" "}
               <a
-                href="https://lavoixintime.netlify.app/"
+                href="https://lavoixintime.com/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="underline transition-colors text-purple-400 hover:text-purple-300">
-                lavoixintime.netlify.app
+                className="underline transition-colors text-purple-400 hover:text-purple-300"
+              >
+                lavoixintime.com
               </a>{" "}
               est soumis au droit français. En dehors des cas où la loi ne le
               permet pas, il est fait attribution exclusive de juridiction aux
@@ -244,7 +251,8 @@ const LegalNotices = () => {
               Pour exercer ce droit, adressez-vous à :{" "}
               <a
                 href="mailto:lavoixintime@gmail.com"
-                className="underline text-purple-400 hover:text-purple-300">
+                className="underline text-purple-400 hover:text-purple-300"
+              >
                 lavoixintime@gmail.com
               </a>
             </p>
@@ -259,7 +267,8 @@ const LegalNotices = () => {
                     href="https://www.legifrance.gouv.fr/loda/id/LEGITEXT000006068624/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="underline text-purple-400 hover:text-purple-300">
+                    className="underline text-purple-400 hover:text-purple-300"
+                  >
                     Loi n° 78-17 du 6 janvier 1978
                   </a>
                 </li>
@@ -269,7 +278,8 @@ const LegalNotices = () => {
                     href="https://eur-lex.europa.eu/legal-content/FR/TXT/HTML/?uri=CELEX:32016R0679"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="underline text-purple-400 hover:text-purple-300">
+                    className="underline text-purple-400 hover:text-purple-300"
+                  >
                     Règlement (UE) 2016/679
                   </a>
                 </li>
@@ -293,25 +303,27 @@ const LegalNotices = () => {
                 Email :{" "}
                 <a
                   href="mailto:lavoixintime@gmail.com"
-                  className="underline text-purple-400 hover:text-purple-300">
+                  className="underline text-purple-400 hover:text-purple-300"
+                >
                   lavoixintime@gmail.com
                 </a>
                 <br />
                 Téléphone :{" "}
                 <a
                   href="tel:+33646849352"
-                  className="underline text-purple-400 hover:text-purple-300">
+                  className="underline text-purple-400 hover:text-purple-300"
+                >
                   06 46 84 93 52
                 </a>
                 <br />
                 <a
-                  href="https://maps.google.com/?q=[Votre+adresse+complète]"
+                  href="https://www.google.fr/maps/place/33120+Arcachon/@44.6515203,-1.3194646,12z/data=!3m1!4b1!4m6!3m5!1s0xd549ef8c86711e3:0x40665174816f060!8m2!3d44.652297!4d-1.1785016!16zL20vMDVubTQ2?entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="underline text-purple-400 hover:text-purple-300">
-                  [Adresse complète]
+                  className="underline text-purple-400 hover:text-purple-300"
+                >
+                  Bassin d'Arcachon, FRANCE
                 </a>
-                <em> à venir</em>
               </p>
             </div>
           </div>
@@ -321,13 +333,15 @@ const LegalNotices = () => {
         <div className="text-center mt-16 mb-8">
           <Link
             to="/"
-            className="relative inline-flex items-center px-8 py-4 text-lg font-semibold text-white border rounded-xl shadow-lg transition-all duration-300 transform group bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 hover:shadow-2xl hover:-translate-y-1 border-purple-500/30 hover:border-purple-400/50">
+            className="relative inline-flex items-center px-8 py-4 text-lg font-semibold text-white border rounded-xl shadow-lg transition-all duration-300 transform group bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 hover:shadow-2xl hover:-translate-y-1 border-purple-500/30 hover:border-purple-400/50"
+          >
             <div className="absolute inset-0 rounded-xl opacity-0 transition-opacity duration-300 bg-gradient-to-r from-purple-400/20 to-purple-600/20 group-hover:opacity-100"></div>
             <svg
               className="w-6 h-6 transition-transform duration-300 mr-3 group-hover:-translate-x-1"
               fill="none"
               stroke="currentColor"
-              viewBox="0 0 24 24">
+              viewBox="0 0 24 24"
+            >
               <path
                 strokeLinecap="round"
                 strokeLinejoin="round"

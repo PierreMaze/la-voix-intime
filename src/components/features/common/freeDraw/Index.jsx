@@ -1,7 +1,7 @@
 import { FadeIn } from "../../../ui/FadeIn";
 import YouTubeVideo from "./YouTubeVideo";
 
-const URL_VIDEO = "vNpf_UAar9g"
+const URL_VIDEO = "CegrqRSZJPc";
 
 const FreeDraw = () => {
   return (
@@ -44,7 +44,8 @@ const FreeDraw = () => {
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block font-semibold px-8 py-3 text-base text-white rounded-lg transition-all duration-300 transform bg-gradient-to-r from-violet-600 to-indigo-600 hover:from-violet-700 hover:to-indigo-700 hover:scale-105"
-              aria-label="S'abonner à la chaîne YouTube La Voix Intime - Lien externe">
+              aria-label="S'abonner à la chaîne YouTube La Voix Intime - Lien externe"
+            >
               S'abonner à la chaîne
             </a>
           </div>
