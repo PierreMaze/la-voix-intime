@@ -4,7 +4,7 @@ export const StarField = () => {
   // Génération d'étoiles aléatoires (une seule fois)
   const stars = useMemo(() => {
     const starsArray = [];
-    for (let i = 0; i < 150; i++) {
+    for (let i = 0; i < 100; i++) {
       starsArray.push({
         id: i,
         x: Math.random() * 100,

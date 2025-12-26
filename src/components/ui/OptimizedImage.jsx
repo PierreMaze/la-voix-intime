@@ -1,4 +1,9 @@
-const OptimizedImage = ({ src, alt, className, ...props }) => {
+const OptimizedImage = ({ src, alt = "", className, ...props }) => {
+  // Avertissement en développement si alt manquant
+  if (!alt && import.meta.env.DEV) {
+    console.warn(`[OptimizedImage] Alt text manquant pour l'image: ${src}`);
+  }
+
   // Vérifier si src est une chaîne de caractères
   const getImageSource = (source) => {
     // Si ce n'est pas une chaîne, c'est probablement un import d'image
@@ -30,11 +35,16 @@ const OptimizedImage = ({ src, alt, className, ...props }) => {
         className={className || ""}
         loading="lazy"
         onError={(e) => {
-          console.error(`Erreur de chargement de l'image: ${src}`);
-          console.error("Erreur complète:", e);
+          // Log uniquement en développement
+          if (import.meta.env.DEV) {
+            console.error(`Erreur de chargement de l'image: ${src}`);
+            console.error("Erreur complète:", e);
+          }
+
           e.target.onerror = null;
-          // Si l'image WebP échoue, on essaie l'image originale
-          if (e.target.src === finalSrc) {
+
+          // Fallback vers l'image originale
+          if (e.target.src !== src) {
             e.target.src = src;
           }
         }}

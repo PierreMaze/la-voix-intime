@@ -1,5 +1,6 @@
 import { Suspense, lazy } from "react";
 import { FadeIn } from "../../ui/FadeIn";
+import Button from "../../ui/Button";
 
 // Lazy loading de l'animation Lottie pour ne pas bloquer le LCP
 const LazyLottieAnimation = lazy(
@@ -39,18 +40,20 @@ const Hero = () => {
 
           <FadeIn className="mt-12 lg:mt-16">
             <div className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-              <a
+              <Button
+                as="a"
                 href="#price"
-                className="px-8 py-3 text-base font-semibold text-white rounded-lg transition-all duration-300 transform bg-gradient-to-r from-violet-500 to-indigo-600 hover:from-violet-600 hover:to-indigo-700 hover:scale-105"
+                variant="primary"
                 aria-label="Réserver un tirage de cartes - Aller à la section tarifs">
                 Réserver un tirage
-              </a>
-              <a
+              </Button>
+              <Button
+                as="a"
                 href="#free-draw"
-                className="px-4 py-3 text-base font-semibold border rounded-lg transition-all duration-300 transform text-violet-50 border-violet-50 hover:bg-white hover:text-violet-900 hover:border-violet-300 hover:scale-105"
+                variant="outline"
                 aria-label="Découvrir les tirages gratuits sur YouTube - Aller à la section vidéos">
                 Découvrir les tirages gratuits sur YouTube
-              </a>
+              </Button>
             </div>
           </FadeIn>
 

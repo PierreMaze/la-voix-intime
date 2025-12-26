@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
+import { AnimatePresence, motion } from "framer-motion";
 
 const DropdownMenu = ({ title, items }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -16,10 +17,22 @@ const DropdownMenu = ({ title, items }) => {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
+  const handleKeyDown = (e) => {
+    if (e.key === 'Escape') {
+      setIsOpen(false);
+    } else if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      setIsOpen(!isOpen);
+    }
+  };
+
   return (
     <div className="relative" ref={dropdownRef}>
       <button
         onClick={() => setIsOpen(!isOpen)}
+        onKeyDown={handleKeyDown}
+        aria-expanded={isOpen}
+        aria-haspopup="true"
         className="flex items-center gap-1 px-4 py-2 transition-colors text-dark/70 hover:text-accent">
         {title}
         <svg
@@ -38,19 +51,26 @@ const DropdownMenu = ({ title, items }) => {
         </svg>
       </button>
 
-      {isOpen && (
-        <div className="absolute left-0 z-50 py-2 w-48 bg-white rounded-lg shadow-lg mt-1 top-full">
-          {items.map((item) => (
-            <Link
-              key={item.path}
-              to={item.path}
-              className="block px-4 py-2 transition-colors text-text-primary/70 hover:bg-background-primary hover:text-accent"
-              onClick={() => setIsOpen(false)}>
-              {item.label}
-            </Link>
-          ))}
-        </div>
-      )}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ duration: 0.2 }}
+            className="absolute left-0 z-50 py-2 w-48 bg-white rounded-lg shadow-lg mt-1 top-full">
+            {items.map((item) => (
+              <Link
+                key={item.path}
+                to={item.path}
+                className="block px-4 py-2 transition-colors text-text-primary/70 hover:bg-background-primary hover:text-accent"
+                onClick={() => setIsOpen(false)}>
+                {item.label}
+              </Link>
+            ))}
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 };
