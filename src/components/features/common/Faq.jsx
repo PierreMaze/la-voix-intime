@@ -1,85 +1,18 @@
-import { Suspense, lazy, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { FadeIn } from "../../ui/FadeIn";
-
-// Lazy loading du composant FAQItem
-const LazyFAQItem = lazy(
-  () =>
-    new Promise((resolve) => {
-      setTimeout(() => {
-        resolve({
-          default: ({
-            question,
-            answer,
-            isOpen,
-            onToggle,
-            index,
-            totalItems,
-          }) => {
-            const isLastItem = index === totalItems - 1;
-            return (
-              <div
-                id={isLastItem ? "faq-to-book" : undefined}
-                className={`border-b group border-white/10 last:border-b-0 ${
-                  isLastItem ? "scroll-mt-16 lg:scroll-mt-64" : ""
-                }`}>
-                <button
-                  onClick={onToggle}
-                  className={`flex items-center justify-between py-6 w-full text-left transition-all duration-300 ${
-                    isOpen ? "text-violet-300" : "hover:text-violet-300"
-                  }`}
-                  aria-expanded={isOpen}
-                  aria-label={`${
-                    isOpen ? "Fermer" : "Ouvrir"
-                  } la question: ${question}`}>
-                  <h3
-                    className={`pr-4 text-base font-medium lg:text-lg ${
-                      isOpen
-                        ? "text-violet-300"
-                        : "text-white group-hover:text-violet-300 group-focus:text-violet-300"
-                    }`}>
-                    {question}
-                  </h3>
-                  <div className="flex-shrink-0">
-                    <svg
-                      className={`w-5 h-5 text-violet-300 transition-transform duration-300 ${
-                        isOpen ? "rotate-180" : ""
-                      }`}
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                      xmlns="http://www.w3.org/2000/svg">
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M19 9l-7 7-7-7"
-                      />
-                    </svg>
-                  </div>
-                </button>
-
-                <div
-                  className={`overflow-hidden transition-all duration-300 ease-in-out ${
-                    isOpen ? "max-h-full opacity-100" : "max-h-0 opacity-0"
-                  }`}>
-                  <div className="pr-4 pb-6">
-                    <div className="text-base leading-relaxed text-white">
-                      {answer}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            );
-          },
-        });
-      }, 200);
-    })
-);
+import { FAQ_DATA } from "../../../constants/faq";
 
 // Composant FAQItem réutilisable
 const FAQItem = ({ question, answer, isOpen, onToggle, index, totalItems }) => {
   // Ajouter un ID spécifique à la dernière question (celle sur la réservation)
   const isLastItem = index === totalItems - 1;
+
+  const handleKeyDown = (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      onToggle();
+    }
+  };
 
   return (
     <div
@@ -89,6 +22,7 @@ const FAQItem = ({ question, answer, isOpen, onToggle, index, totalItems }) => {
       }`}>
       <button
         onClick={onToggle}
+        onKeyDown={handleKeyDown}
         className={`flex items-center justify-between py-6 w-full text-left transition-all duration-300 ${
           isOpen ? "text-violet-300" : "hover:text-violet-300"
         }`}
@@ -144,52 +78,35 @@ const Faq = () => {
     return () => clearTimeout(timer);
   }, []);
 
-  const faqData = [
-    {
-      question: "Dois-je croire aux tirages que vous effectuez ?",
-      answer:
-        "Ce n'est pas une question de croyance mais de résonance. Il y a, à l'intérieur de vous, des parties qui se sentent reconnues, apaisées, entendues. Voilà le signal! Si ce n'est pas le cas, c'est que quelque chose en vous est encore immature, peut-être des zones de confort avec des bénéfices secondaires vous empêchent-ils d'accéder à certaines compréhensions. Ce n'est pas grave. L'intérêt de l'enregistrement audio est qu'il vous permet de réécouter le tirage un peu plus tard avec une meilleure réceptivité.",
-    },
-    {
-      question: "Puis-je poser une question spécifique lors des tirages ?",
-      answer:
-        "Votre inconscient a un message à vous transmettre. Parfois cela passe par une réponse plus générale ou sur un sujet plus profond, qui englobe la source de beaucoup de vos questionnements intérieurs. En général, l'inconscient, lorsque l'on lui donne de l'espace pour s'exprimer, en profite pour traiter quelque chose d'important, de crucial pour votre évolution. En activant cette mise en lumière dans la conscience, souvent, beaucoup de crises existentielles, n'étant que des ramifications du sujet principal, se règlent d'elles-mêmes.",
-    },
-    {
-      question:
-        "Pourquoi ne vous montrez-vous pas lors des tirages, on ne voit que vos mains ?",
-      answer:
-        "J'ai pu observer, lors des tirages en présentiel, que l'inconscient de la personne à qui je fais les tirages, se déconnecte à plusieurs reprises. Comme un signal radio où il y aurait de la friture sur la ligne. La personne me regarde, cherche dans mon regard des approbations et perd sa concentration. Je dois me reconnecter et cela coupe la fluidité des messages. Cette façon d'effectuer les tirages permet d'avoir un signal clair et inninterrompu.",
-    },
-    {
-      question: "Quand sera disponible la réservation sur le site ?",
-      answer: (
-        <>
-          Nous travaillons sur l'intégration de la réservation par le
-          calendrier. Nous vous invitons à réserver par téléphone (
-          <a
-            href="tel:+33646849352"
-            className="underline transition-colors underline-offset-4 hover:text-violet-300">
-            06 46 84 93 52
-          </a>
-          ) ou par mail (
-          <a
-            href="mailto:lavoixintime@gmail.com"
-            className="underline transition-colors underline-offset-4 hover:text-violet-300">
-            lavoixintime@gmail.com
-          </a>
-          ). Nous mettons tout en œuvre pour l'avancement du calendrier.
-        </>
-      ),
-    },
-  ];
+  // Mapper les données FAQ en ajoutant le JSX pour la dernière question
+  const faqData = FAQ_DATA.map((item, index) => {
+    if (item.isJSX) {
+      return {
+        ...item,
+        answer: (
+          <>
+            Nous travaillons sur l'intégration de la réservation par le
+            calendrier. Nous vous invitons à réserver par téléphone (
+            <a
+              href="tel:+33646849352"
+              className="underline transition-colors underline-offset-4 hover:text-violet-300">
+              06 46 84 93 52
+            </a>
+            ) ou par mail (
+            <a
+              href="mailto:lavoixintime@gmail.com"
+              className="underline transition-colors underline-offset-4 hover:text-violet-300">
+              lavoixintime@gmail.com
+            </a>
+            ). Nous mettons tout en œuvre pour l'avancement du calendrier.
+          </>
+        ),
+      };
+    }
+    return item;
+  });
 
   const [openIndex, setOpenIndex] = useState(faqData.length - 1); // Ouvrir la dernière question par défaut
-
-  // Ouvrir automatiquement le dernier onglet au montage du composant
-  useEffect(() => {
-    setOpenIndex(faqData.length - 1);
-  }, [faqData.length]);
 
   const handleToggle = (index) => {
     setOpenIndex(openIndex === index ? null : index);
@@ -203,7 +120,7 @@ const Faq = () => {
             <h2 className="text-4xl font-bold text-white mb-4">
               Questions Fréquentes
             </h2>
-            <div className="w-16 h-0.mx-auto 5 bg-violet-400"></div>
+            <div className="w-16 h-0.5 mx-auto bg-violet-400"></div>
           </div>
         </FadeIn>
 
@@ -211,25 +128,15 @@ const Faq = () => {
           <div className="px-8 border rounded-2xl bg-black/10 backdrop-blur-sm border-white/20">
             {isDataLoaded
               ? faqData.map((item, index) => (
-                  <Suspense
+                  <FAQItem
                     key={index}
-                    fallback={
-                      <div className="py-6 border-b animate-pulse border-white/10 last:border-b-0">
-                        <div className="flex items-center justify-between">
-                          <div className="w-3/4 h-6 bg-gray-700 rounded"></div>
-                          <div className="w-5 h-5 bg-gray-700 rounded"></div>
-                        </div>
-                      </div>
-                    }>
-                    <LazyFAQItem
-                      index={index}
-                      totalItems={faqData.length}
-                      question={item.question}
-                      answer={item.answer}
-                      isOpen={openIndex === index}
-                      onToggle={() => handleToggle(index)}
-                    />
-                  </Suspense>
+                    index={index}
+                    totalItems={faqData.length}
+                    question={item.question}
+                    answer={item.answer}
+                    isOpen={openIndex === index}
+                    onToggle={() => handleToggle(index)}
+                  />
                 ))
               : // Skeleton loader pendant le chargement des données
                 Array.from({ length: 4 }).map((_, index) => (

@@ -1,31 +1,25 @@
 import { useEffect, useRef } from "react";
 
-export const FadeIn = ({ children, className = "" }) => {
+export const FadeIn = ({ children, className = "", threshold = 0.1 }) => {
   const elementRef = useRef(null);
 
   useEffect(() => {
+    const element = elementRef.current;
+    if (!element) return;
+
     const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("opacity-100", "translate-y-0");
-            observer.unobserve(entry.target);
-          }
-        });
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("opacity-100", "translate-y-0");
+          observer.disconnect(); // Plus performant que unobserve
+        }
       },
-      { threshold: 0.1 }
+      { threshold }
     );
 
-    if (elementRef.current) {
-      observer.observe(elementRef.current);
-    }
-
-    return () => {
-      if (elementRef.current) {
-        observer.unobserve(elementRef.current);
-      }
-    };
-  }, []);
+    observer.observe(element);
+    return () => observer.disconnect();
+  }, [threshold]);
 
   return (
     <div

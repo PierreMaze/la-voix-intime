@@ -78,7 +78,7 @@ const Price = () => {
         <FadeIn>
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-white mb-4">Mes tarifs</h2>
-            <div className="mx-auto w-16 h-1 bg-purple-400"></div>
+            <div className="w-16 h-0.5 mx-auto bg-violet-400"></div>
           </div>
         </FadeIn>
 

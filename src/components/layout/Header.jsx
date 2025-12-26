@@ -2,64 +2,9 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import Logo from "../../../assets/img/logo-la-voix-intime.png";
-
-const navigationItems = [
-  {
-    label: "Accueil",
-    path: "#home",
-  },
-  {
-    label: "A propos",
-    path: "#about",
-  },
-  {
-    label: "Mes tarifs",
-    path: "#price",
-  },
-  {
-    label: "Tirages gratuits",
-    path: "#free-draw",
-  },
-  {
-    label: "Avis client",
-    path: "#reviews",
-  },
-  {
-    label: "F.A.Q",
-    path: "#faq",
-  },
-  {
-    label: "Réserver",
-    path: "#faq-to-book",
-  },
-];
-
-const legalNavigationItems = [
-  {
-    label: "Accueil",
-    path: "/",
-  },
-  {
-    label: "Mentions Légales",
-    path: "/mentions-legales",
-  },
-  {
-    label: "Conditions Générales d'Utilisation",
-    path: "/conditions-generales-utilisation",
-  },
-  {
-    label: "Conditions Générales de Vente",
-    path: "/conditions-generales-vente",
-  },
-  {
-    label: "Politique de Confidentialité",
-    path: "/politique-confidentialite",
-  },
-  {
-    label: "Réserver",
-    path: "/#faq-to-book",
-  },
-];
+import { NAVIGATION_ITEMS, LEGAL_NAVIGATION_ITEMS } from "../../constants/navigation";
+import { useFocusTrap } from "../../hooks/useFocusTrap";
+import Button from "../ui/Button";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -68,6 +13,9 @@ const Header = () => {
   const [isVisible, setIsVisible] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
+
+  // Hook pour le focus trap dans le menu mobile
+  const menuRef = useFocusTrap(isMobileMenuOpen);
 
   // Déterminer la page légale active
   const activeLegalPage = useMemo(() => {
@@ -100,7 +48,7 @@ const Header = () => {
 
   // Sélectionner les éléments de navigation appropriés
   const currentNavigationItems = useMemo(() => {
-    return isLegalPage ? legalNavigationItems : navigationItems;
+    return isLegalPage ? LEGAL_NAVIGATION_ITEMS : NAVIGATION_ITEMS;
   }, [isLegalPage]);
 
   // Optimiser la fonction de gestion du scroll
@@ -158,6 +106,18 @@ const Header = () => {
       document.body.style.overflow = "unset";
     };
   }, [isMobileMenuOpen]);
+
+  // Gérer l'événement custom closemenu pour fermer le menu avec Escape
+  useEffect(() => {
+    const handleCloseMenu = () => setIsMobileMenuOpen(false);
+
+    if (menuRef.current) {
+      menuRef.current.addEventListener('closemenu', handleCloseMenu);
+      return () => {
+        menuRef.current?.removeEventListener('closemenu', handleCloseMenu);
+      };
+    }
+  }, [menuRef, isMobileMenuOpen]);
 
   // Optimiser la fonction de navigation
   const handleNavClick = useCallback(
@@ -229,13 +189,13 @@ const Header = () => {
               // Gestion spéciale pour le bouton Réserver
               if (item.label === "Réserver") {
                 return (
-                  <button
+                  <Button
                     key={item.path}
                     onClick={() => handleNavClick(item.path)}
-                    className="px-8 py-3 text-base font-semibold text-white rounded-lg transition-all duration-300 transform bg-gradient-to-r from-violet-500 to-indigo-600 hover:from-violet-600 hover:to-indigo-700 hover:scale-105"
+                    variant="primary"
                     aria-label={`${item.label} - Aller à la section réservation`}>
                     {item.label}
-                  </button>
+                  </Button>
                 );
               }
 
@@ -320,12 +280,13 @@ const Header = () => {
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
                 transition={{ duration: 0.2 }}
-                className="fixed top-0 right-0 bottom-0 left-0 w-full h-full z-[9999]bg-black/20 md:hidden"
+                className="fixed top-0 right-0 bottom-0 left-0 w-full h-full z-[9999] bg-black/20 md:hidden"
                 onClick={() => setIsMobileMenuOpen(false)}
               />
 
               {/* Menu principal */}
               <motion.div
+                ref={menuRef}
                 initial={{ x: "100%" }}
                 animate={{ x: 0 }}
                 exit={{ x: "100%" }}
@@ -335,7 +296,7 @@ const Header = () => {
                   stiffness: 200,
                   duration: 0.4,
                 }}
-                className="fixed right-0 left-0 z-[10000]h-fit shadow-2xl md:hidden"
+                className="fixed right-0 left-0 z-[10000] h-fit shadow-2xl md:hidden"
                 style={{ backgroundColor: "#0f172a" }}>
                 {/* En-tête du menu */}
                 <div className="p-6 border-b border-gray-100">
@@ -359,15 +320,16 @@ const Header = () => {
                               delay: index * 0.1,
                               ease: "easeOut",
                             }}>
-                            <button
+                            <Button
                               onClick={() => {
                                 handleNavClick(item.path);
                                 setIsMobileMenuOpen(false);
                               }}
-                              className="px-4 py-3 w-full text-base font-medium text-white rounded-lg transition-all duration-300 bg-gradient-to-r from-indigo-500 to-violet-600 hover:from-indigo-600 hover:to-violet-700"
+                              variant="primary"
+                              className="w-full"
                               aria-label={`${item.label} - Aller à la section réservation`}>
                               {item.label}
-                            </button>
+                            </Button>
                           </motion.div>
                         );
                       } else if (isLegalPage) {

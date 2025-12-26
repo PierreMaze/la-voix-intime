@@ -22,7 +22,7 @@ const About = () => {
         {/* Titre */}
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-white mb-4">À propos</h2>
-          <div className="w-16 h-0.mx-auto 5 bg-purple-400"></div>
+          <div className="w-16 h-0.5 mx-auto bg-violet-400"></div>
         </div>
 
         {/* Contenu principal */}
@@ -30,11 +30,11 @@ const About = () => {
           {/* Image */}
           <div className="flex justify-center lg:justify-start">
             <div className="relative">
-              <div className="absolute inset-0 rounded-full blur-xl bg-gradient-to-br from-purple-500/20 to-blue-500/20"></div>
+              <div className="absolute inset-0 rounded-full blur-xl bg-gradient-to-br from-violet-500/20 to-blue-500/20"></div>
               <Suspense
                 fallback={
                   <div className="relative flex items-center justify-center w-64 h-64 bg-gray-800 rounded-full shadow-lg animate-pulse lg:w-80 lg:h-80">
-                    <div className="w-16 h-16 border-4 rounded-full animate-spin border-purple-400 border-t-transparent"></div>
+                    <div className="w-16 h-16 border-4 rounded-full animate-spin border-violet-400 border-t-transparent"></div>
                   </div>
                 }>
                 <LazyAboutImage />
@@ -73,8 +73,8 @@ const About = () => {
 
             {/* Séparateur subtil */}
             <div className="pt-6">
-              <div className="w-12 h-px bg-purple-400/50"></div>
-              <p className="text-sm text-purple-300 mt-4 italic">
+              <div className="w-12 h-px bg-violet-400/50"></div>
+              <p className="text-sm text-violet-300 mt-4 italic">
                 ✨ Laissez-vous guider vers votre vérité intérieure ✨
               </p>
             </div>
