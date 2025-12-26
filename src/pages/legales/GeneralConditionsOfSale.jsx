@@ -13,9 +13,9 @@ const GeneralConditionsOfSale = () => {
         <div className="mb-8">
           <Link
             to="/"
-            className="relative inline-flex items-center px-4 py-3 text-base font-medium text-white border rounded-lg shadow-md transition-all duration-300 transform group bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 hover:shadow-lg hover:-translate-y-0.5 border-purple-500/30 hover:border-purple-400/50"
+            className="relative inline-flex items-center px-4 py-3 text-base font-medium text-white border rounded-lg shadow-md transition-all duration-300 transform group bg-gradient-to-r from-violet-600 to-violet-700 hover:from-violet-700 hover:to-violet-800 hover:shadow-lg hover:-translate-y-0.5 border-violet-500/30 hover:border-violet-400/50"
           >
-            <div className="absolute inset-0 rounded-lg opacity-0 transition-opacity duration-300 bg-gradient-to-r from-purple-400/20 to-purple-600/20 group-hover:opacity-100"></div>
+            <div className="absolute inset-0 rounded-lg opacity-0 transition-opacity duration-300 bg-gradient-to-r from-violet-400/20 to-violet-600/20 group-hover:opacity-100"></div>
             <svg
               className="w-5 h-5 transition-transform duration-300 mr-2 group-hover:-translate-x-1"
               fill="none"
@@ -47,7 +47,7 @@ const GeneralConditionsOfSale = () => {
             <h2 className="text-2xl font-semibold text-white mb-4">
               1. Préambule
             </h2>
-            <div className="p-4 border rounded-lg bg-purple-500/10 border-purple-500/20 mb-4">
+            <div className="p-4 border rounded-lg bg-violet-500/10 border-violet-500/20 mb-4">
               <p className="text-white">
                 <strong>La Voix Intime</strong>
                 <br />
@@ -57,7 +57,7 @@ const GeneralConditionsOfSale = () => {
                   href="https://www.google.fr/maps/place/33120+Arcachon/@44.6515203,-1.3194646,12z/data=!3m1!4b1!4m6!3m5!1s0xd549ef8c86711e3:0x40665174816f060!8m2!3d44.652297!4d-1.1785016!16zL20vMDVubTQ2?entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="underline transition-colors text-purple-400 hover:text-purple-300"
+                  className="underline transition-colors text-violet-400 hover:text-violet-300"
                 >
                   Bassin d'Arcachon, FRANCE
                 </a>
@@ -65,7 +65,7 @@ const GeneralConditionsOfSale = () => {
                 Téléphone :{" "}
                 <a
                   href="tel:+33646849352"
-                  className="underline transition-colors text-purple-400 hover:text-purple-300"
+                  className="underline transition-colors text-violet-400 hover:text-violet-300"
                 >
                   06 46 84 93 52
                 </a>
@@ -73,7 +73,7 @@ const GeneralConditionsOfSale = () => {
                 Email :{" "}
                 <a
                   href="mailto:lavoixintime@gmail.com"
-                  className="underline transition-colors text-purple-400 hover:text-purple-300"
+                  className="underline transition-colors text-violet-400 hover:text-violet-300"
                 >
                   lavoixintime@gmail.com
                 </a>
@@ -104,7 +104,7 @@ const GeneralConditionsOfSale = () => {
                   href="https://www.whatsapp.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="underline transition-colors text-purple-400 hover:text-purple-300"
+                  className="underline transition-colors text-violet-400 hover:text-violet-300"
                 >
                   WhatsApp
                 </a>
@@ -144,7 +144,7 @@ const GeneralConditionsOfSale = () => {
                   href="https://www.paypal.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="underline transition-colors text-purple-400 hover:text-purple-300"
+                  className="underline transition-colors text-violet-400 hover:text-violet-300"
                 >
                   PayPal
                 </a>{" "}
@@ -156,7 +156,7 @@ const GeneralConditionsOfSale = () => {
                   href="https://www.paypal.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="underline transition-colors text-purple-400 hover:text-purple-300"
+                  className="underline transition-colors text-violet-400 hover:text-violet-300"
                 >
                   PayPal
                 </a>
@@ -167,7 +167,7 @@ const GeneralConditionsOfSale = () => {
                   href="https://www.paypal.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="underline transition-colors text-purple-400 hover:text-purple-300"
+                  className="underline transition-colors text-violet-400 hover:text-violet-300"
                 >
                   PayPal
                 </a>{" "}
@@ -180,13 +180,13 @@ const GeneralConditionsOfSale = () => {
                 href="https://www.paypal.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="underline transition-colors text-purple-400 hover:text-purple-300"
+                className="underline transition-colors text-violet-400 hover:text-violet-300"
               >
                 PayPal
               </a>{" "}
               pour garantir la sécurité de vos transactions. Aucune donnée
               bancaire n'est stockée sur notre{" "}
-              <strong className="text-purple-300">site</strong>. Le paiement est
+              <strong className="text-violet-300">site</strong>. Le paiement est
               exigible immédiatement à la réservation.
             </p>
           </div>
@@ -203,11 +203,11 @@ const GeneralConditionsOfSale = () => {
                 href="https://calendly.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="underline transition-colors text-purple-400 hover:text-purple-300"
+                className="underline transition-colors text-violet-400 hover:text-violet-300"
               >
                 Calendly
               </a>{" "}
-              intégré au <strong className="text-purple-300">site</strong>. Vous
+              intégré au <strong className="text-violet-300">site</strong>. Vous
               devez :
             </p>
             <ul className="text-white list-disc list-inside space-y-2 ml-4 mb-4">
@@ -222,7 +222,7 @@ const GeneralConditionsOfSale = () => {
                   href="https://www.paypal.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="underline transition-colors text-purple-400 hover:text-purple-300"
+                  className="underline transition-colors text-violet-400 hover:text-violet-300"
                 >
                   PayPal
                 </a>
@@ -236,14 +236,14 @@ const GeneralConditionsOfSale = () => {
                 href="https://calendly.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="underline transition-colors text-purple-400 hover:text-purple-300"
+                className="underline transition-colors text-violet-400 hover:text-violet-300"
               >
                 Calendly
               </a>{" "}
               ou par{" "}
               <a
                 href="mailto:lavoixintime@gmail.com"
-                className="underline text-purple-400 hover:text-purple-300"
+                className="underline text-violet-400 hover:text-violet-300"
               >
                 email
               </a>
@@ -273,7 +273,7 @@ const GeneralConditionsOfSale = () => {
                   href="https://www.whatsapp.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="underline transition-colors text-purple-400 hover:text-purple-300"
+                  className="underline transition-colors text-violet-400 hover:text-violet-300"
                 >
                   WhatsApp
                 </a>
@@ -328,12 +328,12 @@ const GeneralConditionsOfSale = () => {
               Pour exercer ces droits, contactez-nous à{" "}
               <a
                 href="mailto:lavoixintime@gmail.com"
-                className="underline transition-colors text-purple-400 hover:text-purple-300"
+                className="underline transition-colors text-violet-400 hover:text-violet-300"
               >
                 lavoixintime@gmail.com
               </a>
             </p>
-            <div className="p-4 border rounded-lg mt-4 bg-purple-500/10 border-purple-500/20">
+            <div className="p-4 border rounded-lg mt-4 bg-violet-500/10 border-violet-500/20">
               <p className="text-sm text-white mb-2">
                 <strong>Textes de loi de référence :</strong>
               </p>
@@ -344,7 +344,7 @@ const GeneralConditionsOfSale = () => {
                     href="https://eur-lex.europa.eu/legal-content/FR/TXT/HTML/?uri=CELEX:32016R0679"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="underline text-purple-400 hover:text-purple-300"
+                    className="underline text-violet-400 hover:text-violet-300"
                   >
                     Règlement (UE) 2016/679
                   </a>
@@ -355,7 +355,7 @@ const GeneralConditionsOfSale = () => {
                     href="https://www.legifrance.gouv.fr/codes/id/LEGITEXT000006069565/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="underline text-purple-400 hover:text-purple-300"
+                    className="underline text-violet-400 hover:text-violet-300"
                   >
                     Articles L111-1 et suivants
                   </a>
@@ -366,7 +366,7 @@ const GeneralConditionsOfSale = () => {
                     href="https://www.legifrance.gouv.fr/codes/id/LEGITEXT000006070721/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="underline text-purple-400 hover:text-purple-300"
+                    className="underline text-violet-400 hover:text-violet-300"
                   >
                     Articles 1101 et suivants
                   </a>
@@ -435,7 +435,7 @@ const GeneralConditionsOfSale = () => {
                 Email :{" "}
                 <a
                   href="mailto:lavoixintime@gmail.com"
-                  className="underline text-purple-400 hover:text-purple-300"
+                  className="underline text-violet-400 hover:text-violet-300"
                 >
                   lavoixintime@gmail.com
                 </a>
@@ -443,7 +443,7 @@ const GeneralConditionsOfSale = () => {
                 Téléphone :{" "}
                 <a
                   href="tel:+33646849352"
-                  className="underline text-purple-400 hover:text-purple-300"
+                  className="underline text-violet-400 hover:text-violet-300"
                 >
                   06 46 84 93 52
                 </a>
@@ -452,7 +452,7 @@ const GeneralConditionsOfSale = () => {
                   href="https://www.google.fr/maps/place/33120+Arcachon/@44.6515203,-1.3194646,12z/data=!3m1!4b1!4m6!3m5!1s0xd549ef8c86711e3:0x40665174816f060!8m2!3d44.652297!4d-1.1785016!16zL20vMDVubTQ2?entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="underline text-purple-400 hover:text-purple-300"
+                  className="underline text-violet-400 hover:text-violet-300"
                 >
                   Bassin d'Arcachon, FRANCE
                 </a>
@@ -465,9 +465,9 @@ const GeneralConditionsOfSale = () => {
         <div className="text-center mt-16 mb-8">
           <Link
             to="/"
-            className="relative inline-flex items-center px-8 py-4 text-lg font-semibold text-white border rounded-xl shadow-lg transition-all duration-300 transform group bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 hover:shadow-2xl hover:-translate-y-1 border-purple-500/30 hover:border-purple-400/50"
+            className="relative inline-flex items-center px-8 py-4 text-lg font-semibold text-white border rounded-xl shadow-lg transition-all duration-300 transform group bg-gradient-to-r from-violet-600 to-violet-700 hover:from-violet-700 hover:to-violet-800 hover:shadow-2xl hover:-translate-y-1 border-violet-500/30 hover:border-violet-400/50"
           >
-            <div className="absolute inset-0 rounded-xl opacity-0 transition-opacity duration-300 bg-gradient-to-r from-purple-400/20 to-purple-600/20 group-hover:opacity-100"></div>
+            <div className="absolute inset-0 rounded-xl opacity-0 transition-opacity duration-300 bg-gradient-to-r from-violet-400/20 to-violet-600/20 group-hover:opacity-100"></div>
             <svg
               className="w-6 h-6 transition-transform duration-300 mr-3 group-hover:-translate-x-1"
               fill="none"

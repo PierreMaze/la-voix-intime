@@ -43,7 +43,7 @@ const Footer = () => {
             className="text-2xl transition-transform hover:rotate-12"
             aria-label="Suivre La Voix Intime sur Instagram - Lien externe">
             <FaInstagram
-              className="transition-colors hover:text-purple-300"
+              className="transition-colors hover:text-violet-300"
               aria-hidden="true"
             />
           </a>
@@ -53,25 +53,25 @@ const Footer = () => {
         <div className="flex flex-col items-center justify-center gap-4 px-2 md:flex-row md:gap-8 mb-8">
           <Link
             to="/mentions-legales"
-            className="text-sm underline transition-colors underline-offset-4 hover:text-purple-300"
+            className="text-sm underline transition-colors underline-offset-4 hover:text-violet-300"
             aria-label="Lire les mentions légales">
             Mentions légales
           </Link>
           <Link
             to="/conditions-generales-utilisation"
-            className="text-sm underline transition-colors underline-offset-4 hover:text-purple-300"
+            className="text-sm underline transition-colors underline-offset-4 hover:text-violet-300"
             aria-label="Lire les conditions générales d'utilisation">
             Conditions Générales d'Utilisation
           </Link>
           <Link
             to="/conditions-generales-vente"
-            className="text-sm underline transition-colors underline-offset-4 hover:text-purple-300"
+            className="text-sm underline transition-colors underline-offset-4 hover:text-violet-300"
             aria-label="Lire les conditions générales de vente">
             Conditions Générales de Vente
           </Link>
           <Link
             to="/politique-confidentialite"
-            className="text-sm underline transition-colors underline-offset-4 hover:text-purple-300"
+            className="text-sm underline transition-colors underline-offset-4 hover:text-violet-300"
             aria-label="Lire la politique de confidentialité">
             Politique de confidentialité
           </Link>
