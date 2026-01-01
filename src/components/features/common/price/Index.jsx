@@ -16,7 +16,7 @@ const Price = () => {
       original: 55,
     },
     detailsList: [
-      "WhatsApp ou Présentiel*",
+      "En visio surWhatsApp",
       "Consultation de 60 minutes",
       "Guidance complète",
       "Offrez-le en cadeau !",
@@ -26,7 +26,7 @@ const Price = () => {
       path: "/#faq-to-book",
     },
     disclaimer:
-      "* A domicile sur le Bassin d'Arcachon. Des frais de déplacement peuvent s'appliquer.",
+      "Un R.I.B vous sera transmis lors de la réservation, pour effectuer le paiement.",
     badge: null,
   };
 
