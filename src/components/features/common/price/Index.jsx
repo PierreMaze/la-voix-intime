@@ -16,7 +16,7 @@ const Price = () => {
       original: 55,
     },
     detailsList: [
-      "En visio surWhatsApp",
+      "En visio sur WhatsApp",
       "Consultation de 60 minutes",
       "Guidance complète",
       "Offrez-le en cadeau !",
