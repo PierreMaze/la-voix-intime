@@ -1,7 +1,7 @@
 import { FadeIn } from "../../../ui/FadeIn";
 import YouTubeVideo from "./YouTubeVideo";
 
-const URL_VIDEO = "CegrqRSZJPc";
+const URL_VIDEO = "4gFssCp6Dtc";
 
 const FreeDraw = () => {
   return (

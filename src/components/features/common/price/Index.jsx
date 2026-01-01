@@ -9,38 +9,17 @@ const LazyNotePaypal = lazy(() => import("../../NotePaypal"));
 
 const Price = () => {
   const card1Data = {
-    title: "Tirage de Noël",
-    pricing: {
-      type: "single",
-      amount: 20,
-    },
-    detailsList: [
-      "WhatsApp ou Présentiel*",
-      "Consultation de 30 minutes",
-      "Guidance complète",
-    ],
-    button: {
-      text: "Réserver",
-      path: "/#faq-to-book",
-    },
-    disclaimer:
-      "* A domicile sur le Bassin d'Arcachon. Des frais de déplacement peuvent s'appliquer.",
-    badge: {
-      label: "EVENEMENT",
-      color: "bg-gradient-to-r from-red-800 to-pink-800 shadow-rose-500/25",
-    },
-  };
-  const card2Data = {
     title: "Tirage 60 minutes",
     pricing: {
       type: "promo",
-      current: 33,
-      original: "47",
+      current: 47,
+      original: 55,
     },
     detailsList: [
       "WhatsApp ou Présentiel*",
       "Consultation de 60 minutes",
       "Guidance complète",
+      "Offrez-le en cadeau !",
     ],
     button: {
       text: "Réserver",
@@ -51,14 +30,19 @@ const Price = () => {
     badge: null,
   };
 
-  const card3Data = {
+  const card2Data = {
     title: "Avec enregistrement",
     pricing: {
       type: "promo",
-      current: 40,
-      original: 55,
+      current: 55,
+      original: 65,
     },
-    detailsList: ["Votre guidance", "Enregistrement MP3", "Réécoute illimité*"],
+    detailsList: [
+      "Votre guidance",
+      "Enregistrement MP3",
+      "Réécoute illimité*",
+      "Offrez-le en cadeau !",
+    ],
     button: {
       text: "Réserver",
       path: "/#faq-to-book",
@@ -129,9 +113,7 @@ const Price = () => {
                   <div className="h-12 bg-gray-700 rounded mt-8"></div>
                 </div>
               }
-            >
-              <LazyCardPrice {...card3Data} />
-            </Suspense>
+            ></Suspense>
           </div>
         </FadeIn>
 
