@@ -25,8 +25,7 @@ const Price = () => {
       text: "Réserver",
       path: "/#faq-to-book",
     },
-    disclaimer:
-      "Un R.I.B vous sera transmis lors de la réservation, pour effectuer le paiement.",
+    disclaimer: "Un I.B.A.N vous sera transmis lors de votre réservation.",
     badge: null,
   };
 
@@ -48,7 +47,7 @@ const Price = () => {
       path: "/#faq-to-book",
     },
     disclaimer:
-      "* Vous serez la seule personne à le possèder. Il ne sera pas possible de vous le renvoyer.",
+      "* Vous serez la seule personne à le possèder. Il sera impossible de vous le renvoyer.",
     badge: {
       label: "POPULAIRE",
       color:
