@@ -79,7 +79,7 @@ const Faq = () => {
   }, []);
 
   // Mapper les données FAQ en ajoutant le JSX pour la dernière question
-  const faqData = FAQ_DATA.map((item, index) => {
+  const faqData = FAQ_DATA.map((item) => {
     if (item.isJSX) {
       return {
         ...item,

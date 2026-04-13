@@ -110,11 +110,12 @@ const Header = () => {
   // Gérer l'événement custom closemenu pour fermer le menu avec Escape
   useEffect(() => {
     const handleCloseMenu = () => setIsMobileMenuOpen(false);
+    const node = menuRef.current;
 
-    if (menuRef.current) {
-      menuRef.current.addEventListener('closemenu', handleCloseMenu);
+    if (node) {
+      node.addEventListener('closemenu', handleCloseMenu);
       return () => {
-        menuRef.current?.removeEventListener('closemenu', handleCloseMenu);
+        node.removeEventListener('closemenu', handleCloseMenu);
       };
     }
   }, [menuRef, isMobileMenuOpen]);

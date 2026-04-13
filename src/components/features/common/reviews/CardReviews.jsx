@@ -8,10 +8,6 @@ const CardReviews = ({ name, rating, date, comment }) => {
   const renderStars = (rating) => {
     const stars = [];
     for (let i = 1; i <= 5; i++) {
-      const starFill =
-        i <= Math.floor(rating)
-          ? "text-yellow-400 fill-current"
-          : "text-gray-300";
       const isHalfStar = i === Math.ceil(rating) && rating % 1 !== 0;
 
       stars.push(

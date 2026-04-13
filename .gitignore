@@ -13,9 +13,10 @@ dist
 dist-ssr
 *.local
 pnpm-lock.yaml
+ROADMAP.md
 
 # Editor directories and files
-.claude/
+.claude/*
 .vscode/*
 !.vscode/extensions.json
 .idea

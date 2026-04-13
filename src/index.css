@@ -1,6 +1,12 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@theme {
+  --color-light: #f9f8fa;
+  --color-dark: #0f172a;
+  --color-accent: #a855f7;
+  --color-text-primary: #f9f8fa;
+  --color-background-primary: #1e293b;
+}
 
 /* Uniquement la base avec quelques styles minimes globaux */
 @layer base {
@@ -17,7 +23,7 @@
       "wdth" 100;
     font-size: 1rem;
     line-height: 1.625;
-    background-color: #f9f8fa;
+    background-color: #0f172a;
     color: #f9f8fa;
   }
 

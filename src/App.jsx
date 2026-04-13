@@ -42,7 +42,7 @@ const App = () => {
 
   return (
     <>
-      <div className="relative min-h-screen bg-light">
+      <div className="relative min-h-screen bg-transparent">
         <StarField />
         <RouterProvider router={router} />
       </div>
