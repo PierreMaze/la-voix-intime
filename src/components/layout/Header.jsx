@@ -232,6 +232,12 @@ const Header = () => {
                 </button>
               );
             })}
+            <Link
+              to="/dashboard/login"
+              className="ml-2 px-4 py-2 text-sm font-semibold text-white border border-white/40 rounded-lg hover:bg-white/10 transition-colors"
+            >
+              Connexion
+            </Link>
           </div>
 
           {/* Bouton menu mobile */}
@@ -390,6 +396,15 @@ const Header = () => {
                       }
                     })}
                   </nav>
+                  <div className="mt-6 pt-4 border-t border-white/10">
+                    <Link
+                      to="/dashboard/login"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                      className="block w-full text-center px-4 py-3 text-sm font-semibold text-white border border-white/30 rounded-lg hover:bg-white/10 transition-colors"
+                    >
+                      Connexion
+                    </Link>
+                  </div>
                 </div>
               </motion.div>
             </>
