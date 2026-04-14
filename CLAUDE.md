@@ -5,12 +5,13 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ## Commands
 
 ```bash
-npm run dev       # Démarre le serveur de dev sur http://localhost:3000
-npm run build     # Build de production
-npm run lint      # ESLint (max-warnings 0, doit passer sans warning)
-npm run fix       # Formate le code avec Prettier
-npm run preview   # Prévisualise le build de production
-npm run clean     # Supprime node_modules, lock files et dist
+pnpm dev       # Démarre le serveur de dev sur http://localhost:3000
+pnpm build     # Build de production
+pnpm lint      # ESLint (max-warnings 0, doit passer sans warning)
+pnpm fix       # Formate le code avec Prettier
+pnpm preview   # Prévisualise le build de production
+pnpm clean     # Supprime node_modules, lock files et dist
+pnpm pb        # Migre et démarre la base de données Pocketbase
 ```
 
 Pas de tests automatisés dans ce projet.
@@ -22,6 +23,7 @@ Site vitrine single-page en React 19 + Vite 8 + Tailwind CSS 4 pour une voyante 
 ### Routing
 
 `App.jsx` définit un `createBrowserRouter` avec un layout principal (`Layout`) contenant :
+
 - `/` → `Home` (page principale, sections empilées verticalement)
 - Routes légales : `/mentions-legales`, `/conditions-generales-vente`, `/conditions-generales-utilisation`, `/politique-confidentialite`
 
@@ -52,13 +54,13 @@ Palette violet/indigo sur fond sombre. Le `body` a `background-color: #0f172a`. 
 
 #### Couleurs custom (définies dans `src/index.css` via `@theme`)
 
-| Classe Tailwind | Valeur | Usage |
-|---|---|---|
-| `bg-dark` / `text-dark` | `#0f172a` | Fond sombre (footer, etc.) |
-| `bg-light` / `text-light` | `#f9f8fa` | Texte clair |
-| `text-accent` | `#a855f7` | Violet d'accentuation |
-| `text-text-primary` | `#f9f8fa` | Texte principal |
-| `bg-background-primary` | `#1e293b` | Fond hover (dropdown) |
+| Classe Tailwind           | Valeur    | Usage                      |
+| ------------------------- | --------- | -------------------------- |
+| `bg-dark` / `text-dark`   | `#0f172a` | Fond sombre (footer, etc.) |
+| `bg-light` / `text-light` | `#f9f8fa` | Texte clair                |
+| `text-accent`             | `#a855f7` | Violet d'accentuation      |
+| `text-text-primary`       | `#f9f8fa` | Texte principal            |
+| `bg-background-primary`   | `#1e293b` | Fond hover (dropdown)      |
 
 ### Tailwind v4
 
