@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://lavoixintime.netlify.app/sitemap.xml
+Sitemap: https://lavoixintime.com/sitemap.xml
 
 # Désactiver l'exploration des fichiers de développement
 Disallow: /node_modules/

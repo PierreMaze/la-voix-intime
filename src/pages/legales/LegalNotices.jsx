@@ -222,14 +222,11 @@ const LegalNotices = () => {
             </h2>
             <p className="text-white">
               Tout litige en relation avec l'utilisation du{" "}
-              <strong className="text-violet-300">site</strong>{" "}
               <a
-                href="https://lavoixintime.com/"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="/"
                 className="underline transition-colors text-violet-400 hover:text-violet-300"
               >
-                lavoixintime.com
+                site
               </a>{" "}
               est soumis au droit français. En dehors des cas où la loi ne le
               permet pas, il est fait attribution exclusive de juridiction aux

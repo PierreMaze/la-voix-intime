@@ -99,20 +99,6 @@ const Price = () => {
             >
               <LazyCardPrice {...card2Data} />
             </Suspense>
-            <Suspense
-              fallback={
-                <div className="p-8 border rounded-2xl animate-pulse bg-white/10 backdrop-blur-sm border-white/20">
-                  <div className="h-8 bg-gray-700 rounded mb-4"></div>
-                  <div className="h-12 bg-gray-700 rounded mb-8"></div>
-                  <div className="space-y-4">
-                    <div className="h-4 bg-gray-700 rounded"></div>
-                    <div className="h-4 bg-gray-700 rounded"></div>
-                    <div className="h-4 bg-gray-700 rounded"></div>
-                  </div>
-                  <div className="h-12 bg-gray-700 rounded mt-8"></div>
-                </div>
-              }
-            ></Suspense>
           </div>
         </FadeIn>
 
