@@ -10,7 +10,7 @@ export default defineConfig({
   build: {
     assetsDir: "assets",
     rollupOptions: {
-      input: { main: "index.html", prototype: "prototype.html" },
+      input: { main: "index.html" },
       output: {
         assetFileNames: "assets/[name].[hash][extname]",
       },

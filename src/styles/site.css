@@ -216,6 +216,11 @@ h1 {
 .hero-figure figcaption a span {
   font-size: 19px
 }
+.hero-figure figcaption a .hero-figure-link {
+  font-size: inherit;
+  text-decoration: underline;
+  text-underline-offset: 5px
+}
 .section-label {
   font-size: 13px;
   color: #796b4c;
@@ -268,6 +273,50 @@ h2 {
   font-size: 26px;
   color: #8b774e;
   flex-shrink: 0
+}
+.video-symbol {
+  border: 0
+}
+.video-symbol svg {
+  width: 100%;
+  height: 100%
+}
+.video-placeholder {
+  grid-column: 1/-1;
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  border-top: 1px solid #d5d7c9;
+  padding-top: 28px
+}
+.video-placeholder strong {
+  font-size: 15px;
+  font-weight: 500
+}
+.video-placeholder p {
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: 5px
+}
+.video-preview-button {
+  margin-left: auto;
+  flex-shrink: 0
+}
+.video-dialog {
+  width: min(860px,calc(100% - 32px))
+}
+.video-frame {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16/9;
+  border: 0;
+  border-radius: 8px;
+  background: #0c242d
+}
+.video-coming-soon {
+  background: #eceee3;
+  padding: 15px;
+  border-radius: 4px
 }
 .offers-section {
   padding-block: 95px
@@ -976,7 +1025,7 @@ html {
 .button {
   font-size: 16px;
 }
-.header-inner > .button {
+.header-inner > .button, .button.small {
   font-size: 13px;
 }
 .site-container {
@@ -1067,7 +1116,7 @@ h1 {
 .header-inner .logo {
   width: 215px;
 }
-.header-inner > .button {
+.header-inner > .button, .button.small {
   font-size: 15px;
   padding: 13px 22px;
 }
@@ -1224,6 +1273,7 @@ h1 {
 }
 .section-heading > p {
   margin-top: 0;
+  max-width: 470px;
 }
 .reviews-grid {
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -1251,6 +1301,34 @@ h1 {
 .footer-bottom {
   flex-wrap: nowrap;
 }
+/* Échelle typographique desktop : variables redéfinies plus grandes en 2K (1440px+) */
+:root {
+  --desktop-body: 17px;
+  --desktop-small: 14px;
+}
+.button, .text-link, .hero-description, .signature, .about-copy p, .section-heading > p,
+.programme-intro > p:not(.programme-subtitle), .feature-list strong,
+.offer-card > p:not(.offer-duration):not(.recording-note), .simple-list, .recording-option,
+.review blockquote, .review figcaption, .youtube-section p:not(.section-label),
+.faq-section > div > p:not(.section-label), .faq-list summary, .faq-list details p,
+.booking-dialog p:not(.section-label) {
+  font-size: var(--desktop-body);
+}
+.intro-label, .section-label, .hero-figure figcaption > span, .hero-figure figcaption a,
+.signature span, .tag, .programme-bottom, .feature-list span, .offer-card .section-label,
+.offer-duration, .recording-note, .bank-note, .price small, .review figcaption span,
+.footer-top div, .footer-top p, .footer-bottom, .header-inner > .button, .button.small {
+  font-size: var(--desktop-small);
+}
+.hero-figure figcaption p {
+  font-size: 25px;
+}
+.about-copy .lead {
+  font-size: 22px;
+}
+.price {
+  font-size: 34px;
+}
 }
 @media (min-width: 1440px) {
 :root {
@@ -1277,17 +1355,11 @@ html {
   font-size: clamp(18px, 0.9vw, 22px);
   gap: 34px;
 }
-.button, .text-link {
-  font-size: var(--desktop-body);
-}
 .button {
   padding: 20px 30px;
 }
 .button.small {
   padding: 15px 27px;
-}
-.intro-label, .section-label {
-  font-size: var(--desktop-small);
 }
 .hero {
   gap: clamp(60px, 4vw, 100px);
@@ -1301,7 +1373,6 @@ h2 {
   font-size: clamp(43px, 2.2vw, 54px);
 }
 .hero-description {
-  font-size: var(--desktop-body);
   max-width: 600px;
   margin-block: 32px 36px;
 }
@@ -1310,9 +1381,6 @@ h2 {
 }
 .hero-figure figcaption {
   padding: 32px 38px;
-}
-.hero-figure figcaption > span, .hero-figure figcaption a {
-  font-size: var(--desktop-small);
 }
 .hero-figure figcaption p {
   font-size: clamp(27px, 1.35vw, 34px);
@@ -1323,15 +1391,10 @@ h2 {
 .about-grid {
   gap: 48px 100px;
 }
-.signature {
-  font-size: var(--desktop-body);
-}
 .signature span {
-  font-size: var(--desktop-small);
   max-width: none;
 }
 .about-copy p {
-  font-size: var(--desktop-body);
   max-width: 65ch;
 }
 .about-copy .lead {
@@ -1344,14 +1407,10 @@ h2 {
   margin-bottom: 54px;
 }
 .section-heading > p {
-  font-size: var(--desktop-body);
   max-width: 540px;
 }
 .programme-intro, .programme-details {
   padding: 52px;
-}
-.tag, .programme-bottom {
-  font-size: var(--desktop-small);
 }
 .programme-intro h3 {
   font-size: 80px;
@@ -1360,7 +1419,6 @@ h2 {
   font-size: 32px;
 }
 .programme-intro > p:not(.programme-subtitle) {
-  font-size: var(--desktop-body);
   max-width: 440px;
 }
 .programme-details h4 {
@@ -1373,12 +1431,6 @@ h2 {
   margin-bottom: 25px;
   padding-left: 36px;
 }
-.feature-list strong {
-  font-size: var(--desktop-body);
-}
-.feature-list span {
-  font-size: var(--desktop-small);
-}
 .secondary-offers {
   gap: 34px;
   margin-top: 34px;
@@ -1389,15 +1441,10 @@ h2 {
 .offer-card h3 {
   font-size: 38px;
 }
-.offer-card .section-label, .offer-duration {
-  font-size: var(--desktop-small);
-}
 .offer-card > p:not(.offer-duration):not(.recording-note) {
-  font-size: var(--desktop-body);
   max-width: 55ch;
 }
 .simple-list {
-  font-size: var(--desktop-body);
   margin-block: 30px;
 }
 .simple-list li {
@@ -1405,21 +1452,14 @@ h2 {
   padding-left: 30px;
 }
 .recording-option {
-  font-size: var(--desktop-body);
   padding: 18px;
 }
 .recording-option input {
   width: 21px;
   height: 21px;
 }
-.recording-note, .bank-note {
-  font-size: var(--desktop-small);
-}
 .price {
   font-size: 40px;
-}
-.price small {
-  font-size: var(--desktop-small);
 }
 .pending-price {
   font-size: 25px;
@@ -1432,16 +1472,11 @@ h2 {
   margin-bottom: 45px;
 }
 .review blockquote {
-  font-size: var(--desktop-body);
   line-height: 1.8;
   max-width: 55ch;
 }
 .review figcaption {
-  font-size: var(--desktop-body);
   padding-top: 32px;
-}
-.review figcaption span {
-  font-size: var(--desktop-small);
 }
 .quote-mark {
   font-size: 76px;
@@ -1449,19 +1484,12 @@ h2 {
 .youtube-section {
   padding-block: 90px;
 }
-.youtube-section p:not(.section-label) {
-  font-size: var(--desktop-body);
-}
 .faq-section {
   padding-block: 110px;
   gap: 110px;
   grid-template-columns: 0.7fr 1.3fr;
 }
-.faq-section > div > p:not(.section-label) {
-  font-size: var(--desktop-body);
-}
 .faq-list summary {
-  font-size: var(--desktop-body);
   padding-block: 29px;
   gap: 30px;
 }
@@ -1469,7 +1497,6 @@ h2 {
   font-size: 30px;
 }
 .faq-list details p {
-  font-size: var(--desktop-body);
   line-height: 1.8;
   padding-bottom: 29px;
   max-width: 65ch;
@@ -1483,18 +1510,12 @@ h2 {
 .footer-top .logo {
   width: 260px;
 }
-.footer-top div, .footer-top p, .footer-bottom {
-  font-size: var(--desktop-small);
-}
 .booking-dialog {
   width: min(680px, calc(100% - 64px));
   padding: 52px;
 }
 .booking-dialog h2 {
   font-size: 38px;
-}
-.booking-dialog p:not(.section-label) {
-  font-size: var(--desktop-body);
 }
 }
 @media (min-width:1440px) {
@@ -1508,11 +1529,6 @@ h2 {
 @media (min-width:1100px) {
 .about-grid h2 br, .section-heading h2 br, .faq-section h2 br, .closing h2 br, .hero-figure figcaption p br, .desktop-break {
   display: initial;
-}
-}
-@media (min-width:1440px) {
-.header-inner > .button {
-  font-size: var(--desktop-small);
 }
 }
 .site-header {
@@ -1608,5 +1624,26 @@ html {
 .booking-coming-soon .button { margin-top: 8px; }
 
 .booking-dialog .booking-choice-list .button + .button { margin-top: 0; }
+.booking-choice-list .button { gap: 10px; }
+.booking-choice-list .button svg { width: 1.3em; height: 1.3em; flex-shrink: 0; }
+.booking-dialog p.booking-note { font-size: 13px; color: var(--muted); margin: 14px 0 0; text-align: center; }
+
+/* Icônes des outils (Zoom, WhatsApp, Tally) : couleurs des marques, alignées sur le texte */
+.with-icon { display: inline-flex; align-items: center; gap: .35em; white-space: nowrap; vertical-align: middle; }
+.brand-icon { display: inline-grid; place-items: center; width: 1.35em; height: 1.35em; border-radius: 28%; color: #fff; flex-shrink: 0; }
+.brand-icon svg { width: 68%; height: 68%; }
+.brand-icon-whatsapp { background: #25d366; }
+.brand-icon-zoom { background: #0b5cff; }
+.brand-icon-zoom svg { width: 80%; height: 80%; }
+.offer-duration { display: flex; flex-wrap: wrap; align-items: center; column-gap: .4em; }
+.programme-bottom { align-items: center; }
 
 .mobile-nav[hidden] { display: none; }
+@media (min-width:1100px) {
+.video-placeholder strong {
+  font-size: var(--desktop-body)
+}
+.video-placeholder p {
+  font-size: var(--desktop-small)
+}
+}

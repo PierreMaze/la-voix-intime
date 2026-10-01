@@ -27,3 +27,9 @@ pnpm-lock.yaml
 *.sw?
 cursor
 .cursor
+# Prototype (local uniquement)
+prototype.html
+prototype*.jpg
+site-integre.jpg
+reseaux-sociaux.jpg
+src/prototype/
