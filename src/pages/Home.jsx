@@ -7,7 +7,7 @@ const insideImage = 'https://lavoixintime-programeinside.fr/images/inside-horizo
 export default function Home() { return <>
       <section className="hero site-container" id="accueil">
         <div className="hero-copy">
-          <p className="intro-label"><span /> Coaching en ligne avec Frédérique Caignard</p>
+          <p className="intro-label"><span /> Coaching en ligne avec la méthode INSIDE</p>
           <h1>Découvrez le langage secret de votre inconscient.</h1>
           <p className="hero-description">Les ressources pour avancer sont déjà en vous. Ensemble, apprenons à les reconnaître et à leur donner toute leur place.</p>
           <a className="button" href="#accompagnements">Découvrir les accompagnements</a>
@@ -20,7 +20,7 @@ export default function Home() { return <>
       </section>
 
       <section className="about-section" id="a-propos"><div className="site-container about-grid">
-        <div><p className="section-label">Coaching par La Voix Intime</p><h2>Une autre façon <br />de vous accompagner.</h2><p className="signature">Frédérique Caignard<span>Créatrice de La Voix Intime et de la méthode Inside</span></p></div>
+        <div><p className="section-label">Coaching par La Voix Intime</p><h2>Une autre façon <br />de vous accompagner.</h2><p className="signature">Frédérique Caignard<span>Créatrice de La Voix Intime et de la méthode <strong>INSIDE</strong></span></p></div>
         <div className="about-copy"><p className="lead">Mon approche repose sur une conviction : vous possédez déjà en vous les ressources nécessaires pour avancer et transformer votre vie.</p><p>À travers le travail avec l’inconscient, je vous accompagne pour faire émerger vos propres réponses, dépasser certains schémas et utiliser pleinement vos ressources intérieures.</p><p>Je propose trois façons de vivre cette approche : un parcours de groupe, un coaching individuel ou un tirage de cartes. Les cartes sont un support de réflexion pour interroger l’inconscient, changer de regard et faire émerger vos propres réponses.</p></div>
         <VideoPresentation />
       </div></section>

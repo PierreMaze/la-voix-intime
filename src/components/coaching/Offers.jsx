@@ -5,26 +5,19 @@ import { WhatsappIcon, ZoomIcon } from '../icons/BrandIcons';
 export default function Offers() {
  const [recording,setRecording] = useState(false);
  const [booking,setBooking] = useState('');
- const [bookingStep,setBookingStep] = useState('choices');
  const dialog = useRef(null);
  const trigger = useRef(null);
  const openBooking = (offer,event) => {
    trigger.current = event.currentTarget;
    setBooking(offer);
-   setBookingStep('choices');
    dialog.current.showModal();
  };
- const getProfessionalBookingUrl = () => {
-   const url = new URL(SITE.professionalBookingUrl);
+ const getBookingUrl = baseUrl => {
+   const url = new URL(baseUrl);
    url.searchParams.set('accompagnement', booking === 'Programme INSIDE' ? 'programme-inside' : 'coaching-one-to-one');
    return url.toString();
  };
  const closeBooking = () => dialog.current.close();
- useEffect(() => {
-   if (!dialog.current?.open) return;
-   const selector = bookingStep === 'private-coming-soon' ? '[data-booking-back]' : '[data-booking-private]';
-   dialog.current.querySelector(selector)?.focus();
- }, [bookingStep]);
  useEffect(() => {
    if (!booking) return;
    const previous = document.body.style.overflow;
@@ -43,9 +36,9 @@ return <>      <section className="offers-section site-container" id="accompagne
         </div>
       </section>
 
-<dialog ref={dialog} className="booking-dialog" aria-labelledby="booking-title" onClose={() => { setBooking(''); setBookingStep('choices'); trigger.current?.focus(); }} onClick={event => { if (event.target === event.currentTarget) { const rect = event.currentTarget.getBoundingClientRect(); if (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom) closeBooking(); } }}>
+<dialog ref={dialog} className="booking-dialog" aria-labelledby="booking-title" onClose={() => { setBooking(''); trigger.current?.focus(); }} onClick={event => { if (event.target === event.currentTarget) { const rect = event.currentTarget.getBoundingClientRect(); if (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom) closeBooking(); } }}>
  <button className="dialog-close" aria-label="Fermer la réservation" onClick={closeBooking}>×</button>
  <p className="section-label">Votre réservation</p><h2 id="booking-title">{booking}</h2>
- {booking === 'Tirage de cartes' ? <><p>60 minutes en visio sur WhatsApp{recording ? ', avec enregistrement vidéo MP4' : ''}. {recording ? '65' : '59'} €.</p><p>Contactez Frédérique pour convenir de votre séance{recording ? ' et préciser que vous souhaitez l’enregistrement' : ''}. Un IBAN vous sera transmis pour le règlement.</p></> : bookingStep === 'private-coming-soon' ? <div className="booking-coming-soon"><p role="status">Le formulaire pour les particuliers sera bientôt disponible.</p><button data-booking-back className="button outline" onClick={() => setBookingStep('choices')}>Revenir aux choix</button></div> : <><p>Choisissez le formulaire adapté à votre statut pour poursuivre la réservation.</p><div className="booking-choice-list"><a className="button" href={getProfessionalBookingUrl()} target="_blank" rel="noopener noreferrer" aria-label="Professionnel — ouvrir le formulaire de réservation Tally dans un nouvel onglet"><TbBriefcase aria-hidden="true" />Professionnel</a><button data-booking-private className="button outline" onClick={() => setBookingStep('private-coming-soon')}><TbUser aria-hidden="true" />Particulier</button></div><p className="booking-note">Les formulaires s’ouvrent sur Tally, dans un nouvel onglet.</p></>}
+ {booking === 'Tirage de cartes' ? <><p>60 minutes en visio sur WhatsApp{recording ? ', avec enregistrement vidéo MP4' : ''}. {recording ? '65' : '59'} €.</p><p>Contactez Frédérique pour convenir de votre séance{recording ? ' et préciser que vous souhaitez l’enregistrement' : ''}. Un IBAN vous sera transmis pour le règlement.</p></> : <><p>Choisissez le formulaire adapté à votre statut pour poursuivre la réservation.</p><div className="booking-choice-list"><a className="button" href={getBookingUrl(SITE.professionalBookingUrl)} target="_blank" rel="noopener noreferrer" aria-label="Professionnel — ouvrir le formulaire de réservation Tally dans un nouvel onglet"><TbBriefcase aria-hidden="true" />Professionnel</a><a className="button outline" href={getBookingUrl(SITE.privateBookingUrl)} target="_blank" rel="noopener noreferrer" aria-label="Particulier — ouvrir le formulaire de réservation Tally dans un nouvel onglet"><TbUser aria-hidden="true" />Particulier</a></div><p className="booking-note">Les formulaires s’ouvrent sur Tally, dans un nouvel onglet.</p></>}
  {booking === 'Tirage de cartes' && <><a className="button" href="tel:+33646849352">Appeler le 06 46 84 93 52</a><a className="button outline" href={`mailto:lavoixintime@gmail.com?subject=${encodeURIComponent('Réservation — ' + booking + (recording ? ' avec enregistrement MP4' : ''))}`}>Réserver par email</a></>}
  </dialog></>; }
