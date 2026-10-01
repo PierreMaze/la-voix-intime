@@ -11,12 +11,11 @@ const LegalNotices = () => {
       <div className="px-6 mx-auto max-w-4xl lg:px-8">
         {/* Bouton de retour en haut */}
         <div className="mb-8">
-          <Link
-            to="/"
+          <Link aria-label="Retour à l’accueil" to="/"
             className="relative inline-flex items-center px-4 py-3 text-base font-medium text-white border rounded-lg shadow-md transition-all duration-300 transform group bg-gradient-to-r from-violet-600 to-violet-700 hover:from-violet-700 hover:to-violet-800 hover:shadow-lg hover:-translate-y-0.5 border-violet-500/30 hover:border-violet-400/50"
           >
             <div className="absolute inset-0 rounded-lg opacity-0 transition-opacity duration-300 bg-gradient-to-r from-violet-400/20 to-violet-600/20 group-hover:opacity-100"></div>
-            <svg
+            <svg aria-hidden="true" focusable="false"
               className="w-5 h-5 transition-transform duration-300 mr-2 group-hover:-translate-x-1"
               fill="none"
               stroke="currentColor"
@@ -37,7 +36,7 @@ const LegalNotices = () => {
             Mentions Légales
           </h1>
           <p className="text-white">
-            Dernière mise à jour : {new Date().toLocaleDateString("fr-FR")}
+            Dernière mise à jour : 1er octobre 2026
           </p>
         </div>
 
@@ -51,7 +50,7 @@ const LegalNotices = () => {
               <p className="text-white">
                 <strong>La Voix Intime</strong>
                 <br />
-                Fréderique CAIGNARD
+                Frédérique CAIGNARD
                 <br />
                 <a
                   href="https://www.google.fr/maps/place/33120+Arcachon/@44.6515203,-1.3194646,12z/data=!3m1!4b1!4m6!3m5!1s0xd549ef8c86711e3:0x40665174816f060!8m2!3d44.652297!4d-1.1785016!16zL20vMDVubTQ2?entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D"
@@ -83,8 +82,7 @@ const LegalNotices = () => {
             </div>
             <p className="text-white">
               Ce <strong className="text-violet-300">site</strong> web est édité
-              par La Voix Intime, professionnelle de la divination et de la
-              tarologie.
+              par Frédérique Caignard, créatrice de La Voix Intime et de la méthode Inside. L’activité proposée est le coaching en ligne et l’accompagnement à l’exploration des ressources intérieures. Les cartes peuvent être utilisées comme support de réflexion et de dialogue au cours des séances.
             </p>
           </div>
 
@@ -328,12 +326,11 @@ const LegalNotices = () => {
 
         {/* Bouton de retour en bas de page */}
         <div className="text-center mt-16 mb-8">
-          <Link
-            to="/"
+          <Link aria-label="Retour à l’accueil" to="/"
             className="relative inline-flex items-center px-8 py-4 text-lg font-semibold text-white border rounded-xl shadow-lg transition-all duration-300 transform group bg-gradient-to-r from-violet-600 to-violet-700 hover:from-violet-700 hover:to-violet-800 hover:shadow-2xl hover:-translate-y-1 border-violet-500/30 hover:border-violet-400/50"
           >
             <div className="absolute inset-0 rounded-xl opacity-0 transition-opacity duration-300 bg-gradient-to-r from-violet-400/20 to-violet-600/20 group-hover:opacity-100"></div>
-            <svg
+            <svg aria-hidden="true" focusable="false"
               className="w-6 h-6 transition-transform duration-300 mr-3 group-hover:-translate-x-1"
               fill="none"
               stroke="currentColor"

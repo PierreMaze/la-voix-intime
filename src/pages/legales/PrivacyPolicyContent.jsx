@@ -11,12 +11,11 @@ const PrivacyPolicyContent = () => {
       <div className="px-6 mx-auto max-w-4xl lg:px-8">
         {/* Bouton de retour en haut */}
         <div className="mb-8">
-          <Link
-            to="/"
+          <Link aria-label="Retour à l’accueil" to="/"
             className="relative inline-flex items-center px-4 py-3 text-base font-medium text-white border rounded-lg shadow-md transition-all duration-300 transform group bg-gradient-to-r from-violet-600 to-violet-700 hover:from-violet-700 hover:to-violet-800 hover:shadow-lg hover:-translate-y-0.5 border-violet-500/30 hover:border-violet-400/50"
           >
             <div className="absolute inset-0 rounded-lg opacity-0 transition-opacity duration-300 bg-gradient-to-r from-violet-400/20 to-violet-600/20 group-hover:opacity-100"></div>
-            <svg
+            <svg aria-hidden="true" focusable="false"
               className="w-5 h-5 transition-transform duration-300 mr-2 group-hover:-translate-x-1"
               fill="none"
               stroke="currentColor"
@@ -37,7 +36,7 @@ const PrivacyPolicyContent = () => {
             Politique de Confidentialité
           </h1>
           <p className="text-white">
-            Dernière mise à jour : {new Date().toLocaleDateString("fr-FR")}
+            Dernière mise à jour : 1er octobre 2026
           </p>
         </div>
 
@@ -59,145 +58,9 @@ const PrivacyPolicyContent = () => {
             </p>
           </div>
 
-          {/* Collecte des données */}
-          <div className="p-8 border rounded-2xl bg-white/5 backdrop-blur-sm border-white/10">
-            <h2 className="text-2xl font-semibold text-white mb-4">
-              2. Informations que nous collectons
-            </h2>
-            <div className="space-y-4">
-              <div>
-                <h3 className="text-lg font-medium text-white mb-2">
-                  Informations que vous nous fournissez :
-                </h3>
-                <ul className="text-white space-y-2 ml-4">
-                  <li>• Nom et prénom</li>
-                  <li>• Adresse e-mail</li>
-                  <li>• Numéro de téléphone</li>
-                  <li>
-                    • Informations de réservation (via{" "}
-                    <a
-                      href="https://calendly.com"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="underline transition-colors text-violet-400 hover:text-violet-300"
-                    >
-                      Calendly
-                    </a>
-                    )
-                  </li>
-                  <li>
-                    • Informations de paiement (traitées par{" "}
-                    <a
-                      href="https://www.paypal.com"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="underline transition-colors text-violet-400 hover:text-violet-300"
-                    >
-                      PayPal
-                    </a>
-                    )
-                  </li>
-                  <li>
-                    • Messages et communications avec notre service client
-                  </li>
-                </ul>
-              </div>
-              <div>
-                <h3 className="text-lg font-medium text-white mb-2">
-                  Informations collectées automatiquement :
-                </h3>
-                <ul className="text-white space-y-2 ml-4">
-                  <li>• Adresse IP et données de localisation</li>
-                  <li>• Type de navigateur et système d'exploitation</li>
-                  <li>
-                    • Pages visitées et temps passé sur le{" "}
-                    <strong className="text-violet-300">site</strong>
-                  </li>
-                  <li>• Cookies et technologies similaires</li>
-                  <li>
-                    • Données de navigation sur{" "}
-                    <a
-                      href="https://calendly.com"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="underline transition-colors text-violet-400 hover:text-violet-300"
-                    >
-                      Calendly
-                    </a>{" "}
-                    (conformément à leur politique)
-                  </li>
-                </ul>
-              </div>
-              <div>
-                <h3 className="text-lg font-medium text-white mb-2">
-                  Services tiers utilisés :
-                </h3>
-                <ul className="text-white space-y-2 ml-4">
-                  <li>
-                    • <strong>Calendly</strong> : Gestion des réservations et
-                    calendrier
-                    <br />
-                    <span className="text-sm">
-                      - Site web :{" "}
-                      <a
-                        href="https://calendly.com"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="underline text-violet-400 hover:text-violet-300"
-                      >
-                        https://calendly.com
-                      </a>
-                    </span>
-                    <br />
-                    <span className="text-sm">
-                      - Politique de confidentialité :{" "}
-                      <a
-                        href="https://calendly.com/privacy"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="underline text-violet-400 hover:text-violet-300"
-                      >
-                        https://calendly.com/privacy
-                      </a>
-                    </span>
-                  </li>
-                  <li>
-                    • <strong>PayPal</strong> : Traitement des paiements
-                    <br />
-                    <span className="text-sm">
-                      - Site web :{" "}
-                      <a
-                        href="https://www.paypal.com"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="underline text-violet-400 hover:text-violet-300"
-                      >
-                        https://www.paypal.com
-                      </a>
-                    </span>
-                    <br />
-                    <span className="text-sm">
-                      - Politique de confidentialité :{" "}
-                      <a
-                        href="https://www.paypal.com/fr/webapps/mpp/ua/privacy-full"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="underline text-violet-400 hover:text-violet-300 break-all sm:break-normal"
-                      >
-                        https://www.paypal.com/fr/webapps/mpp/ua/privacy-full
-                      </a>
-                    </span>
-                  </li>
-                </ul>
-                <p className="text-sm text-white mt-2">
-                  Ces services ont leurs propres politiques de confidentialité.
-                  Nous vous invitons à les consulter.
-                </p>
-              </div>
-            </div>
-          </div>
+          <div className="p-8 border rounded-2xl bg-white/5 border-white/10"><h2 className="text-2xl mb-4">2. Informations et services utilisés</h2><p>Lors de vos échanges par téléphone ou email, vous communiquez les coordonnées et informations nécessaires à votre demande et à l’organisation de votre accompagnement.</p><p>Ce site ne recueille pas directement de données au moyen d’un formulaire et ne contient ni calendrier intégré ni module de paiement. Pour réserver les accompagnements professionnels, un lien ouvre un formulaire hébergé par Tally. Les informations saisies dans ce formulaire sont recueillies pour traiter votre demande. Pour en savoir plus sur le service Tally, consultez sa <a href="https://tally.so/help/privacy-policy" target="_blank" rel="noopener noreferrer">politique de confidentialité</a>. Les séances se déroulent sur Zoom ou WhatsApp selon l’offre choisie.</p><p>Le chargement des polices Google Fonts et du visuel hébergé sur le site du programme INSIDE implique des requêtes vers ces services, qui reçoivent notamment votre adresse IP et des informations techniques de connexion. Les vidéos YouTube ne sont pas intégrées : le bouton ouvre la chaîne sur YouTube.</p></div>
 
-          {/* Utilisation des données */}
+{/* Utilisation des données */}
           <div className="p-8 border rounded-2xl bg-white/5 backdrop-blur-sm border-white/10">
             <h2 className="text-2xl font-semibold text-white mb-4">
               3. Comment nous utilisons vos informations
@@ -317,18 +180,7 @@ const PrivacyPolicyContent = () => {
             <h2 className="text-2xl font-semibold text-white mb-4">
               7. Cookies et technologies similaires
             </h2>
-            <p className="text-white mb-4">
-              Nous utilisons des cookies et des technologies similaires pour
-              améliorer votre expérience sur notre{" "}
-              <strong className="text-violet-300">site</strong>. Vous pouvez
-              contrôler l'utilisation des cookies via les paramètres de votre
-              navigateur.
-            </p>
-            <p className="text-white">
-              Les cookies nous aident à analyser le trafic du{" "}
-              <strong className="text-violet-300">site</strong>, à mémoriser vos
-              préférences et à fournir un contenu personnalisé.
-            </p>
+            <p className="text-white">Cette version du site ne dépose pas de cookies de mesure d’audience et ne charge pas de lecteur YouTube intégré. Les sites externes accessibles par des liens appliquent leurs propres politiques.</p>
           </div>
 
           {/* Contact */}
@@ -389,12 +241,11 @@ const PrivacyPolicyContent = () => {
 
         {/* Bouton de retour en bas de page */}
         <div className="text-center mt-16 mb-8">
-          <Link
-            to="/"
+          <Link aria-label="Retour à l’accueil" to="/"
             className="relative inline-flex items-center px-8 py-4 text-lg font-semibold text-white border rounded-xl shadow-lg transition-all duration-300 transform group bg-gradient-to-r from-violet-600 to-violet-700 hover:from-violet-700 hover:to-violet-800 hover:shadow-2xl hover:-translate-y-1 border-violet-500/30 hover:border-violet-400/50"
           >
             <div className="absolute inset-0 rounded-xl opacity-0 transition-opacity duration-300 bg-gradient-to-r from-violet-400/20 to-violet-600/20 group-hover:opacity-100"></div>
-            <svg
+            <svg aria-hidden="true" focusable="false"
               className="w-6 h-6 transition-transform duration-300 mr-3 group-hover:-translate-x-1"
               fill="none"
               stroke="currentColor"

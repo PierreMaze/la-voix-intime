@@ -1,18 +1,19 @@
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { useRoutes } from "react-router-dom";
 import Layout from "./components/layout";
-import { StarField } from "./components/ui/StarField";
-import { useSmoothScroll } from "./hooks/useSmoothScroll.jsx";
+
+
 import Home from "./pages/Home";
 import GeneralConditionsOfSale from "./pages/legales/GeneralConditionsOfSale";
 import GeneralConditionsOfUse from "./pages/legales/GeneralConditionsOfUse";
 import LegalNotices from "./pages/legales/LegalNotices";
 import PrivacyPolicyContent from "./pages/legales/PrivacyPolicyContent";
 
-const router = createBrowserRouter([
+const routes = [
   {
     path: "/",
     element: <Layout />,
     children: [
+      { path: '*', element: <section className="site-container" style={{ paddingBlock: '80px' }}><h1>Page introuvable</h1><p>Retrouvez les accompagnements de La Voix Intime.</p><a className="button" href="/">Retour à l’accueil</a></section> },
       {
         index: true,
         element: <Home />,
@@ -35,19 +36,6 @@ const router = createBrowserRouter([
       },
     ],
   },
-]);
+];
 
-const App = () => {
-  useSmoothScroll();
-
-  return (
-    <>
-      <div className="relative min-h-screen bg-light">
-        <StarField />
-        <RouterProvider router={router} />
-      </div>
-    </>
-  );
-};
-
-export default App;
+export default function App() { return useRoutes(routes); }

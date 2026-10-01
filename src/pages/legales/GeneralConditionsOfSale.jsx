@@ -11,12 +11,11 @@ const GeneralConditionsOfSale = () => {
       <div className="px-6 mx-auto max-w-4xl lg:px-8">
         {/* Bouton de retour en haut */}
         <div className="mb-8">
-          <Link
-            to="/"
+          <Link aria-label="Retour à l’accueil" to="/"
             className="relative inline-flex items-center px-4 py-3 text-base font-medium text-white border rounded-lg shadow-md transition-all duration-300 transform group bg-gradient-to-r from-violet-600 to-violet-700 hover:from-violet-700 hover:to-violet-800 hover:shadow-lg hover:-translate-y-0.5 border-violet-500/30 hover:border-violet-400/50"
           >
             <div className="absolute inset-0 rounded-lg opacity-0 transition-opacity duration-300 bg-gradient-to-r from-violet-400/20 to-violet-600/20 group-hover:opacity-100"></div>
-            <svg
+            <svg aria-hidden="true" focusable="false"
               className="w-5 h-5 transition-transform duration-300 mr-2 group-hover:-translate-x-1"
               fill="none"
               stroke="currentColor"
@@ -37,7 +36,7 @@ const GeneralConditionsOfSale = () => {
             Conditions Générales de Vente
           </h1>
           <p className="text-white">
-            Dernière mise à jour : {new Date().toLocaleDateString("fr-FR")}
+            Dernière mise à jour : 1er octobre 2026
           </p>
         </div>
 
@@ -90,157 +89,14 @@ const GeneralConditionsOfSale = () => {
           </div>
 
           {/* Section 2 */}
-          <div className="p-8 border rounded-2xl bg-white/5 backdrop-blur-sm border-white/10">
-            <h2 className="text-2xl font-semibold text-white mb-4">
-              2. Services Proposés
-            </h2>
-            <p className="text-white mb-4">
-              La Voix Intime propose les services suivants :
-            </p>
-            <ul className="text-white list-disc list-inside space-y-2 ml-4">
-              <li>
-                Consultations de divination par présentiel ou{" "}
-                <a
-                  href="https://www.whatsapp.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="underline transition-colors text-violet-400 hover:text-violet-300"
-                >
-                  WhatsApp
-                </a>
-              </li>
-              <li>Lectures des tirages</li>
-              <li>Conseils en développement personnel</li>
-              <li>
-                Enregistrement du tirage via WhatsApp ou dictaphone puis
-                converti en MP3
-              </li>
-              <li>Tirages gratuits en ligne</li>
-            </ul>
-            <p className="text-white mt-4">
-              Ces services sont proposés à titre de développement personnel. Ils
-              ne constituent en aucun cas une consultation médicale,
-              psychologique ou juridique.
-            </p>
-          </div>
+<div className="p-8 border rounded-2xl bg-white/5 border-white/10"><h2 className="text-2xl mb-4">2. Services proposés</h2><p>La Voix Intime propose des accompagnements de coaching en ligne fondés sur la méthode Inside et l’exploration des ressources intérieures. Les cartes sont utilisées comme support de réflexion et de dialogue pour explorer une situation, changer de regard et faire émerger ses propres réponses. La personne accompagnée reste libre de ses choix et de ses décisions.</p><ul className="list-disc ml-4 space-y-2"><li>INSIDE — Le Trésor des 9 Portes : 3 mois, 9 séances en groupe sur Zoom et 3 séances individuelles, suivi journalier et groupe WhatsApp.</li><li>Inside One-to-One : 1 mois, 4 séances individuelles en visio sur WhatsApp et suivi journalier.</li><li>Séance individuelle de 60 minutes avec les cartes comme support d’exploration, en visio sur WhatsApp, avec enregistrement vidéo MP4 en option.</li><li>Contenus collectifs gratuits sur la chaîne YouTube, utilisant les cartes comme support de réflexion personnelle.</li></ul></div>
 
-          {/* Section 3 */}
-          <div className="p-8 border rounded-2xl bg-white/5 backdrop-blur-sm border-white/10">
-            <h2 className="text-2xl font-semibold text-white mb-4">
-              3. Tarifs et Modalités de Paiement
-            </h2>
-            <p className="text-white mb-4">
-              Les tarifs de nos services sont exprimés en euros et hors taxes.
-              La TVA n'est pas applicable (BIC - Bénéfices Industriels et
-              Commerciaux).
-            </p>
-            <p className="text-white mb-4">
-              Les modalités de paiement acceptées sont :
-            </p>
-            <ul className="text-white list-disc list-inside space-y-2 ml-4">
-              <li>
-                Paiement par{" "}
-                <a
-                  href="https://www.paypal.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="underline transition-colors text-violet-400 hover:text-violet-300"
-                >
-                  PayPal
-                </a>{" "}
-                (exclusivement)
-              </li>
-              <li>
-                Cartes bancaires via{" "}
-                <a
-                  href="https://www.paypal.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="underline transition-colors text-violet-400 hover:text-violet-300"
-                >
-                  PayPal
-                </a>
-              </li>
-              <li>
-                Compte{" "}
-                <a
-                  href="https://www.paypal.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="underline transition-colors text-violet-400 hover:text-violet-300"
-                >
-                  PayPal
-                </a>{" "}
-                existant
-              </li>
-            </ul>
-            <p className="text-white mt-4">
-              <strong>Sécurité :</strong> Le paiement s'effectue via{" "}
-              <a
-                href="https://www.paypal.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="underline transition-colors text-violet-400 hover:text-violet-300"
-              >
-                PayPal
-              </a>{" "}
-              pour garantir la sécurité de vos transactions. Aucune donnée
-              bancaire n'est stockée sur notre{" "}
-              <strong className="text-violet-300">site</strong>. Le paiement est
-              exigible immédiatement à la réservation.
-            </p>
-          </div>
+{/* Section 3 */}
+<div className="p-8 border rounded-2xl bg-white/5 border-white/10"><h2 className="text-2xl mb-4">3. Tarifs et modalités de paiement</h2><p>Le prix et les modalités de règlement de l’accompagnement sont communiqués avant la confirmation de la réservation.</p><p>La séance avec les cartes se règle par virement bancaire. Un IBAN vous est transmis lors de votre réservation. Les modalités des coachings sont convenues directement avec Frédérique. Aucun paiement bancaire n’est collecté sur ce site.</p></div>
 
-          {/* Section 4 */}
-          <div className="p-8 border rounded-2xl bg-white/5 backdrop-blur-sm border-white/10">
-            <h2 className="text-2xl font-semibold text-white mb-4">
-              4. Réservation et Annulation
-            </h2>
-            <p className="text-white mb-4">
-              <strong>Réservation :</strong> Les consultations se réservent
-              exclusivement via le système{" "}
-              <a
-                href="https://calendly.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="underline transition-colors text-violet-400 hover:text-violet-300"
-              >
-                Calendly
-              </a>{" "}
-              intégré au <strong className="text-violet-300">site</strong>. Vous
-              devez :
-            </p>
-            <ul className="text-white list-disc list-inside space-y-2 ml-4 mb-4">
-              <li>Choisir un créneau disponible dans le calendrier</li>
-              <li>
-                Remplir le formulaire avec vos informations de contact (Nom,
-                Date de naissance, Email, Téléphone)
-              </li>
-              <li>
-                Effectuer le paiement via{" "}
-                <a
-                  href="https://www.paypal.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="underline transition-colors text-violet-400 hover:text-violet-300"
-                >
-                  PayPal
-                </a>
-              </li>
-              <li>Confirmer votre réservation</li>
-            </ul>
-            <p className="text-white mb-4">
+<div className="p-8 border rounded-2xl bg-white/5 border-white/10"><h2 className="text-2xl mb-4">4. Réservation et annulation</h2><p>Pour réserver, contactez Frédérique Caignard par téléphone au <a href="tel:+33646849352">06 46 84 93 52</a> ou par email à <a href="mailto:lavoixintime@gmail.com">lavoixintime@gmail.com</a>. Le choix de l’accompagnement, ses modalités et le rendez-vous sont confirmés lors de cet échange.</p><p className="text-white mb-4">
               <strong>Annulation :</strong> Toute annulation doit être effectuée
-              au minimum 24 heures avant la consultation prévue via{" "}
-              <a
-                href="https://calendly.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="underline transition-colors text-violet-400 hover:text-violet-300"
-              >
-                Calendly
-              </a>{" "}
-              ou par{" "}
+              au minimum 24 heures avant la séance prévue par téléphone ou par{" "}
               <a
                 href="mailto:lavoixintime@gmail.com"
                 className="underline text-violet-400 hover:text-violet-300"
@@ -251,24 +107,24 @@ const GeneralConditionsOfSale = () => {
             </p>
             <p className="text-white">
               <strong>Report :</strong> En cas de force majeure, La Voix Intime
-              se réserve le droit de reporter ou d'annuler une consultation.
+              se réserve le droit de reporter ou d'annuler une séance.
               Dans ce cas, un nouveau rendez-vous vous sera proposé.
             </p>
           </div>
 
-          {/* Section 5 */}
+{/* Section 5 */}
           <div className="p-8 border rounded-2xl bg-white/5 backdrop-blur-sm border-white/10">
             <h2 className="text-2xl font-semibold text-white mb-4">
-              5. Déroulement des Consultations
+              5. Déroulement des séances
             </h2>
             <p className="text-white mb-4">
-              Les consultations se déroulent dans un cadre confidentiel et
+              Les séances se déroulent dans un cadre confidentiel et
               bienveillant :
             </p>
             <ul className="text-white list-disc list-inside space-y-2 ml-4">
-              <li>Durée : La duré de la consultation est de 60 minutes</li>
+              <li>Durée : la séance avec les cartes dure 60 minutes ; la durée des séances de coaching est précisée lors de la réservation</li>
               <li>
-                Support : Présentiel ou{" "}
+                Support : en visio sur Zoom ou{" "}
                 <a
                   href="https://www.whatsapp.com"
                   target="_blank"
@@ -299,11 +155,9 @@ const GeneralConditionsOfSale = () => {
               <li>Maintenir une approche éthique et bienveillante</li>
             </ul>
             <p className="text-white mt-4">
-              <strong>Limitation de responsabilité :</strong> Les services de
-              divination sont proposés à titre de divertissement et de
-              développement personnel. La Voix Intime ne peut être tenue
+              <strong>Limitation de responsabilité :</strong> Les accompagnements sont proposés à titre de développement personnel. La Voix Intime ne peut être tenue
               responsable des décisions prises par le client sur la base des
-              consultations.
+              séances.
             </p>
           </div>
 
@@ -463,12 +317,11 @@ const GeneralConditionsOfSale = () => {
 
         {/* Bouton de retour en bas de page */}
         <div className="text-center mt-16 mb-8">
-          <Link
-            to="/"
+          <Link aria-label="Retour à l’accueil" to="/"
             className="relative inline-flex items-center px-8 py-4 text-lg font-semibold text-white border rounded-xl shadow-lg transition-all duration-300 transform group bg-gradient-to-r from-violet-600 to-violet-700 hover:from-violet-700 hover:to-violet-800 hover:shadow-2xl hover:-translate-y-1 border-violet-500/30 hover:border-violet-400/50"
           >
             <div className="absolute inset-0 rounded-xl opacity-0 transition-opacity duration-300 bg-gradient-to-r from-violet-400/20 to-violet-600/20 group-hover:opacity-100"></div>
-            <svg
+            <svg aria-hidden="true" focusable="false"
               className="w-6 h-6 transition-transform duration-300 mr-3 group-hover:-translate-x-1"
               fill="none"
               stroke="currentColor"

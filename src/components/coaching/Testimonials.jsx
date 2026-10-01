@@ -1,0 +1,5 @@
+import { useState } from 'react';
+import { REVIEWS_DATA } from '../../constants/reviews';
+export default function Testimonials() { const [allReviews,setAllReviews] = useState(false); return (      <section className="testimonials-section" id="temoignages"><div className="site-container"><div className="section-heading"><div><p className="section-label">Témoignages</p><h2>Des mots après la rencontre.</h2></div><p>Leurs expériences des tirages avec La Voix Intime.</p></div><div className="reviews-grid" id="reviews-list">{(allReviews ? REVIEWS_DATA : [REVIEWS_DATA[5], REVIEWS_DATA[6], REVIEWS_DATA[7]]).map(review => <figure className="review" key={review.name}><span className="quote-mark" aria-hidden="true">“</span><blockquote>{review.comment}</blockquote><figcaption>{review.name}<span>Tirage de cartes</span></figcaption></figure>)}</div><button className="text-link" aria-expanded={allReviews} aria-controls="reviews-list" onClick={() => setAllReviews(!allReviews)}>{allReviews ? 'Réduire les témoignages' : 'Voir tous les témoignages'}</button></div></section>
+
+); }
