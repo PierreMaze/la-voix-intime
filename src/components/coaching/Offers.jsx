@@ -3,14 +3,11 @@ import { TbBriefcase, TbUser } from 'react-icons/tb';
 import { SITE } from '../../config/site';
 import { WhatsappIcon, ZoomIcon } from '../icons/BrandIcons';
 // Visuels des offres : 16:9 sur tablette et ordinateur, 9:16 sur mobile.
-// One-to-One et Tirage reprennent provisoirement les visuels INSIDE.
-const INSIDE_LANDSCAPE = 'https://lavoixintime-programeinside.fr/images/inside-horizontal.png';
-const INSIDE_PORTRAIT = 'https://lavoixintime-programeinside.fr/images/inside-vertical.png';
-const INSIDE_ALT = 'INSIDE, le Trésor des 9 Portes : neuf portes ouvertes sur des paysages lumineux.';
+const offerImage = (name, alt) => ({ landscape: `/assets/img/offres/${name}-16-9.webp`, portrait: `/assets/img/offres/${name}-9-16.webp`, alt });
 const OFFER_IMAGES = {
- inside: { landscape: INSIDE_LANDSCAPE, portrait: INSIDE_PORTRAIT, alt: INSIDE_ALT },
- oneToOne: { landscape: INSIDE_LANDSCAPE, portrait: INSIDE_PORTRAIT, alt: INSIDE_ALT },
- tirage: { landscape: INSIDE_LANDSCAPE, portrait: INSIDE_PORTRAIT, alt: INSIDE_ALT },
+ inside: offerImage('inside', 'Programme INSIDE, le trésor des 9 portes : 3 mois pour transformer votre vie.'),
+ oneToOne: offerImage('one-to-one', 'Coaching INSIDE One-to-One : 1 mois pour trouver vos ressources.'),
+ tirage: offerImage('tirage', 'Tirage de cartes : un moment exclusif avec votre inconscient.'),
 };
 const OfferImage = ({ image }) => <picture className="offer-image"><source media="(max-width: 599px)" srcSet={image.portrait} /><img src={image.landscape} alt={image.alt} loading="lazy" decoding="async" /></picture>;
 export default function Offers() {
