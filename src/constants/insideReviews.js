@@ -5,7 +5,7 @@ export const INSIDE_REVIEWS = [
     name: "Anonyme",
     offer: "Inside One-to-One",
     comment:
-      "Le coaching One-to-One a été pour moi un grand révélateur. J'ai enfin entendu mon inconscient. Je savais qu'il y avait de la colère en moi, mais découvrir toute cette rage a été étonnant. Pouvoir la dénouer a libéré beaucoup d'autres choses autour de moi. Frédérique m'a apporté une perspective différente et originale, tout en bienveillance. Je recommande !",
+      "Le coaching One-to-One a été pour moi un grand révélateur. J'ai enfin entendu mon inconscient. Je savais qu'il y avait de la colère en moi, mais découvrir toute cette rage a été étonnant. Pouvoir la dénouer a libéré beaucoup d'autres choses autour de moi. Frédérique m'a apporté une perspective différente et originale, le tout avec de la bienveillance. Je recommande !",
   },
   {
     id: "inside-recommencer",
