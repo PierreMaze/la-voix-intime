@@ -1,7 +1,7 @@
 import { useState } from 'react';
 export default function Header() {
  const [menu,setMenu] = useState(false);
- const navLinks = [['À propos','/#a-propos'],['Accompagnements','/#accompagnements'],['Témoignages','/#temoignages'],['Questions','/#questions']];
+ const navLinks = [['À propos','/#a-propos'],['Accompagnements','/#accompagnements'],['Témoignages','/#temoignages'],['Questions','/#questions'],['Contact','/#contact']];
  return (    <header className="site-header" onKeyDown={event => { if (event.key === 'Escape' && menu) { setMenu(false); event.currentTarget.querySelector('.menu-button')?.focus(); } }}>
       <div className="site-container header-inner">
         <a href="/#accueil" aria-label="La Voix Intime — accueil"><img className="logo" src="/la-voix-intime-logo-transparent.png" alt="La Voix Intime — coaching en ligne" /></a>

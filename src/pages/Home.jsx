@@ -2,6 +2,7 @@ import SocialLinks from '../components/SocialLinks';
 import Offers from '../components/coaching/Offers';
 import Testimonials from '../components/coaching/Testimonials';
 import Faq from '../components/coaching/Faq';
+import Contact from '../components/coaching/Contact';
 import HeroVideo from '../components/coaching/HeroVideo';
 export default function Home() { return <>
       <section className="hero site-container" id="accueil">
@@ -29,6 +30,7 @@ export default function Home() { return <>
       <section className="youtube-section site-container" id="tirages-gratuits"><div><p className="section-label">Les tirages gratuits</p><h2>Prolonger l’exploration.</h2><p>Retrouvez les tirages collectifs de La Voix Intime sur YouTube. <br />Un rendez-vous à découvrir à votre rythme.</p></div><a className="button small" href="https://www.youtube.com/@lavoixintime" target="_blank" rel="noreferrer">Découvrir la chaîne YouTube <span aria-hidden="true">↗</span></a></section>
 
 <Faq />
+<Contact />
       <section className="closing"><div className="site-container"><h2>Et si la ressource que vous cherchiez <br />était déjà en vous ?</h2><a className="button light" href="#accompagnements">Choisir mon accompagnement</a></div></section>
 
 </>; }

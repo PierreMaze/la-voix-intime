@@ -10,7 +10,7 @@ const networks = [
 
 export default function SocialLinks({ placement = 'footer' }) {
   return (
-    <nav className={`social-links social-links--${placement}`} aria-label={`Réseaux sociaux — ${placement === 'hero' ? 'présentation' : 'pied de page'}`}>
+    <nav className={`social-links social-links--${placement}`} aria-label={`Réseaux sociaux — ${{ hero: 'présentation', contact: 'contact' }[placement] ?? 'pied de page'}`}>
       {networks.map(({ name, href, Icon }) => (
         <a key={name} href={href} target="_blank" rel="noopener noreferrer"
           aria-label={`La Voix Intime sur ${name} (nouvel onglet)`} title={`${name} — nouvel onglet`}>
