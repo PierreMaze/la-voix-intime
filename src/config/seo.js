@@ -1,7 +1,7 @@
 export const SITE_URL = 'https://lavoixintime.com';
 export const pages = {
   '/': {
-    title: 'La Voix Intime — Coaching en ligne et méthode Inside',
+    title: 'La Voix Intime — Coaching en ligne avec la méthode INSIDE',
     description: 'Coaching en ligne avec Frédérique Caignard : programme Inside, coaching individuel et cartes comme support pour explorer vos ressources intérieures.',
   },
   '/mentions-legales': {
