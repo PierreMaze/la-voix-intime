@@ -184,8 +184,6 @@ h1 {
 .hero-figure {
   border-radius: 12px;
   overflow: hidden;
-  background: #eeeee5;
-  border: 1px solid #e4e1d4;
   box-shadow: 0 15px 45px #30433808
 }
 .section-label {
@@ -1466,7 +1464,32 @@ html {
 .booking-dialog .booking-choice-list .button + .button { margin-top: 0; }
 .booking-choice-list .button { gap: 10px; }
 .booking-choice-list .button svg { width: 1.3em; height: 1.3em; flex-shrink: 0; }
-.booking-dialog p.booking-note { font-size: 13px; color: var(--muted); margin: 14px 0 0; text-align: center; }
+.booking-dialog p.booking-note { color: var(--muted); margin: 14px 0 0; text-align: center; }
+/* Modales des offres : format (durée, outils), sous-titre et prix */
+.booking-dialog p.booking-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 14px; color: var(--muted); padding-bottom: 20px; margin-bottom: 24px; border-bottom: 1px solid var(--line); }
+.booking-meta > span + span { padding-left: 14px; border-left: 1px solid var(--line); }
+.booking-subtitle { font-size: 18px; margin-bottom: 18px; }
+.booking-dialog p.booking-price { text-align: start; font-family: Manrope, sans-serif; font-size: 30px; line-height: 1.2; letter-spacing: -1px; margin-bottom: 0; }
+.booking-price small { display: block; font-family: 'DM Sans', sans-serif; letter-spacing: 0; color: var(--muted); margin-top: 5px; }
+/* Modale : « Prix de la séance » et le montant sur la même ligne */
+.booking-dialog .price-block { display: flex; flex-wrap: wrap; align-items: baseline; column-gap: 12px; margin-bottom: 24px; }
+.booking-dialog .price-label { margin-bottom: 0; }
+/* Petits textes de la modale : même échelle que ceux de la page (13px, puis --desktop-small dès 1100px) */
+.booking-dialog p.booking-meta, .booking-dialog p.booking-note, .booking-price small { font-size: 13px; }
+@media (min-width: 1100px) {
+  .booking-dialog p.booking-meta, .booking-dialog p.booking-note, .booking-price small { font-size: var(--desktop-small); }
+  .booking-dialog p.booking-price { font-size: 34px; }
+}
+@media (min-width: 1440px) { .booking-dialog p.booking-price { font-size: 40px; } }
+/* Prix (carte et modale du tirage) en gras ; les petits textes à côté restent en normal */
+.price, .booking-dialog p.booking-price { font-weight: 700; }
+.price small, .booking-price small { font-weight: 400; }
+/* Tirage : « Prix de la séance » titré comme « Sur candidature uniquement », prix collé au bouton avec un trait */
+.price-label { display: block; font-family: Manrope, sans-serif; font-size: 16px; margin-bottom: 6px; }
+@media (min-width: 600px) { .price-label { font-size: 18px; } }
+@media (min-width: 1100px) { .price-label { font-size: var(--desktop-body); } }
+.card-bottom .price { margin-bottom: 0; }
+.card-bottom .price-block { margin-bottom: 24px; padding-bottom: 24px; border-bottom: 1px solid var(--line); }
 
 /* Icônes des outils (Zoom, WhatsApp, Tally) : couleurs des marques, alignées sur le texte */
 .with-icon { display: inline-flex; align-items: center; gap: .35em; white-space: nowrap; vertical-align: middle; }
@@ -1543,6 +1566,8 @@ html {
 /* Mention « Sur candidature » (INSIDE et One-to-One) et étapes dans la modale */
 .application-note { margin: 0 0 24px; }
 .card-bottom .application-note { padding-bottom: 24px; border-bottom: 1px solid var(--line); }
+/* INSIDE : candidature et bouton calés en bas de la colonne, comme le bas des autres cartes */
+.programme-details { display: flex; flex-direction: column; }
 .offer-card > .application-note { margin: 24px 0 0; }
 .application-note strong { display: block; font-family: Manrope, sans-serif; font-size: 16px; margin-bottom: 6px; }
 .application-note p { font-size: 14px; line-height: 1.55; color: var(--muted); margin: 0; }
@@ -1576,16 +1601,9 @@ html {
   .closing h2 { font-size: clamp(18px, 5.6vw, 28px); letter-spacing: -0.5px; text-wrap: balance; }
 }
 
-/* Vidéo de présentation dans la hero (mobile first) : aperçu 16:9, lecteur Vimeo chargé au clic */
-.hero-video { position: relative; aspect-ratio: 16 / 9; background: #0c242d; }
-.hero-video img, .hero-video iframe { display: block; width: 100%; height: 100%; border: 0; object-fit: cover; }
-.hero-video-play { position: absolute; inset: 0; display: grid; place-items: center; width: 100%; padding: 0; border: 0; background: #0c242d26; cursor: pointer; }
-.hero-video-play span { display: grid; place-items: center; width: 56px; height: 56px; border-radius: 50%; background: #f9f8f3eb; box-shadow: 0 8px 24px #0c242d40; transition: transform .2s ease; }
-.hero-video-play span::before { content: ""; margin-left: 4px; border-style: solid; border-width: 9px 0 9px 15px; border-color: transparent transparent transparent var(--ink); }
-.hero-video-play:hover span, .hero-video-play:focus-visible span { transform: scale(1.08); }
-.hero-video-play:focus-visible { outline: 2px solid var(--paper); outline-offset: -6px; }
-@media (min-width: 600px) { .hero-video-play span { width: 68px; height: 68px; } .hero-video-play span::before { border-width: 11px 0 11px 18px; } }
-@media (min-width: 1100px) { .hero-video-play span { width: 80px; height: 80px; } .hero-video-play span::before { margin-left: 5px; border-width: 13px 0 13px 21px; } }
+/* Vidéo de présentation dans la hero : lecteur Vimeo 16:9 sur toute la largeur de sa colonne */
+.hero-video { aspect-ratio: 16 / 9; background: #0c242d; }
+.hero-video iframe { display: block; width: 100%; height: 100%; border: 0; }
 
 /* Hero : bouton et réseaux sociaux sous la vidéo en mobile et tablette, sous le texte dès 900px */
 .hero-description { margin-bottom: 0; }

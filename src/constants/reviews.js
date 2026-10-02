@@ -24,7 +24,7 @@ export const REVIEWS_DATA = [
     rating: 5,
     date: "2025-11-26",
     comment:
-      "Merci beaucoup pour ce tirage et pour toutes tes explications. C'était vraiment très intéressant et enrichissant. Tu as partagé énormément d'informations utiles qui permettent d'y voir plus clair et d'apporter de nouvelles pistes de réflexion (pour moi en tout cas, surtout actuellement). Encore un grand Merci ! J'ai beaucoup aimé ta façon d'expliquer, claire et bienveillante, ce qui rend le tout encore plus précieux ! 🙏 Et le cadrage est plutôt réussi pour une première ! 😉👏",
+      "Merci beaucoup pour ce tirage et pour toutes tes explications. C'était vraiment très intéressant et enrichissant. Tu as partagé énormément d'informations utiles qui permettent d'y voir plus clair et d'apporter de nouvelles pistes de réflexion (pour moi en tout cas, surtout actuellement). Encore un grand Merci ! J'ai beaucoup aimé ta façon d'expliquer, claire et bienveillante, ce qui rend le tout encore plus précieux ! 🙏",
   },
   {
     name: "Nadine N.",
